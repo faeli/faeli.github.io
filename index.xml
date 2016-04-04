@@ -1,0 +1,134 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+      <title> on Faeli Diary </title>
+    <link>http://www.faeli.me/</link>
+    <language>en-US</language>
+    <author>Enthusiastic Hugo User</author>
+    <rights>Copyright (c) 2014, Enthusiastic Hugo User; all rights reserved.</rights>
+    <updated>Sat, 02 Apr 2016 15:56:18 CST</updated>
+    
+    <item>
+      <title>Gulp 的简单使用</title>
+      <link>http://www.faeli.me/gulp-simple/</link>
+      <pubDate>Sat, 02 Apr 2016 15:56:18 CST</pubDate>
+      <author>Enthusiastic Hugo User</author>
+      <guid>http://www.faeli.me/gulp-simple/</guid>
+      <description>
+
+&lt;p&gt;首先我们需要 &lt;a href=&#34;https://nodejs.org/en/&#34;&gt;node.js&lt;/a&gt; &lt;a href=&#34;https://www.npmjs.com&#34;&gt;&lt;code&gt;npm&lt;/code&gt;&lt;/a&gt; 以 &lt;em&gt;mac&lt;/em&gt; 为例&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;安装 node.js&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;brew install node
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安装 gulp&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;sudo npm install -g gulp
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;创建项目目录&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;mkdir ~/myproject   //创建项目目录    
+cd ~/myproject   
+npm init    // 初始化项目                                       
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+
+&lt;li&gt;&lt;p&gt;安装相应的插件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install -g jade
+npm install gulp-util --save-dev
+npm install gulp-jade --save-dev
+npm install gulp-concat --save-dev
+npm install gulp-uglify --save-dev
+npm install gulp-compass --save-dev
+npm install browser-sync --save-dev 
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h5 id=&#34;简单的静态web项目的文件结构:a3312e6ef73fe5d0dbc331abda7b0a8e&#34;&gt;简单的静态Web项目的文件结构&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;|-- dist            // 发布项目目录
+|   |-- res
+|       |-- css     // css 样式文件
+|       |-- img     // 图片文件
+|       |-- js      // javascript 文件
+|-- gulpfile.js     //
+|-- package.json
+|-- scripts         // web js 文件
+|-- test            // web js 文件
+|-- views
+    |-- jade
+        |   |-- index.jade  // 未编译的 html 页面
+            |-- res
+                |-- css
+                |-- img
+                |-- sass        // sass / scss  文件
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h5 id=&#34;gulpfile-js-的配置:a3312e6ef73fe5d0dbc331abda7b0a8e&#34;&gt;gulpfile.js 的配置&lt;/h5&gt;
+
+&lt;pre&gt;&lt;code&gt;var gulp        = require(&#39;gulp&#39;);
+var jade        = require(&#39;gulp-jade&#39;);
+var compass     = require(&#39;gulp-compass&#39;);
+var browserSync = require(&#39;browser-sync&#39;).create();
+
+var app = {
+        serveDir:&amp;quot;./dist&amp;quot;,
+        sass:&amp;quot;./views/res/sass/**/*.scss&amp;quot;,
+        img:&amp;quot;./views/res/img/**&amp;quot;,
+        jade:&amp;quot;./views/jade/**/*.jade&amp;quot;,
+        js:&amp;quot;./scripts/**/*.js&amp;quot;,
+        dist:{
+            css:&amp;quot;./dist/res/css&amp;quot;,
+            img:&amp;quot;./dist/res/img&amp;quot;
+        }
+};
+
+gulp.task(&#39;html&#39;,function() {
+        var YOUR_LOCALS = {title:&#39;infos&#39;};
+
+            gulp.src(app.jade)
+                .pipe(jade({
+                            locals: YOUR_LOCALS,
+                            pretty: true
+                            }))
+                .pipe(gulp.dest(app.serveDir));
+});
+
+// Build sass to css
+gulp.task(&#39;compass&#39;, function() {
+        gulp.src(app.sass)
+            .pipe(compass({
+                        config_file: &#39;./config.rb&#39;,
+                        sass:&amp;quot;views/res/sass&amp;quot;,
+                        css: &amp;quot;dist/res/css&amp;quot;
+                        }))
+            //.pipe(gulp.dest(app.dist.css))
+            .pipe(browserSync.stream({match: &#39;**/*.css&#39;}));
+});
+
+gulp.task(&#39;image&#39;, function() {
+        gulp.src(app.img)
+            .pipe(gulp.dest(app.dist.img));
+});
+
+// Static server
+gulp.task(&#39;serve&#39;,[&#39;compass&#39;,&#39;html&#39;,&#39;image&#39;], function() {
+        browserSync.init({ server: {  baseDir: app.serveDir }  });
+            
+        gulp.watch(app.sass,[&#39;compass&#39;]);
+        gulp.watch(app.jade,[&#39;html&#39;]).on(&#39;change&#39;,browserSync.reload);
+});
+
+
+
+gulp.task(&#39;default&#39;,[&#39;serve&#39;]);
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
+    
+  </channel>
+</rss>

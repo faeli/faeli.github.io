@@ -1,0 +1,14 @@
+/* line 1, ../scss/_layout.scss */
+.wrapper {
+  padding: 4px;
+  background-color: #f0f0f0;
+}
+/* line 4, ../scss/_layout.scss */
+.wrapper div {
+  background-color: #ffffff;
+}
+
+/* line 8, ../scss/_layout.scss */
+.container {
+  padding: 10px;
+}

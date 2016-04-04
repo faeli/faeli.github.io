@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+
+        
+        <title>Gulp 的简单使用 - http://www.faeli.me/</title>
+        <base href="http://www.faeli.me/">
+        
+        <link rel="canonical" href="http://www.faeli.me/gulp-simple/">
+        <link href="" rel="alternate" type="application/rss+xml" title="Faeli Diary" />
+
+        <link rel="stylesheet" href="//cdn.jsdelivr.net/g/foundation@6.2.0(foundation.min.css),highlight.js@9.2.0(styles/default.min.css)">
+<link href="/css/custom.css" rel="stylesheet">
+<script src="//cdn.jsdelivr.net/g/jquery@2.2.2(jquery.min.js+jquery.slim.min.js),highlight.js@9.2.0,foundation@6.2.0"></script>
+
+        
+    </head>
+    
+    <body lang="zh-cn">      
+        <div class="wrapper">
+
+<div class="container">
+    <div>
+        <h3>Gulp 的简单使用</h3>
+        <p></p>
+    </div>
+    <div class="content">
+    
+
+<p>首先我们需要 <a href="https://nodejs.org/en/">node.js</a> <a href="https://www.npmjs.com"><code>npm</code></a> 以 <em>mac</em> 为例</p>
+
+<ol>
+<li><p>安装 node.js</p>
+
+<pre><code>brew install node
+</code></pre></li>
+
+<li><p>安装 gulp</p>
+
+<pre><code>sudo npm install -g gulp
+</code></pre></li>
+
+<li><p>创建项目目录</p>
+
+<pre><code>mkdir ~/myproject   //创建项目目录    
+cd ~/myproject   
+npm init    // 初始化项目                                       
+</code></pre></li>
+
+<li><p>安装相应的插件</p>
+
+<pre><code>npm install -g jade
+npm install gulp-util --save-dev
+npm install gulp-jade --save-dev
+npm install gulp-concat --save-dev
+npm install gulp-uglify --save-dev
+npm install gulp-compass --save-dev
+npm install browser-sync --save-dev 
+</code></pre></li>
+</ol>
+
+<h5 id="简单的静态web项目的文件结构:a3312e6ef73fe5d0dbc331abda7b0a8e">简单的静态Web项目的文件结构</h5>
+
+<pre><code>|-- dist            // 发布项目目录
+|   |-- res
+|       |-- css     // css 样式文件
+|       |-- img     // 图片文件
+|       |-- js      // javascript 文件
+|-- gulpfile.js     //
+|-- package.json
+|-- scripts         // web js 文件
+|-- test            // web js 文件
+|-- views
+    |-- jade
+        |   |-- index.jade  // 未编译的 html 页面
+            |-- res
+                |-- css
+                |-- img
+                |-- sass        // sass / scss  文件
+</code></pre>
+
+<h5 id="gulpfile-js-的配置:a3312e6ef73fe5d0dbc331abda7b0a8e">gulpfile.js 的配置</h5>
+
+<pre><code>var gulp        = require('gulp');
+var jade        = require('gulp-jade');
+var compass     = require('gulp-compass');
+var browserSync = require('browser-sync').create();
+
+var app = {
+        serveDir:&quot;./dist&quot;,
+        sass:&quot;./views/res/sass/**/*.scss&quot;,
+        img:&quot;./views/res/img/**&quot;,
+        jade:&quot;./views/jade/**/*.jade&quot;,
+        js:&quot;./scripts/**/*.js&quot;,
+        dist:{
+            css:&quot;./dist/res/css&quot;,
+            img:&quot;./dist/res/img&quot;
+        }
+};
+
+gulp.task('html',function() {
+        var YOUR_LOCALS = {title:'infos'};
+
+            gulp.src(app.jade)
+                .pipe(jade({
+                            locals: YOUR_LOCALS,
+                            pretty: true
+                            }))
+                .pipe(gulp.dest(app.serveDir));
+});
+
+// Build sass to css
+gulp.task('compass', function() {
+        gulp.src(app.sass)
+            .pipe(compass({
+                        config_file: './config.rb',
+                        sass:&quot;views/res/sass&quot;,
+                        css: &quot;dist/res/css&quot;
+                        }))
+            //.pipe(gulp.dest(app.dist.css))
+            .pipe(browserSync.stream({match: '**/*.css'}));
+});
+
+gulp.task('image', function() {
+        gulp.src(app.img)
+            .pipe(gulp.dest(app.dist.img));
+});
+
+// Static server
+gulp.task('serve',['compass','html','image'], function() {
+        browserSync.init({ server: {  baseDir: app.serveDir }  });
+            
+        gulp.watch(app.sass,['compass']);
+        gulp.watch(app.jade,['html']).on('change',browserSync.reload);
+});
+
+
+
+gulp.task('default',['serve']);
+</code></pre>
+
+    </div>
+</div>
+
+<footer>
+    <div class="footer">
+        <b>&copy;</b>
+    </div>
+</footer>
+<script>
+$(function() {
+    hljs.initHighlightingOnLoad();
+});
+</script>
+</div>
+</body>
+</html>
+
