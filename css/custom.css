@@ -1,14 +1,26 @@
-/* line 1, ../scss/_layout.scss */
+/* line 1, ../scss/_header.scss */
+.header {
+  padding: 10px;
+  color: #323232;
+  border-bottom: 1px solid #d9d9d9;
+}
+
+/* line 4, ../scss/_layout.scss */
 .wrapper {
   padding: 4px;
   background-color: #f0f0f0;
 }
-/* line 4, ../scss/_layout.scss */
+/* line 7, ../scss/_layout.scss */
 .wrapper div {
   background-color: #ffffff;
 }
 
-/* line 8, ../scss/_layout.scss */
+/* line 11, ../scss/_layout.scss */
 .container {
+  padding: 10px;
+}
+
+/* line 1, ../scss/_footer.scss */
+.footer {
   padding: 10px;
 }
