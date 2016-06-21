@@ -1,2 +1,17 @@
 @import "normalize";
-@import "pygments"
+@import "pygments";
+
+$primary-color: #FB2A7A;
+
+a {
+    text-decoration: none;
+    color: #323232;
+    &:hover {
+        text-decoration: none;
+        color: $primary-color;
+    }
+}
+
+small {
+    color: #7C7C7C;
+}

@@ -649,3 +649,18 @@ th {
 }
 
 /* Literal.Number.Integer.Long */
+/* line 6, ../scss/base.scss */
+a {
+  text-decoration: none;
+  color: #323232;
+}
+/* line 9, ../scss/base.scss */
+a:hover {
+  text-decoration: none;
+  color: #FB2A7A;
+}
+
+/* line 15, ../scss/base.scss */
+small {
+  color: #7C7C7C;
+}
