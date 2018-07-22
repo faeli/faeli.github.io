@@ -1,14 +1,14 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>faeli</title>
-    <link>http://www.faeli.me/</link>
-    <description>Recent content on faeli</description>
+    <title>Posts on faeli</title>
+    <link>http://www.faeli.me/posts/</link>
+    <description>Recent content in Posts on faeli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
     <lastBuildDate>Sun, 22 Jul 2018 20:45:38 +0800</lastBuildDate>
     
-        <atom:link href="http://www.faeli.me/index.xml" rel="self" type="application/rss+xml" />
+        <atom:link href="http://www.faeli.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>

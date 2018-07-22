@@ -1,0 +1,38 @@
+@import url("https://cdnjs.cloudflare.com/ajax/libs/normalize/7.0.0/normalize.min.css");
+header,
+nav,
+main,
+footer {
+    padding-left: 2em;
+    padding-right: 2em;
+}
+
+main,
+article {
+    min-height: 30em;
+}
+
+header {
+    background-color: #E4399E;
+    border-bottom: 1px solid #CF2287;
+    margin-bottom: 2em;
+}
+header h1 { margin: 0px; line-height: 2em;}
+header a, header a:hover { color: white; text-decoration: none; }
+
+footer {
+    margin-top: 3em;
+    color: #808080;
+    border-top: 1px solid #f0f0f0;
+}
+footer a { color: #808080 }
+footer a:hover { color: #E4399E; text-decoration: none; }
+a {
+    text-decoration: none;
+    color: #E4399E;
+}
+
+a:hover {
+    text-decoration: underline;
+    color: black;
+}
