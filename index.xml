@@ -6,10 +6,26 @@
     <description>Recent content on faeli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Sun, 22 Jul 2018 20:45:38 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 23 Jul 2018 22:18:11 +0800</lastBuildDate>
     
         <atom:link href="http://www.faeli.me/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Tomcat GET 请求中中文参数乱码</title>
+      <link>http://www.faeli.me/posts/tomcat-params-encoding/</link>
+      <pubDate>Mon, 23 Jul 2018 22:18:11 +0800</pubDate>
+      
+      <guid>http://www.faeli.me/posts/tomcat-params-encoding/</guid>
+      <description>&lt;p&gt;需要在 Tomcat 配置&lt;code&gt;conf/server.xml&lt;/code&gt;中加入&lt;code&gt;URIEncoding=&amp;quot;utf-8&amp;quot;&lt;/code&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Connector port=&amp;quot;8000&amp;quot; protocol=&amp;quot;HTTP/1.1&amp;quot;
+               connectionTimeout=&amp;quot;20000&amp;quot;
+               redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;utf-8&amp;quot;/&amp;gt;
+
+&lt;/code&gt;&lt;/pre&gt;
+</description>
+    </item>
     
     <item>
       <title>Hugo 使用记录</title>
