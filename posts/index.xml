@@ -6,10 +6,47 @@
     <description>Recent content in Posts on faeli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Mon, 23 Jul 2018 22:18:11 +0800</lastBuildDate>
+    <lastBuildDate>Sun, 29 Jul 2018 23:14:09 +0800</lastBuildDate>
     
         <atom:link href="http://www.faeli.me/posts/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Let&#39;s Encrypt 免费证书的使用</title>
+      <link>http://www.faeli.me/posts/lets-encrypt-ssl/</link>
+      <pubDate>Sun, 29 Jul 2018 23:14:09 +0800</pubDate>
+      
+      <guid>http://www.faeli.me/posts/lets-encrypt-ssl/</guid>
+      <description>&lt;p&gt;Let&amp;rsquo;s Encrypt 是一个认证机构（CA）。它可以提供免费的SSL证书，并且已经被大多数浏览器信任。
+我们可以通过Certbot-auto自动化证书的安装和更新。&lt;/p&gt;
+
+&lt;p&gt;安装&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;wget https://dl.eff.org/certbot-auto # 下载到本地
+chmod a+x ./certbot-auto # 添加可执行权限
+./certbot-auto --help all # 查看帮助
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;生成证书&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;./certbot-auto --nginx -d faeli.me -d www.faeli.me
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Let&amp;rsquo;s Encrypt 签发的证书有效期只有90天。通过 &lt;code&gt;./certbot-auto renew&lt;/code&gt; 命令可以续签&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;编辑 &lt;code&gt;crontab&lt;/code&gt; 文件&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;$ crontab -e
+# 每天凌晨1点更新
+0 1 * * * /root/certbot-auto renew --quiet
+&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;参考文档：&lt;br /&gt;
+&lt;a href=&#34;https://certbot.eff.org/docs/install.html&#34;&gt;https://certbot.eff.org/docs/install.html&lt;/a&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Tomcat GET 请求中中文参数乱码</title>
