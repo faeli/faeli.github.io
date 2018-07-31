@@ -3,38 +3,38 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://www.faeli.me/posts/lets-encrypt-ssl/</loc>
+    <loc>/posts/lets-encrypt-ssl/</loc>
     <lastmod>2018-07-29T23:14:09+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.faeli.me/posts/tomcat-params-encoding/</loc>
+    <loc>/posts/tomcat-params-encoding/</loc>
     <lastmod>2018-07-23T22:18:11+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.faeli.me/posts/hugo-quick-start/</loc>
+    <loc>/posts/hugo-quick-start/</loc>
     <lastmod>2018-07-22T20:45:38+08:00</lastmod>
   </url>
   
   <url>
-    <loc>https://www.faeli.me/categories/</loc>
+    <loc>/categories/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.faeli.me/posts/</loc>
+    <loc>/posts/</loc>
     <lastmod>2018-07-29T23:14:09+08:00</lastmod>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.faeli.me/tags/</loc>
+    <loc>/tags/</loc>
     <priority>0</priority>
   </url>
   
   <url>
-    <loc>https://www.faeli.me/</loc>
+    <loc>/</loc>
     <lastmod>2018-07-29T23:14:09+08:00</lastmod>
     <priority>0</priority>
   </url>
