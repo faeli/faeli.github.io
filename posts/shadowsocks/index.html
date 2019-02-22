@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    
+    <title>faeli  | Shadowsocks</title>
+    <meta name="HandheldFriendly" content="True">
+    <meta name="MobileOptimized" content="320">
+
+    <meta name="viewport" content="width=device-width,minimum-scale=1">
+    <meta name="generator" content="Hugo 0.47" />
+    
+    
+      <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+    
+
+    
+    
+    <link rel="stylesheet" type="text/css" href="/css/style.css">
+
+    
+
+    
+      
+    
+
+    
+
+    <meta property="og:title" content="Shadowsocks" />
+<meta property="og:description" content=" Shadowsocks 官方地址
+推荐使用：https://github.com/shadowsocks/shadowsocks-go
+Windows: 下载 https://github.com/shadowsocks/shadowsocks-windows/releases
+Andriod: 下载 https://github.com/shadowsocks/shadowsocks-android/releases
+共享服务 ss://YWVzLTI1Ni1jZmI6RkBlbGlAMTMxNCQ4YkJAMTkyLjI0My4xMTQuMjE1Ojg4Mzg=
+捐助 " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/shadowsocks/" /><meta property="article:published_time" content="2018-10-15T09:37:10&#43;08:00"/>
+<meta property="article:modified_time" content="2018-10-15T09:37:10&#43;08:00"/>
+<meta itemprop="name" content="Shadowsocks">
+<meta itemprop="description" content=" Shadowsocks 官方地址
+推荐使用：https://github.com/shadowsocks/shadowsocks-go
+Windows: 下载 https://github.com/shadowsocks/shadowsocks-windows/releases
+Andriod: 下载 https://github.com/shadowsocks/shadowsocks-android/releases
+共享服务 ss://YWVzLTI1Ni1jZmI6RkBlbGlAMTMxNCQ4YkJAMTkyLjI0My4xMTQuMjE1Ojg4Mzg=
+捐助 ">
+
+
+<meta itemprop="datePublished" content="2018-10-15T09:37:10&#43;08:00" />
+<meta itemprop="dateModified" content="2018-10-15T09:37:10&#43;08:00" />
+<meta itemprop="wordCount" content="12">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Shadowsocks"/>
+<meta name="twitter:description" content=" Shadowsocks 官方地址
+推荐使用：https://github.com/shadowsocks/shadowsocks-go
+Windows: 下载 https://github.com/shadowsocks/shadowsocks-windows/releases
+Andriod: 下载 https://github.com/shadowsocks/shadowsocks-android/releases
+共享服务 ss://YWVzLTI1Ni1jZmI6RkBlbGlAMTMxNCQ4YkJAMTkyLjI0My4xMTQuMjE1Ojg4Mzg=
+捐助 "/>
+
+    
+	<link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/default.min.css">
+	<script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js"></script>
+<script>hljs.initHighlightingOnLoad();</script>
+  </head>
+
+  <body class="avenir bg-near-white">
+
+    <header>
+	
+	<a href="/index.xml" style="float: right; margin-top: 1.4em;">
+		<strong>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+			    stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
+				<path d="M4 11a9 9 0 0 1 9 9"></path>
+				<path d="M4 4a16 16 0 0 1 16 16"></path>
+				<circle cx="5" cy="19" r="1"></circle>
+			</svg>
+		</strong>
+	</a>
+	
+	<h1>
+		<a href="/">
+			<strong>faeli</strong>
+		</a>
+
+	</h1>
+</header>
+    <main>
+      
+
+<div id="loadingMask" style="width: 100%; height: 100%; position: fixed; background: #fff;"></div>
+<article>
+  <script>
+    function fadeOut(el) {
+      el.style.opacity = 1;
+
+      var last = +new Date();
+      var tick = function () {
+        el.style.opacity = +el.style.opacity - (new Date() - last) / 80;
+        last = +new Date();
+        
+
+        if (el.style.opacity > 0) {
+          (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        } else {
+          el.style.display = 'none';
+        }
+      };
+
+      tick();
+    }
+
+    function ready(fn) {
+      if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        el = document.getElementById('loadingMask');
+        fadeOut(el);
+        var elements = document.querySelectorAll("img");
+        Array.prototype.forEach.call(elements, function (el, i) {
+          if (el.getAttribute("alt")) {
+            const caption = document.createElement('figcaption');
+            var node = document.createTextNode(el.getAttribute("alt"));
+            caption.appendChild(node);
+            const wrapper = document.createElement('figure');
+            wrapper.className = 'image';
+            el.parentNode.insertBefore(wrapper, el);
+            el.parentNode.removeChild(el);
+            wrapper.appendChild(el);
+            wrapper.appendChild(caption);
+          }
+        });
+
+      } else {
+        document.addEventListener('DOMContentLoaded', fn);
+      }
+    }
+    window.onload = ready;
+  </script>
+
+  
+  
+  <h1>Shadowsocks
+      <ul id="tags">
+          
+        </ul>        
+  </h1>
+  
+
+<p><a href="https://github.com/shadowsocks">Shadowsocks 官方地址</a></p>
+
+<p>推荐使用：<a href="https://github.com/shadowsocks/shadowsocks-go">https://github.com/shadowsocks/shadowsocks-go</a></p>
+
+<p>Windows: <a href="/res/win/shadowsocks-4.1.2.zip">下载</a> <a href="https://github.com/shadowsocks/shadowsocks-windows/releases">https://github.com/shadowsocks/shadowsocks-windows/releases</a></p>
+
+<p>Andriod: <a href="/res/apk/shadowsocks--universal-4.7.1.apk">下载</a> <a href="https://github.com/shadowsocks/shadowsocks-android/releases">https://github.com/shadowsocks/shadowsocks-android/releases</a></p>
+
+<h4 id="共享服务">共享服务</h4>
+
+<p><img src="/images/share_ss.png" alt="Share ss QR code" /><br />
+<code>ss://YWVzLTI1Ni1jZmI6RkBlbGlAMTMxNCQ4YkJAMTkyLjI0My4xMTQuMjE1Ojg4Mzg=</code></p>
+
+<h4 id="捐助">捐助</h4>
+
+<p><img src="/images/me_ali.png" alt="支付宝" /><br />
+<img src="/images/me_wx.png" alt="微信" /></p>
+ 
+</article>
+
+
+    </main>
+    <footer>
+	<p>
+		<span style="float: right;">&copy; 2018</span>
+
+		<a href="/">
+			<strong>faeli.me</strong>
+		</a>
+	</p>
+</footer>
+    
+  </body>
+</html>

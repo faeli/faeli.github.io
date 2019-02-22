@@ -6,10 +6,38 @@
     <description>Recent content on faeli</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh-CN</language>
-    <lastBuildDate>Thu, 11 Oct 2018 20:21:31 +0800</lastBuildDate>
+    <lastBuildDate>Mon, 15 Oct 2018 09:37:10 +0800</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Shadowsocks</title>
+      <link>/posts/shadowsocks/</link>
+      <pubDate>Mon, 15 Oct 2018 09:37:10 +0800</pubDate>
+      
+      <guid>/posts/shadowsocks/</guid>
+      <description>
+
+&lt;p&gt;&lt;a href=&#34;https://github.com/shadowsocks&#34;&gt;Shadowsocks 官方地址&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;推荐使用：&lt;a href=&#34;https://github.com/shadowsocks/shadowsocks-go&#34;&gt;https://github.com/shadowsocks/shadowsocks-go&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Windows: &lt;a href=&#34;/res/win/shadowsocks-4.1.2.zip&#34;&gt;下载&lt;/a&gt; &lt;a href=&#34;https://github.com/shadowsocks/shadowsocks-windows/releases&#34;&gt;https://github.com/shadowsocks/shadowsocks-windows/releases&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Andriod: &lt;a href=&#34;/res/apk/shadowsocks--universal-4.7.1.apk&#34;&gt;下载&lt;/a&gt; &lt;a href=&#34;https://github.com/shadowsocks/shadowsocks-android/releases&#34;&gt;https://github.com/shadowsocks/shadowsocks-android/releases&lt;/a&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;共享服务&#34;&gt;共享服务&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;/images/share_ss.png&#34; alt=&#34;Share ss QR code&#34; /&gt;&lt;br /&gt;
+&lt;code&gt;ss://YWVzLTI1Ni1jZmI6RkBlbGlAMTMxNCQ4YkJAMTkyLjI0My4xMTQuMjE1Ojg4Mzg=&lt;/code&gt;&lt;/p&gt;
+
+&lt;h4 id=&#34;捐助&#34;&gt;捐助&lt;/h4&gt;
+
+&lt;p&gt;&lt;img src=&#34;/images/me_ali.png&#34; alt=&#34;支付宝&#34; /&gt;&lt;br /&gt;
+&lt;img src=&#34;/images/me_wx.png&#34; alt=&#34;微信&#34; /&gt;&lt;/p&gt;
+</description>
+    </item>
     
     <item>
       <title>Redis Cluster</title>
