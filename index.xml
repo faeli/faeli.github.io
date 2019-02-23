@@ -61,26 +61,18 @@
 我们可以通过Certbot-auto自动化证书的安装和更新。&lt;/p&gt;
 
 &lt;p&gt;安装&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;wget https://dl.eff.org/certbot-auto # 下载到本地
-chmod a+x ./certbot-auto # 添加可执行权限
-./certbot-auto --help all # 查看帮助
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;wget https://dl.eff.org/certbot-auto &lt;span class=&#34;c1&#34;&gt;# 下载到本地&lt;/span&gt;
+chmod a+x ./certbot-auto &lt;span class=&#34;c1&#34;&gt;# 添加可执行权限&lt;/span&gt;
+./certbot-auto --help all &lt;span class=&#34;c1&#34;&gt;# 查看帮助&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;生成证书&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;./certbot-auto --nginx -d faeli.me -d www.faeli.me
-&lt;/code&gt;&lt;/pre&gt;
-
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;./certbot-auto --nginx -d faeli.me -d www.faeli.me&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
 &lt;p&gt;Let&amp;rsquo;s Encrypt 签发的证书有效期只有90天。通过 &lt;code&gt;./certbot-auto renew&lt;/code&gt; 命令可以续签&lt;/p&gt;
 
 &lt;ul&gt;
 &lt;li&gt;&lt;p&gt;编辑 &lt;code&gt;crontab&lt;/code&gt; 文件&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;$ crontab -e
-# 每天凌晨1点更新
-0 1 * * * /root/certbot-auto renew --quiet
-&lt;/code&gt;&lt;/pre&gt;&lt;/li&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ crontab -e
+&lt;span class=&#34;c1&#34;&gt;# 每天凌晨1点更新&lt;/span&gt;
+&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; * * * /root/certbot-auto renew --quiet&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;参考文档：&lt;br /&gt;
@@ -95,13 +87,9 @@ chmod a+x ./certbot-auto # 添加可执行权限
       
       <guid>/posts/tomcat-params-encoding/</guid>
       <description>&lt;p&gt;需要在 Tomcat 配置&lt;code&gt;conf/server.xml&lt;/code&gt;中加入&lt;code&gt;URIEncoding=&amp;quot;utf-8&amp;quot;&lt;/code&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;Connector port=&amp;quot;8000&amp;quot; protocol=&amp;quot;HTTP/1.1&amp;quot;
-               connectionTimeout=&amp;quot;20000&amp;quot;
-               redirectPort=&amp;quot;8443&amp;quot; URIEncoding=&amp;quot;utf-8&amp;quot;/&amp;gt;
-
-&lt;/code&gt;&lt;/pre&gt;
-</description>
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;Connector&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;port=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;8000&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;protocol=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;HTTP/1.1&amp;#34;&lt;/span&gt;
+               &lt;span class=&#34;na&#34;&gt;connectionTimeout=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;20000&amp;#34;&lt;/span&gt;
+               &lt;span class=&#34;na&#34;&gt;redirectPort=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;8443&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;URIEncoding=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
     </item>
     
     <item>
