@@ -3,36 +3,52 @@ header,
 nav,
 main,
 footer {
-    padding-left: 2em;
-    padding-right: 2em;
+    padding-left: 1.5em;
+    padding-right: 1.5em;
 }
 
 main,
 article {
-    min-height: 30em;
+    min-height: 35em;
 }
 
 header {
     background-color: #E4399E;
     border-bottom: 1px solid #CF2287;
-    margin-bottom: 2em;
+    border-top: 1px solid #CF2287;
+    margin-bottom: 1.5em;
 }
 header h1 { margin: 0px; line-height: 2em;}
 header a, header a:hover { color: white; text-decoration: none; }
 
 footer {
     margin-top: 3em;
-    color: #808080;
+    padding-top: 0.1em;
+    padding-bottom: 0.1em;
+    color: #CCC;
     border-top: 1px solid #f0f0f0;
 }
-footer a { color: #808080 }
-footer a:hover { color: #E4399E; text-decoration: none; }
+footer a { color: #CCC }
+footer a:hover { color: #E4399E; text-decoration: none; background-color: transparent; }
+footer div.copy_right {
+    font-size: 0.8em;
+    float: right;
+}
 a {
     text-decoration: none;
     color: #E4399E;
+    padding-left: 0.2em;
+    padding-right: 0.2em;
 }
 
 a:hover {
-    text-decoration: underline;
-    color: black;
+    text-decoration: none;
+    color: white;
+    background-color: #E4399E;
+    border-top-right-radius: .3em;
+    border-bottom-left-radius: .3em;
+}
+ul.posts li{
+    padding-top: .2em;
+    padding-bottom: .2em;
 }

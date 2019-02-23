@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes" ?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>faeli</title>
+    <title>faeli.me</title>
     <link>/</link>
-    <description>Recent content on faeli</description>
+    <description>Recent content on faeli.me</description>
     <generator>Hugo -- gohugo.io</generator>
-    <language>zh-CN</language>
+    <language>zh</language>
     <lastBuildDate>Mon, 15 Oct 2018 09:37:10 +0800</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
