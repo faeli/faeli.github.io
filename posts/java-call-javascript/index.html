@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>  Java 调用 Javascript 代码 | faeli.me</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.54.0" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/style.min.e5838fc10e58896443efc5e140dc3c4650448f3af8c8e2654bace966ee33d2bf.css">
+  
+  <link rel="stylesheet" href="/css/syntax.min.358a8ea815c6764e6cf4bbb2d503f000bb823d6c4a5d10eabdbd2df7cebc55dc.css">
+  
+
+  
+  
+  
+
+  
+
+  <meta property="og:title" content="Java 调用 Javascript 代码" />
+<meta property="og:description" content="JavaScript d:/tmp/calculator.js
+var calculator = new Object(); calculator.add = function (n1, n2) {n1 &#43; n2}; calculator.subtract = function (n1, n2) {n1 - n2}; calculator.multiply = function (n1, n2) {n1 * n2}; calculator.divide = function (n1, n2) {n1 / n2}; function test(a, b) { if (a === &#39;Number&#39;) return 1; else return b};  Java Code
+import javax.script.Invocable; import javax.script.ScriptEngine; import javax.script.ScriptEngineManager; public class Main { public static void main(String[] args) throws Exception { ScriptEngineManager manager = new ScriptEngineManager(); ScriptEngine engine = manager." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/java-call-javascript/" />
+<meta property="article:published_time" content="2019-02-27T16:36:10&#43;08:00"/>
+<meta property="article:modified_time" content="2019-02-27T16:36:10&#43;08:00"/>
+
+<meta itemprop="name" content="Java 调用 Javascript 代码">
+<meta itemprop="description" content="JavaScript d:/tmp/calculator.js
+var calculator = new Object(); calculator.add = function (n1, n2) {n1 &#43; n2}; calculator.subtract = function (n1, n2) {n1 - n2}; calculator.multiply = function (n1, n2) {n1 * n2}; calculator.divide = function (n1, n2) {n1 / n2}; function test(a, b) { if (a === &#39;Number&#39;) return 1; else return b};  Java Code
+import javax.script.Invocable; import javax.script.ScriptEngine; import javax.script.ScriptEngineManager; public class Main { public static void main(String[] args) throws Exception { ScriptEngineManager manager = new ScriptEngineManager(); ScriptEngine engine = manager.">
+
+
+<meta itemprop="datePublished" content="2019-02-27T16:36:10&#43;08:00" />
+<meta itemprop="dateModified" content="2019-02-27T16:36:10&#43;08:00" />
+<meta itemprop="wordCount" content="170">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Java 调用 Javascript 代码"/>
+<meta name="twitter:description" content="JavaScript d:/tmp/calculator.js
+var calculator = new Object(); calculator.add = function (n1, n2) {n1 &#43; n2}; calculator.subtract = function (n1, n2) {n1 - n2}; calculator.multiply = function (n1, n2) {n1 * n2}; calculator.divide = function (n1, n2) {n1 / n2}; function test(a, b) { if (a === &#39;Number&#39;) return 1; else return b};  Java Code
+import javax.script.Invocable; import javax.script.ScriptEngine; import javax.script.ScriptEngineManager; public class Main { public static void main(String[] args) throws Exception { ScriptEngineManager manager = new ScriptEngineManager(); ScriptEngine engine = manager."/>
+
+</head>
+
+<body class="avenir bg-near-white">
+
+  <header>
+	
+	<a href="/index.xml" style="float: right; margin-top: 1.4em;">
+		<strong>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+			    stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
+				<path d="M4 11a9 9 0 0 1 9 9"></path>
+				<path d="M4 4a16 16 0 0 1 16 16"></path>
+				<circle cx="5" cy="19" r="1"></circle>
+			</svg>
+		</strong>
+	</a>
+	
+	<h1>
+		<a href="/">
+			<strong>faeli.me</strong>
+		</a>
+
+	</h1>
+</header>
+  <main>
+    
+
+<div id="loadingMask" style="width: 100%; height: 100%; position: fixed; background: #fff;"></div>
+<article>
+  <script>
+    function fadeOut(el) {
+      el.style.opacity = 1;
+
+      var last = +new Date();
+      var tick = function () {
+        el.style.opacity = +el.style.opacity - (new Date() - last) / 80;
+        last = +new Date();
+        
+
+        if (el.style.opacity > 0) {
+          (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        } else {
+          el.style.display = 'none';
+        }
+      };
+
+      tick();
+    }
+
+    function ready(fn) {
+      if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        el = document.getElementById('loadingMask');
+        fadeOut(el);
+        var elements = document.querySelectorAll("img");
+        Array.prototype.forEach.call(elements, function (el, i) {
+          if (el.getAttribute("alt")) {
+            const caption = document.createElement('figcaption');
+            var node = document.createTextNode(el.getAttribute("alt"));
+            caption.appendChild(node);
+            const wrapper = document.createElement('figure');
+            wrapper.className = 'image';
+            el.parentNode.insertBefore(wrapper, el);
+            el.parentNode.removeChild(el);
+            wrapper.appendChild(el);
+            wrapper.appendChild(caption);
+          }
+        });
+
+      } else {
+        document.addEventListener('DOMContentLoaded', fn);
+      }
+    }
+    window.onload = ready;
+  </script>
+
+  
+  
+  <h1>Java 调用 Javascript 代码
+      <ul id="tags">
+          
+        </ul>        
+  </h1>
+  <p>JavaScript <code>d:/tmp/calculator.js</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-javascript" data-lang="javascript"><span class="kd">var</span> <span class="nx">calculator</span> <span class="o">=</span> <span class="k">new</span> <span class="nb">Object</span><span class="p">();</span>
+
+<span class="nx">calculator</span><span class="p">.</span><span class="nx">add</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n1</span><span class="p">,</span> <span class="nx">n2</span><span class="p">)</span> <span class="p">{</span><span class="nx">n1</span> <span class="o">+</span> <span class="nx">n2</span><span class="p">};</span>
+<span class="nx">calculator</span><span class="p">.</span><span class="nx">subtract</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n1</span><span class="p">,</span> <span class="nx">n2</span><span class="p">)</span> <span class="p">{</span><span class="nx">n1</span> <span class="o">-</span> <span class="nx">n2</span><span class="p">};</span>
+<span class="nx">calculator</span><span class="p">.</span><span class="nx">multiply</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n1</span><span class="p">,</span> <span class="nx">n2</span><span class="p">)</span> <span class="p">{</span><span class="nx">n1</span> <span class="o">*</span> <span class="nx">n2</span><span class="p">};</span>
+<span class="nx">calculator</span><span class="p">.</span><span class="nx">divide</span> <span class="o">=</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">n1</span><span class="p">,</span> <span class="nx">n2</span><span class="p">)</span> <span class="p">{</span><span class="nx">n1</span> <span class="err">/ n2};</span>
+<span class="kd">function</span> <span class="nx">test</span><span class="p">(</span><span class="nx">a</span><span class="p">,</span> <span class="nx">b</span><span class="p">)</span> <span class="p">{</span> <span class="k">if</span> <span class="p">(</span><span class="nx">a</span> <span class="o">===</span> <span class="s1">&#39;Number&#39;</span><span class="p">)</span> <span class="k">return</span> <span class="mi">1</span><span class="p">;</span> <span class="k">else</span> <span class="k">return</span> <span class="nx">b</span><span class="p">};</span>
+</code></pre></div>
+<p>Java Code</p>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">javax.script.Invocable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.script.ScriptEngine</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.script.ScriptEngineManager</span><span class="o">;</span>
+
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">Main</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">ScriptEngineManager</span> <span class="n">manager</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScriptEngineManager</span><span class="o">();</span>
+        <span class="n">ScriptEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">manager</span><span class="o">.</span><span class="na">getEngineByName</span><span class="o">(</span><span class="s">&#34;JavaScript&#34;</span><span class="o">);</span>
+        <span class="k">if</span> <span class="o">(!(</span><span class="n">engine</span> <span class="k">instanceof</span> <span class="n">Invocable</span><span class="o">))</span> <span class="o">{</span>
+            <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="s">&#34;Invoking methods is not supported.&#34;</span><span class="o">);</span>
+            <span class="k">return</span><span class="o">;</span>
+        <span class="o">}</span>
+        <span class="n">Invocable</span> <span class="n">inv</span> <span class="o">=</span> <span class="o">(</span><span class="n">Invocable</span><span class="o">)</span> <span class="n">engine</span><span class="o">;</span>
+        <span class="n">String</span> <span class="n">scriptPath</span> <span class="o">=</span> <span class="s">&#34;d:/tmp/calculator.js&#34;</span><span class="o">;</span>
+
+        <span class="n">engine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span><span class="s">&#34;load(&#39;&#34;</span> <span class="o">+</span> <span class="n">scriptPath</span> <span class="o">+</span> <span class="s">&#34;&#39;)&#34;</span><span class="o">);</span>
+
+        <span class="n">Object</span> <span class="n">calculator</span> <span class="o">=</span> <span class="n">engine</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="s">&#34;calculator&#34;</span><span class="o">);</span>
+
+        <span class="kt">int</span> <span class="n">x</span> <span class="o">=</span> <span class="n">3</span><span class="o">;</span>
+        <span class="kt">int</span> <span class="n">y</span> <span class="o">=</span> <span class="n">4</span><span class="o">;</span>
+        <span class="n">Object</span> <span class="n">addResult</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="na">invokeMethod</span><span class="o">(</span><span class="n">calculator</span><span class="o">,</span> <span class="s">&#34;add&#34;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+        <span class="n">Object</span> <span class="n">subResult</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="na">invokeMethod</span><span class="o">(</span><span class="n">calculator</span><span class="o">,</span> <span class="s">&#34;subtract&#34;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+        <span class="n">Object</span> <span class="n">mulResult</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="na">invokeMethod</span><span class="o">(</span><span class="n">calculator</span><span class="o">,</span> <span class="s">&#34;multiply&#34;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+        <span class="n">Object</span> <span class="n">divResult</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="na">invokeMethod</span><span class="o">(</span><span class="n">calculator</span><span class="o">,</span> <span class="s">&#34;divide&#34;</span><span class="o">,</span> <span class="n">x</span><span class="o">,</span> <span class="n">y</span><span class="o">);</span>
+        <span class="n">Object</span> <span class="n">testResult</span> <span class="o">=</span> <span class="n">inv</span><span class="o">.</span><span class="na">invokeFunction</span><span class="o">(</span><span class="s">&#34;test&#34;</span><span class="o">,</span> <span class="s">&#34;a&#34;</span><span class="o">,</span> <span class="s">&#34;a not number&#34;</span><span class="o">);</span>
+
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">addResult</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">subResult</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">mulResult</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">divResult</span><span class="o">);</span>
+        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">testResult</span><span class="o">);</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
+<p>结果：</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="m">7</span>.0
+-1.0
+<span class="m">12</span>.0
+<span class="m">0</span>.75
+a not number</code></pre></div> 
+</article>
+
+
+  </main>
+  <footer>
+	<p>
+		<div class="copy_right">&copy; <lable class="date">2019</lable></div>
+
+		<a href="/">
+			<strong>faeli.me</strong>
+		</a>
+	</p>
+</footer>
+
+  
+</body>
+
+</html>
