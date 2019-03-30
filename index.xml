@@ -6,10 +6,37 @@
     <description>Recent content on faeli.me</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Wed, 27 Feb 2019 16:36:10 +0800</lastBuildDate>
+    <lastBuildDate>Sat, 30 Mar 2019 21:33:31 +0800</lastBuildDate>
     
         <atom:link href="/index.xml" rel="self" type="application/rss+xml" />
     
+    
+    <item>
+      <title>Centos7 安装 MySQL 8.0</title>
+      <link>/posts/centos7-install-mysql-8/</link>
+      <pubDate>Sat, 30 Mar 2019 21:33:31 +0800</pubDate>
+      
+      <guid>/posts/centos7-install-mysql-8/</guid>
+      <description>&lt;blockquote&gt;
+&lt;p&gt;运行安装脚本&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#下载安 sh 文件&lt;/span&gt;
+curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh
+
+&lt;span class=&#34;c1&#34;&gt;#运行 sh&lt;/span&gt;
+sh mysql-8.0.15-el7-x86_64-install.sh
+
+&lt;span class=&#34;c1&#34;&gt;# 启动服务&lt;/span&gt;
+sudo systemctl start mysqld
+&lt;span class=&#34;c1&#34;&gt;# 查看root密码&lt;/span&gt;
+cat /var/log/mysqld.log &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep password&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: &lt;code&gt;,&amp;gt;rhFk4is5y&amp;lt;&lt;/code&gt;&lt;/p&gt;
+&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#使用密码链接&lt;/span&gt;
+mysql -uroot -p&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
+&lt;p&gt;脚本说明
+&lt;script src=&#34;https://gist.github.com/faeli/4a041caaecc26ef7f245c899e9732754.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+</description>
+    </item>
     
     <item>
       <title>Java 调用 Javascript 代码</title>

@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+  
+  <title>  Centos7 安装 MySQL 8.0 | faeli.me</title>
+  <meta name="HandheldFriendly" content="True">
+  <meta name="MobileOptimized" content="320">
+
+  <meta name="viewport" content="width=device-width,minimum-scale=1">
+  <meta name="generator" content="Hugo 0.54.0" />
+  
+  
+  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
+  
+
+  
+  
+  
+  <link rel="stylesheet" href="/css/style.min.e5838fc10e58896443efc5e140dc3c4650448f3af8c8e2654bace966ee33d2bf.css">
+  
+  <link rel="stylesheet" href="/css/syntax.min.358a8ea815c6764e6cf4bbb2d503f000bb823d6c4a5d10eabdbd2df7cebc55dc.css">
+  
+
+  
+  
+  
+
+  
+
+  <meta property="og:title" content="Centos7 安装 MySQL 8.0" />
+<meta property="og:description" content=" 运行安装脚本
+#下载安 sh 文件 curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh #运行 sh sh mysql-8.0.15-el7-x86_64-install.sh # 启动服务 sudo systemctl start mysqld # 查看root密码 cat /var/log/mysqld.log | grep password 2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: ,&gt;rhFk4is5y&lt;
+#使用密码链接 mysql -uroot -p 脚本说明 
+ " />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="/posts/centos7-install-mysql-8/" />
+<meta property="article:published_time" content="2019-03-30T21:33:31&#43;08:00"/>
+<meta property="article:modified_time" content="2019-03-30T21:33:31&#43;08:00"/>
+
+<meta itemprop="name" content="Centos7 安装 MySQL 8.0">
+<meta itemprop="description" content=" 运行安装脚本
+#下载安 sh 文件 curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh #运行 sh sh mysql-8.0.15-el7-x86_64-install.sh # 启动服务 sudo systemctl start mysqld # 查看root密码 cat /var/log/mysqld.log | grep password 2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: ,&gt;rhFk4is5y&lt;
+#使用密码链接 mysql -uroot -p 脚本说明 
+ ">
+
+
+<meta itemprop="datePublished" content="2019-03-30T21:33:31&#43;08:00" />
+<meta itemprop="dateModified" content="2019-03-30T21:33:31&#43;08:00" />
+<meta itemprop="wordCount" content="42">
+
+
+
+<meta itemprop="keywords" content="" />
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Centos7 安装 MySQL 8.0"/>
+<meta name="twitter:description" content=" 运行安装脚本
+#下载安 sh 文件 curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh #运行 sh sh mysql-8.0.15-el7-x86_64-install.sh # 启动服务 sudo systemctl start mysqld # 查看root密码 cat /var/log/mysqld.log | grep password 2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: ,&gt;rhFk4is5y&lt;
+#使用密码链接 mysql -uroot -p 脚本说明 
+ "/>
+
+</head>
+
+<body class="avenir bg-near-white">
+
+  <header>
+	
+	<a href="/index.xml" style="float: right; margin-top: 1.4em;">
+		<strong>
+			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
+			    stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
+				<path d="M4 11a9 9 0 0 1 9 9"></path>
+				<path d="M4 4a16 16 0 0 1 16 16"></path>
+				<circle cx="5" cy="19" r="1"></circle>
+			</svg>
+		</strong>
+	</a>
+	
+	<h1>
+		<a href="/">
+			<strong>faeli.me</strong>
+		</a>
+
+	</h1>
+</header>
+  <main>
+    
+
+<div id="loadingMask" style="width: 100%; height: 100%; position: fixed; background: #fff;"></div>
+<article>
+  <script>
+    function fadeOut(el) {
+      el.style.opacity = 1;
+
+      var last = +new Date();
+      var tick = function () {
+        el.style.opacity = +el.style.opacity - (new Date() - last) / 80;
+        last = +new Date();
+        
+
+        if (el.style.opacity > 0) {
+          (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
+        } else {
+          el.style.display = 'none';
+        }
+      };
+
+      tick();
+    }
+
+    function ready(fn) {
+      if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
+        el = document.getElementById('loadingMask');
+        fadeOut(el);
+        var elements = document.querySelectorAll("img");
+        Array.prototype.forEach.call(elements, function (el, i) {
+          if (el.getAttribute("alt")) {
+            const caption = document.createElement('figcaption');
+            var node = document.createTextNode(el.getAttribute("alt"));
+            caption.appendChild(node);
+            const wrapper = document.createElement('figure');
+            wrapper.className = 'image';
+            el.parentNode.insertBefore(wrapper, el);
+            el.parentNode.removeChild(el);
+            wrapper.appendChild(el);
+            wrapper.appendChild(caption);
+          }
+        });
+
+      } else {
+        document.addEventListener('DOMContentLoaded', fn);
+      }
+    }
+    window.onload = ready;
+  </script>
+
+  
+  
+  <h1>Centos7 安装 MySQL 8.0
+      <ul id="tags">
+          
+        </ul>        
+  </h1>
+  <blockquote>
+<p>运行安装脚本</p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#下载安 sh 文件</span>
+curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh
+
+<span class="c1">#运行 sh</span>
+sh mysql-8.0.15-el7-x86_64-install.sh
+
+<span class="c1"># 启动服务</span>
+sudo systemctl start mysqld
+<span class="c1"># 查看root密码</span>
+cat /var/log/mysqld.log <span class="p">|</span> grep password</code></pre></div>
+<p>2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: <code>,&gt;rhFk4is5y&lt;</code></p>
+<div class="highlight"><pre class="chroma"><code class="language-bash" data-lang="bash"><span class="c1">#使用密码链接</span>
+mysql -uroot -p</code></pre></div>
+<p>脚本说明
+<script src="https://gist.github.com/faeli/4a041caaecc26ef7f245c899e9732754.js"></script></p>
+</blockquote>
+ 
+</article>
+
+
+  </main>
+  <footer>
+	<p>
+		<div class="copy_right">&copy; <lable class="date">2019</lable></div>
+
+		<a href="/">
+			<strong>faeli.me</strong>
+		</a>
+	</p>
+</footer>
+
+  
+</body>
+
+</html>
