@@ -1,41 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Posts on faeli.me</title>
+    <title>Posts on 大个子斌斌子</title>
     <link>/posts/</link>
-    <description>Recent content in Posts on faeli.me</description>
+    <description>Recent content in Posts on 大个子斌斌子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Sat, 30 Mar 2019 21:33:31 +0800</lastBuildDate>
-    
-        <atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
-    
-    
+    <lastBuildDate>Sat, 30 Mar 2019 21:33:31 +0800</lastBuildDate><atom:link href="/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Centos7 安装 MySQL 8.0</title>
       <link>/posts/centos7-install-mysql-8/</link>
       <pubDate>Sat, 30 Mar 2019 21:33:31 +0800</pubDate>
       
       <guid>/posts/centos7-install-mysql-8/</guid>
-      <description>&lt;blockquote&gt;
-&lt;p&gt;运行安装脚本&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#下载安 sh 文件&lt;/span&gt;
-curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh
-
-&lt;span class=&#34;c1&#34;&gt;#运行 sh&lt;/span&gt;
-sh mysql-8.0.15-el7-x86_64-install.sh
-
-&lt;span class=&#34;c1&#34;&gt;# 启动服务&lt;/span&gt;
-sudo systemctl start mysqld
-&lt;span class=&#34;c1&#34;&gt;# 查看root密码&lt;/span&gt;
-cat /var/log/mysqld.log &lt;span class=&#34;p&#34;&gt;|&lt;/span&gt; grep password&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: &lt;code&gt;,&amp;gt;rhFk4is5y&amp;lt;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;c1&#34;&gt;#使用密码链接&lt;/span&gt;
-mysql -uroot -p&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;脚本说明
-&lt;script src=&#34;https://gist.github.com/faeli/4a041caaecc26ef7f245c899e9732754.js&#34;&gt;&lt;/script&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-</description>
+      <description>运行安装脚本
+#下载安 sh 文件 curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh #运行 sh sh mysql-8.0.15-el7-x86_64-install.sh # 启动服务 sudo systemctl start mysqld # 查看root密码 cat /var/log/mysqld.log | grep password 2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: #使用密码链接 mysql -uroot -p #链接成功后修改密码 mysql&amp;gt; alter user user() identified by &amp;#34;你要设置的新密码&amp;#34;; 脚本说明  </description>
     </item>
     
     <item>
@@ -44,56 +23,9 @@ mysql -uroot -p&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
       <pubDate>Wed, 27 Feb 2019 16:36:10 +0800</pubDate>
       
       <guid>/posts/java-call-javascript/</guid>
-      <description>&lt;p&gt;JavaScript &lt;code&gt;d:/tmp/calculator.js&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-javascript&#34; data-lang=&#34;javascript&#34;&gt;&lt;span class=&#34;kd&#34;&gt;var&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;calculator&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;nb&#34;&gt;Object&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;();&lt;/span&gt;
-
-&lt;span class=&#34;nx&#34;&gt;calculator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;add&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;calculator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;subtract&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;-&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;calculator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;multiply&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n1&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;*&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
-&lt;span class=&#34;nx&#34;&gt;calculator&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;divide&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;n2&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;n1&lt;/span&gt; &lt;span class=&#34;err&#34;&gt;/ n2};&lt;/span&gt;
-&lt;span class=&#34;kd&#34;&gt;function&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;test&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;{&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;p&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;nx&#34;&gt;a&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;===&lt;/span&gt; &lt;span class=&#34;s1&#34;&gt;&amp;#39;Number&amp;#39;&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;mi&#34;&gt;1&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;;&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;else&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt; &lt;span class=&#34;nx&#34;&gt;b&lt;/span&gt;&lt;span class=&#34;p&#34;&gt;};&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Java Code&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-java&#34; data-lang=&#34;java&#34;&gt;&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;javax.script.Invocable&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;javax.script.ScriptEngine&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-&lt;span class=&#34;kn&#34;&gt;import&lt;/span&gt; &lt;span class=&#34;nn&#34;&gt;javax.script.ScriptEngineManager&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-
-&lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;class&lt;/span&gt; &lt;span class=&#34;nc&#34;&gt;Main&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-    &lt;span class=&#34;kd&#34;&gt;public&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;static&lt;/span&gt; &lt;span class=&#34;kt&#34;&gt;void&lt;/span&gt; &lt;span class=&#34;nf&#34;&gt;main&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;String&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;[]&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;args&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;kd&#34;&gt;throws&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Exception&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;ScriptEngineManager&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;manager&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;new&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;ScriptEngineManager&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;();&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;ScriptEngine&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;engine&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;manager&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;getEngineByName&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;JavaScript&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;k&#34;&gt;if&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(!(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;engine&lt;/span&gt; &lt;span class=&#34;k&#34;&gt;instanceof&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;Invocable&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;))&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;{&lt;/span&gt;
-            &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;Invoking methods is not supported.&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-            &lt;span class=&#34;k&#34;&gt;return&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;Invocable&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inv&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;Invocable&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;)&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;engine&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;String&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;scriptPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;d:/tmp/calculator.js&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-
-        &lt;span class=&#34;n&#34;&gt;engine&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;eval&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;load(&amp;#39;&amp;#34;&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;scriptPath&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;+&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;&amp;#39;)&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-
-        &lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;calculator&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;engine&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;get&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;calculator&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-
-        &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;3&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;kt&#34;&gt;int&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;4&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;;&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;addResult&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;invokeMethod&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calculator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;add&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;subResult&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;invokeMethod&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calculator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;subtract&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;mulResult&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;invokeMethod&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calculator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;multiply&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;divResult&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;invokeMethod&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;calculator&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;divide&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;x&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;y&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;Object&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;testResult&lt;/span&gt; &lt;span class=&#34;o&#34;&gt;=&lt;/span&gt; &lt;span class=&#34;n&#34;&gt;inv&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;invokeFunction&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;test&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;a&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;,&lt;/span&gt; &lt;span class=&#34;s&#34;&gt;&amp;#34;a not number&amp;#34;&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-
-        &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;addResult&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;subResult&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;mulResult&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;divResult&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-        &lt;span class=&#34;n&#34;&gt;System&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;out&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;.&lt;/span&gt;&lt;span class=&#34;na&#34;&gt;println&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;(&lt;/span&gt;&lt;span class=&#34;n&#34;&gt;testResult&lt;/span&gt;&lt;span class=&#34;o&#34;&gt;);&lt;/span&gt;
-    &lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;
-&lt;span class=&#34;o&#34;&gt;}&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;结果：&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-bash&#34; data-lang=&#34;bash&#34;&gt;&lt;span class=&#34;m&#34;&gt;7&lt;/span&gt;.0
--1.0
-&lt;span class=&#34;m&#34;&gt;12&lt;/span&gt;.0
-&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt;.75
-a not number&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>JavaScript d:/tmp/calculator.js
+var calculator = new Object(); calculator.add = function (n1, n2) {n1 + n2}; calculator.subtract = function (n1, n2) {n1 - n2}; calculator.multiply = function (n1, n2) {n1 * n2}; calculator.divide = function (n1, n2) {n1 / n2}; function test(a, b) { if (a === &amp;#39;Number&amp;#39;) return 1; else return b}; Java Code
+import javax.script.Invocable; import javax.script.ScriptEngine; import javax.script.ScriptEngineManager; public class Main { public static void main(String[] args) throws Exception { ScriptEngineManager manager = new ScriptEngineManager(); ScriptEngine engine = manager.</description>
     </item>
     
     <item>
@@ -102,26 +34,11 @@ a not number&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       <pubDate>Mon, 15 Oct 2018 09:37:10 +0800</pubDate>
       
       <guid>/posts/shadowsocks/</guid>
-      <description>
-
-&lt;p&gt;&lt;a href=&#34;https://github.com/shadowsocks&#34;&gt;Shadowsocks 官方地址&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;推荐使用：&lt;a href=&#34;https://github.com/shadowsocks/shadowsocks-go&#34;&gt;https://github.com/shadowsocks/shadowsocks-go&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Windows: &lt;a href=&#34;/res/win/shadowsocks-4.1.2.zip&#34;&gt;下载&lt;/a&gt; &lt;a href=&#34;https://github.com/shadowsocks/shadowsocks-windows/releases&#34;&gt;https://github.com/shadowsocks/shadowsocks-windows/releases&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Andriod: &lt;a href=&#34;/res/apk/shadowsocks--universal-4.7.1.apk&#34;&gt;下载&lt;/a&gt; &lt;a href=&#34;https://github.com/shadowsocks/shadowsocks-android/releases&#34;&gt;https://github.com/shadowsocks/shadowsocks-android/releases&lt;/a&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;共享服务&#34;&gt;共享服务&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;/images/share_ss.png&#34; alt=&#34;Share ss QR code&#34; /&gt;&lt;br /&gt;
-&lt;code&gt;ss://YWVzLTI1Ni1jZmI6RkBlbGlAMTMxNCQ4YkJAMTkyLjI0My4xMTQuMjE1Ojg4Mzg=&lt;/code&gt;&lt;/p&gt;
-
-&lt;h4 id=&#34;捐助&#34;&gt;捐助&lt;/h4&gt;
-
-&lt;p&gt;&lt;img src=&#34;/images/me_ali.png&#34; alt=&#34;支付宝&#34; /&gt;&lt;br /&gt;
-&lt;img src=&#34;/images/me_wx.png&#34; alt=&#34;微信&#34; /&gt;&lt;/p&gt;
-</description>
+      <description>Shadowsocks 官方地址
+推荐使用：https://github.com/shadowsocks/shadowsocks-go
+Windows: 下载 https://github.com/shadowsocks/shadowsocks-windows/releases
+Andriod: 下载 https://github.com/shadowsocks/shadowsocks-android/releases
+共享服务 ss://YWVzLTI1Ni1jZmI6RkBlbGlAMTMxNCQ4YkJAMTkyLjI0My4xMTQuMjE1Ojg4Mzg=</description>
     </item>
     
     <item>
@@ -130,10 +47,9 @@ a not number&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       <pubDate>Thu, 11 Oct 2018 20:21:31 +0800</pubDate>
       
       <guid>/posts/redis-cluster/</guid>
-      <description>&lt;p&gt;参考:&lt;br /&gt;
-&lt;a href=&#34;https://redis.io/topics/cluster-tutorial&#34;&gt;https://redis.io/topics/cluster-tutorial&lt;/a&gt;&lt;br /&gt;
-&lt;a href=&#34;https://redis.io/topics/cluster-spec&#34;&gt;https://redis.io/topics/cluster-spec&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>参考:
+https://redis.io/topics/cluster-tutorial
+https://redis.io/topics/cluster-spec</description>
     </item>
     
     <item>
@@ -142,27 +58,12 @@ a not number&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
       <pubDate>Sun, 29 Jul 2018 23:14:09 +0800</pubDate>
       
       <guid>/posts/lets-encrypt-ssl/</guid>
-      <description>&lt;p&gt;Let&amp;rsquo;s Encrypt 是一个认证机构（CA）。它可以提供免费的SSL证书，并且已经被大多数浏览器信任。
-我们可以通过Certbot-auto自动化证书的安装和更新。&lt;/p&gt;
-
-&lt;p&gt;安装&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;wget https://dl.eff.org/certbot-auto &lt;span class=&#34;c1&#34;&gt;# 下载到本地&lt;/span&gt;
-chmod a+x ./certbot-auto &lt;span class=&#34;c1&#34;&gt;# 添加可执行权限&lt;/span&gt;
-./certbot-auto --help all &lt;span class=&#34;c1&#34;&gt;# 查看帮助&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;生成证书&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;./certbot-auto --nginx -d faeli.me -d www.faeli.me&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;
-&lt;p&gt;Let&amp;rsquo;s Encrypt 签发的证书有效期只有90天。通过 &lt;code&gt;./certbot-auto renew&lt;/code&gt; 命令可以续签&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;p&gt;编辑 &lt;code&gt;crontab&lt;/code&gt; 文件&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-sh&#34; data-lang=&#34;sh&#34;&gt;$ crontab -e
-&lt;span class=&#34;c1&#34;&gt;# 每天凌晨1点更新&lt;/span&gt;
-&lt;span class=&#34;m&#34;&gt;0&lt;/span&gt; &lt;span class=&#34;m&#34;&gt;1&lt;/span&gt; * * * /root/certbot-auto renew --quiet&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;参考文档：&lt;br /&gt;
-&lt;a href=&#34;https://certbot.eff.org/docs/install.html&#34;&gt;https://certbot.eff.org/docs/install.html&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>Let&amp;rsquo;s Encrypt 是一个认证机构（CA）。它可以提供免费的SSL证书，并且已经被大多数浏览器信任。 我们可以通过Certbot-auto自动化证书的安装和更新。
+安装
+wget https://dl.eff.org/certbot-auto # 下载到本地 chmod a+x ./certbot-auto # 添加可执行权限 ./certbot-auto --help all # 查看帮助 生成证书
+./certbot-auto --nginx -d faeli.me -d www.faeli.me Let&amp;rsquo;s Encrypt 签发的证书有效期只有90天。通过 ./certbot-auto renew 命令可以续签
+ 编辑 crontab 文件  $ crontab -e # 每天凌晨1点更新 0 1 * * * /root/certbot-auto renew --quiet 参考文档：
+https://certbot.eff.org/docs/install.html</description>
     </item>
     
     <item>
@@ -171,10 +72,8 @@ chmod a+x ./certbot-auto &lt;span class=&#34;c1&#34;&gt;# 添加可执行权限&
       <pubDate>Mon, 23 Jul 2018 22:18:11 +0800</pubDate>
       
       <guid>/posts/tomcat-params-encoding/</guid>
-      <description>&lt;p&gt;需要在 Tomcat 配置&lt;code&gt;conf/server.xml&lt;/code&gt;中加入&lt;code&gt;URIEncoding=&amp;quot;utf-8&amp;quot;&lt;/code&gt;&lt;/p&gt;
-&lt;div class=&#34;highlight&#34;&gt;&lt;pre class=&#34;chroma&#34;&gt;&lt;code class=&#34;language-xml&#34; data-lang=&#34;xml&#34;&gt;&lt;span class=&#34;nt&#34;&gt;&amp;lt;Connector&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;port=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;8000&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;protocol=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;HTTP/1.1&amp;#34;&lt;/span&gt;
-               &lt;span class=&#34;na&#34;&gt;connectionTimeout=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;20000&amp;#34;&lt;/span&gt;
-               &lt;span class=&#34;na&#34;&gt;redirectPort=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;8443&amp;#34;&lt;/span&gt; &lt;span class=&#34;na&#34;&gt;URIEncoding=&lt;/span&gt;&lt;span class=&#34;s&#34;&gt;&amp;#34;utf-8&amp;#34;&lt;/span&gt;&lt;span class=&#34;nt&#34;&gt;/&amp;gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description>
+      <description>需要在 Tomcat 配置conf/server.xml中加入URIEncoding=&amp;quot;utf-8&amp;quot;
+&amp;lt;Connector port=&amp;#34;8000&amp;#34; protocol=&amp;#34;HTTP/1.1&amp;#34; connectionTimeout=&amp;#34;20000&amp;#34; redirectPort=&amp;#34;8443&amp;#34; URIEncoding=&amp;#34;utf-8&amp;#34;/&amp;gt; </description>
     </item>
     
     <item>
@@ -183,40 +82,8 @@ chmod a+x ./certbot-auto &lt;span class=&#34;c1&#34;&gt;# 添加可执行权限&
       <pubDate>Sun, 22 Jul 2018 20:45:38 +0800</pubDate>
       
       <guid>/posts/hugo-quick-start/</guid>
-      <description>
-
-&lt;h3 id=&#34;安装-hugo&#34;&gt;安装 Hugo&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;brew install hugo
-hugo version
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;创建一个网站项目&#34;&gt;创建一个网站项目&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;hogo new site quickstart
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;使用一个网站主题&#34;&gt;使用一个网站主题&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;cd quickstart
-git init
-git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
-# 修改文件使用主题
-echo &#39;theme = &amp;quot;ananka&amp;quot;&#39; &amp;gt;&amp;gt; config.toml
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;添加文章文件&#34;&gt;添加文章文件&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo new posts/my-first-post.md
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3 id=&#34;运行&#34;&gt;运行&lt;/h3&gt;
-
-&lt;pre&gt;&lt;code&gt;hugo server -D
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;浏览地址：&lt;a href=&#34;http://localhost:1313&#34;&gt;http://localhost:1313&lt;/a&gt;&lt;/p&gt;
-</description>
+      <description>快速开始 安装 Hugo brew install hugo hugo version 创建一个网站项目 hogo new site quickstart 使用一个网站主题 cd quickstart git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke # 修改文件使用主题 echo &#39;theme = &amp;quot;ananka&amp;quot;&#39; &amp;gt;&amp;gt; config.toml 添加文章文件 hugo new posts/my-first-post.md 运行 hugo server -D 浏览地址：http://localhost:1313
+主题开发 </description>
     </item>
     
   </channel>

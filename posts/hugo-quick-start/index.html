@@ -1,188 +1,216 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en" dir="zh">
 
-<head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<head><meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1"
+/>
+<meta
+  http-equiv="Content-Security-Policy"
+  content="upgrade-insecure-requests"
+/>
+<title>
+   Hugo 使用记录 - 大个子斌斌子
   
-  <title>  Hugo 使用记录 | faeli.me</title>
-  <meta name="HandheldFriendly" content="True">
-  <meta name="MobileOptimized" content="320">
+</title>
 
-  <meta name="viewport" content="width=device-width,minimum-scale=1">
-  <meta name="generator" content="Hugo 0.54.0" />
-  
-  
-  <META NAME="ROBOTS" CONTENT="NOINDEX, NOFOLLOW">
-  
+<meta name="keywords" content="" />
+  <meta property="og:title" content="Hugo 使用记录"/>
+<meta property="og:site_name" content="大个子斌斌子" />
+<meta property="og:image" content="/favicon-32x32.png" />
+<meta name="title" content="Hugo 使用记录 - 大个子斌斌子" /> 
+<meta name="description" content="" />
 
-  
-  
-  
-  <link rel="stylesheet" href="/css/style.min.e5838fc10e58896443efc5e140dc3c4650448f3af8c8e2654bace966ee33d2bf.css">
-  
-  <link rel="stylesheet" href="/css/syntax.min.358a8ea815c6764e6cf4bbb2d503f000bb823d6c4a5d10eabdbd2df7cebc55dc.css">
-  
-
-  
-  
-  
-
-  
-
-  <meta property="og:title" content="Hugo 使用记录" />
-<meta property="og:description" content="安装 Hugo brew install hugo hugo version  创建一个网站项目 hogo new site quickstart  使用一个网站主题 cd quickstart git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke # 修改文件使用主题 echo &#39;theme = &quot;ananka&quot;&#39; &gt;&gt; config.toml  添加文章文件 hugo new posts/my-first-post.md  运行 hugo server -D  浏览地址：http://localhost:1313" />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="/posts/hugo-quick-start/" />
-<meta property="article:published_time" content="2018-07-22T20:45:38&#43;08:00"/>
-<meta property="article:modified_time" content="2018-07-22T20:45:38&#43;08:00"/>
-
-<meta itemprop="name" content="Hugo 使用记录">
-<meta itemprop="description" content="安装 Hugo brew install hugo hugo version  创建一个网站项目 hogo new site quickstart  使用一个网站主题 cd quickstart git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke # 修改文件使用主题 echo &#39;theme = &quot;ananka&quot;&#39; &gt;&gt; config.toml  添加文章文件 hugo new posts/my-first-post.md  运行 hugo server -D  浏览地址：http://localhost:1313">
-
-
-<meta itemprop="datePublished" content="2018-07-22T20:45:38&#43;08:00" />
-<meta itemprop="dateModified" content="2018-07-22T20:45:38&#43;08:00" />
-<meta itemprop="wordCount" content="39">
-
-
-
-<meta itemprop="keywords" content="" />
-<meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Hugo 使用记录"/>
-<meta name="twitter:description" content="安装 Hugo brew install hugo hugo version  创建一个网站项目 hogo new site quickstart  使用一个网站主题 cd quickstart git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke # 修改文件使用主题 echo &#39;theme = &quot;ananka&quot;&#39; &gt;&gt; config.toml  添加文章文件 hugo new posts/my-first-post.md  运行 hugo server -D  浏览地址：http://localhost:1313"/>
-
-</head>
-
-<body class="avenir bg-near-white">
-
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href="/android-icon-192x192.png"
+/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
+<link href="/zero.css" rel="stylesheet" type="text/css" /></head>
+<body>
   <header>
-	
-	<a href="/index.xml" style="float: right; margin-top: 1.4em;">
-		<strong>
-			<svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-			    stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss">
-				<path d="M4 11a9 9 0 0 1 9 9"></path>
-				<path d="M4 4a16 16 0 0 1 16 16"></path>
-				<circle cx="5" cy="19" r="1"></circle>
-			</svg>
-		</strong>
-	</a>
-	
-	<h1>
-		<a href="/">
-			<strong>faeli.me</strong>
-		</a>
-
-	</h1>
-</header>
-  <main>
-    
-
-<div id="loadingMask" style="width: 100%; height: 100%; position: fixed; background: #fff;"></div>
-<article>
-  <script>
-    function fadeOut(el) {
-      el.style.opacity = 1;
-
-      var last = +new Date();
-      var tick = function () {
-        el.style.opacity = +el.style.opacity - (new Date() - last) / 80;
-        last = +new Date();
+    <div class="header-inner"><div id="site-header" class="header-wrap">
+    <div class="title">
         
+        <a href="/">大个子斌斌子</a>
+        
+         &nbsp;|&nbsp; 慢慢浇水，等待，发芽，长大！
+    </div>
+</div>
 
-        if (el.style.opacity > 0) {
-          (window.requestAnimationFrame && requestAnimationFrame(tick)) || setTimeout(tick, 16);
-        } else {
-          el.style.display = 'none';
-        }
-      };
+<div id="post-header" class="header-wrap">
+    <div class="title">Hugo 使用记录</div>
+</div>
 
-      tick();
-    }
+</div>
+    <div class="header-band"></div>
+  </header>
+  <main id="main">
+    <div class="main-inner">
+      <div class="content-wrap">
+        <div id="main-content" class="main-content">
+<article>
+  
+  <h2 id="post-title">Hugo 使用记录</h2>
+  
+  <div class="post-meta">
 
-    function ready(fn) {
-      if (document.attachEvent ? document.readyState === "complete" : document.readyState !== "loading") {
-        el = document.getElementById('loadingMask');
-        fadeOut(el);
-        var elements = document.querySelectorAll("img");
-        Array.prototype.forEach.call(elements, function (el, i) {
-          if (el.getAttribute("alt")) {
-            const caption = document.createElement('figcaption');
-            var node = document.createTextNode(el.getAttribute("alt"));
-            caption.appendChild(node);
-            const wrapper = document.createElement('figure');
-            wrapper.className = 'image';
-            el.parentNode.insertBefore(wrapper, el);
-            el.parentNode.removeChild(el);
-            wrapper.appendChild(el);
-            wrapper.appendChild(caption);
-          }
-        });
+   <span class="post-date"> 2018-07-22</span>
 
-      } else {
-        document.addEventListener('DOMContentLoaded', fn);
-      }
-    }
-    window.onload = ready;
-  </script>
+
+
+
+
+<span class="post-count">41</span>
+
+<span class="post-readtime">
+    1
+</span>
+</div>
 
   
-  
-  <h1>Hugo 使用记录
-      <ul id="tags">
-          
-        </ul>        
-  </h1>
-  
-
+  <div class="post-body"><h2 id="快速开始">快速开始</h2>
 <h3 id="安装-hugo">安装 Hugo</h3>
-
-<pre><code>brew install hugo
+<pre tabindex="0"><code>brew install hugo
 hugo version
-</code></pre>
-
-<h3 id="创建一个网站项目">创建一个网站项目</h3>
-
-<pre><code>hogo new site quickstart
-</code></pre>
-
-<h3 id="使用一个网站主题">使用一个网站主题</h3>
-
-<pre><code>cd quickstart
+</code></pre><h3 id="创建一个网站项目">创建一个网站项目</h3>
+<pre tabindex="0"><code>hogo new site quickstart
+</code></pre><h3 id="使用一个网站主题">使用一个网站主题</h3>
+<pre tabindex="0"><code>cd quickstart
 git init
 git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke
 # 修改文件使用主题
 echo 'theme = &quot;ananka&quot;' &gt;&gt; config.toml
-</code></pre>
+</code></pre><h3 id="添加文章文件">添加文章文件</h3>
+<pre tabindex="0"><code>hugo new posts/my-first-post.md
+</code></pre><h3 id="运行">运行</h3>
+<pre tabindex="0"><code>hugo server -D
+</code></pre><p>浏览地址：http://localhost:1313</p>
+<h2 id="主题开发">主题开发</h2>
+</div>
+  
+  <section id="post-copyright">
+  <dl>
+    <dt><span>本文链接：</span>/posts/hugo-quick-start/</dt>
+    <dt><span>本文作者：</span>大个子斌斌子</dt>
+    <dt>
+      <span>版权声明：</span>本博客文章除特别声明外，均采用
+      <a
+        href="https://creativecommons.org/licenses/by-nc-sa/3.0/"
+        target="_blank"
+        style="text-decoration: underline"
+        ><abbr>&nbsp;CC BY-NC-SA 3.0&nbsp;</abbr></a
+      >许可协议，转载请注明出处！
+    </dt>
+  </dl>
+</section>
 
-<h3 id="添加文章文件">添加文章文件</h3>
+  
+  <section id="post-donate">
+  <div>
+    <p class="donate-message">“感谢您请我喝茶”</p>
+    <div class="donate-way">
+      <div class="donate-item">
+        <img width="188" src="/images/donate_ali.png" alt="支付宝" />
+        <div><cite>支付宝</cite></div>
+      </div>
+      <div class="donate-item">
+        <img width="188" src="/images/donate_wx.png" alt="微信" />
+        <div><cite>微信</cite></div>
+      </div>
+    </div>
+  </div>
+</section>
 
-<pre><code>hugo new posts/my-first-post.md
-</code></pre>
+  
+  <div class="tags">
+  <ul>
+    
+  </ul>
+</div>
 
-<h3 id="运行">运行</h3>
+  
+  <div class="paginate">
+  
+  
+  <div class="paginate-divider"></div>
+  
+  <div class="next">
+    <a href="/posts/tomcat-params-encoding/">Tomcat GET 请求中中文参数乱码</a>
+    <b>&gt;</b>
+  </div>
+  
+</div>
 
-<pre><code>hugo server -D
-</code></pre>
+  
+   
 
-<p>浏览地址：<a href="http://localhost:1313">http://localhost:1313</a></p>
+</section>
+</div>
+      </div><aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+     
+<section class="sidebar-wrap">
+  <div class="post-toc">
+    <div class="post-toc-content"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#快速开始">快速开始</a>
+      <ul>
+        <li><a href="#安装-hugo">安装 Hugo</a></li>
+        <li><a href="#创建一个网站项目">创建一个网站项目</a></li>
+        <li><a href="#使用一个网站主题">使用一个网站主题</a></li>
+        <li><a href="#添加文章文件">添加文章文件</a></li>
+        <li><a href="#运行">运行</a></li>
+      </ul>
+    </li>
+    <li><a href="#主题开发">主题开发</a></li>
+  </ul>
+</nav></div>
+  </div>
+</section>
  
-</article>
 
+  </div>
+</aside>
+</div>
 
   </main>
   <footer>
-	<p>
-		<div class="copy_right">&copy; <lable class="date">2019</lable></div>
-
-		<a href="/">
-			<strong>faeli.me</strong>
-		</a>
-	</p>
-</footer>
-
+    <div class="footer-inner">
+<div></div>
+<p class="copyright">
   
+  <span>
+    由&nbsp;<a href="https://gohugo.io" target="_blank">Hugo</a>&nbsp;强力驱动
+  </span>
+  <span>&nbsp;|&nbsp;</span>
+  <span
+    >主题&nbsp;-
+    <a href="https://github.com/faeli/hugo-theme-zero/" target="_blank">Zero</a>
+  </span>
+</p>
+</div>
+  </footer><script src="/js/zero.js"></script>
+
 </body>
 
 </html>

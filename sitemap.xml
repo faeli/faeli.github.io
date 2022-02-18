@@ -1,62 +1,58 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
-  
   <url>
     <loc>/posts/centos7-install-mysql-8/</loc>
     <lastmod>2019-03-30T21:33:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/java-call-javascript/</loc>
-    <lastmod>2019-02-27T16:36:10+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/shadowsocks/</loc>
-    <lastmod>2018-10-15T09:37:10+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/redis-cluster/</loc>
-    <lastmod>2018-10-11T20:21:31+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/lets-encrypt-ssl/</loc>
-    <lastmod>2018-07-29T23:14:09+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/tomcat-params-encoding/</loc>
-    <lastmod>2018-07-23T22:18:11+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/posts/hugo-quick-start/</loc>
-    <lastmod>2018-07-22T20:45:38+08:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>/categories/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/posts/</loc>
     <lastmod>2019-03-30T21:33:31+08:00</lastmod>
-    <priority>0</priority>
-  </url>
-  
-  <url>
-    <loc>/tags/</loc>
-    <priority>0</priority>
-  </url>
-  
-  <url>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
     <loc>/</loc>
     <lastmod>2019-03-30T21:33:31+08:00</lastmod>
-    <priority>0</priority>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/java-call-javascript/</loc>
+    <lastmod>2019-02-27T16:36:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/shadowsocks/</loc>
+    <lastmod>2018-10-15T09:37:10+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/redis-cluster/</loc>
+    <lastmod>2018-10-11T20:21:31+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/lets-encrypt-ssl/</loc>
+    <lastmod>2018-07-29T23:14:09+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/tomcat-params-encoding/</loc>
+    <lastmod>2018-07-23T22:18:11+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/hugo-quick-start/</loc>
+    <lastmod>2018-07-22T20:45:38+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/categories/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/tags/</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
   </url>
-  
 </urlset>
