@@ -46,7 +46,7 @@
 <meta name="theme-color" content="#ffffff" />
 <link href="/zero.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="/scss/zero.min.05d00ec8456559608239a749d1c5f9b7797243dee5ebd6799e1140091c41b2e6.css">
+<link rel="stylesheet" href="/scss/zero.min.42082f4c3eee1dc545847d20fa2d066146287a7e65f00e1d3d50375b4fecafdd.css">
 </head>
 <body>
   <header>
@@ -107,25 +107,25 @@
 </div>
 
   
-  <div class="post-body"><p><em>运行安装脚本</em></p>
-<div class="highlight"><pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#75715e">#下载安 sh 文件</span>
+  <div class="markdown-body post-body"><p><em>运行安装脚本</em></p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#998;font-style:italic">#下载安 sh 文件</span>
 curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh
 
-<span style="color:#75715e">#运行 sh</span>
+<span style="color:#998;font-style:italic">#运行 sh</span>
 sh mysql-8.0.15-el7-x86_64-install.sh
 
-<span style="color:#75715e"># 启动服务</span>
+<span style="color:#998;font-style:italic"># 启动服务</span>
 sudo systemctl start mysqld
-<span style="color:#75715e"># 查看root密码</span>
+<span style="color:#998;font-style:italic"># 查看root密码</span>
 cat /var/log/mysqld.log | grep password
 
-2019-03-30T13:54:44.768968Z <span style="color:#ae81ff">5</span> <span style="color:#f92672">[</span>Note<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>MY-010454<span style="color:#f92672">]</span> <span style="color:#f92672">[</span>Server<span style="color:#f92672">]</span> A temporary password is generated <span style="color:#66d9ef">for</span> root@localhost: 
+2019-03-30T13:54:44.768968Z <span style="color:#099">5</span> <span style="color:#000;font-weight:bold">[</span>Note<span style="color:#000;font-weight:bold">]</span> <span style="color:#000;font-weight:bold">[</span>MY-010454<span style="color:#000;font-weight:bold">]</span> <span style="color:#000;font-weight:bold">[</span>Server<span style="color:#000;font-weight:bold">]</span> A temporary password is generated <span style="color:#000;font-weight:bold">for</span> root@localhost: 
 
 
-<span style="color:#75715e">#使用密码链接</span>
+<span style="color:#998;font-style:italic">#使用密码链接</span>
 mysql -uroot -p
-<span style="color:#75715e">#链接成功后修改密码</span>
-mysql&gt; alter user user<span style="color:#f92672">()</span> identified by <span style="color:#e6db74">&#34;你要设置的新密码&#34;</span>;
+<span style="color:#998;font-style:italic">#链接成功后修改密码</span>
+mysql&gt; alter user user<span style="color:#000;font-weight:bold">()</span> identified by <span style="color:#d14">&#34;你要设置的新密码&#34;</span>;
 </code></pre></div><p><em>脚本说明</em>
 <script type="application/javascript" src="https://gist.github.com/faeli/4a041caaecc26ef7f245c899e9732754.js"></script>
 </p>
@@ -233,15 +233,15 @@ Java 调用 Javascript 代码
     
     <div class="site-statis">
       <div class="statis-number">
-        <strong class="number">7</strong>
+        <strong class="number">8</strong>
         <div><small>日志</small></div>
       </div>
       <div class="statis-number">
-        <strong class="number">1</strong>
+        <strong class="number">2</strong>
         <div><small>分类</small></div>
       </div>
       <div class="statis-number">
-        <strong class="number">1</strong>
+        <strong class="number">0</strong>
         <div><small>标签</small></div>
       </div>
     </div>
