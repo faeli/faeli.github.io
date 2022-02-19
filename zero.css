@@ -372,10 +372,11 @@ body a:hover {
   left: 0;
   right: 0;
   width: 100%;
+  z-index: 88;
   overflow: hidden;
   border-bottom: 2px solid rgb(230, 35, 120);
   background-color: rgb(230, 35, 120);
-  color: rgba(255, 255, 255, 0.9);
+  color: rgba(255, 255, 255, 0.8);
   font-size: 1.5em;
 }
 .header-inner a {
@@ -395,57 +396,64 @@ body a:hover {
   align-items: center;
 }
 .header-wrap .title {
-  margin: auto 20px;
+  margin: auto 18px;
 }
 .header-band {
-  height: 58px;
+  height: 60px;
   display: block;
 }
 .main-inner {
-  display: flex;
-  align-items: top;
-  flex-direction: row;
   background-color: rgb(245, 247, 249);
   width: 100%;
+  display: flex;
+  flex-direction: row;
 }
 .main-inner .content-wrap {
-  width: 61.8%;
+  width: calc(100vw - 305px);
   flex: 1;
+  display: inline-block;
 }
 .main-content {
-  padding: 20px;
+  margin: 18px;
+  padding: 18px;
   background-color: #FFF;
   word-wrap: break-word;
   word-break: break-all;
   white-space: normal;
   overflow: hidden;
 }
-.main-inner aside {
-  width: 40.2%;
-  min-width: 288px;
-  position: relative;
+.sidebar {
+  height: 100%;
+  width: 305px;
+}
+/* 媒体查询 */
+@media (max-width:1000px){
+  .sidebar {
+    display: none;
+  }
 }
 .sidebar-inner {
-  padding: 20px;
   position: fixed;
+  width: 287px;
 }
 .sidebar-wrap {
+  margin: 18px 0px;
   background-color: #FFF;
-  padding: 20px;
-  margin-bottom: 25px;
+  padding: 18px;
+  margin-bottom: 18px;
 }
-footer {
-  padding: 20px;
+.footer-inner {
+  padding: 18px;
   text-align: center;
   color: #243b65;
-  background-color: rgb(249, 249, 249);
+  background-color: rgb(245, 247, 249);
 }
-footer a {
+.footer-inner a {
   color: #243b65;
   text-decoration: none;
 }
 
-footer a:hover {
+.footer-inner a:hover {
   color: rgb(230, 35, 120);
 }
 
@@ -508,4 +516,25 @@ article .paginate .next {
   display: flex;
   flex-direction: row;
   justify-content: center;
+}
+
+/* 站点信息 */
+.site-info  {
+  text-align: center;
+}
+.site-info .site-statis {
+  margin-top: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-items: center;
+  justify-content: center;
+}
+.site-info .site-statis .statis-number {
+  display: inline-block;
+  min-width: 50px;
+  border-right: 1px solid #EEE;
+}
+.site-info .site-statis .statis-number:last-child{
+  border-right: none;
 }
