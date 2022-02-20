@@ -1,18 +1,18 @@
 <?xml version="1.0" encoding="utf-8" standalone="yes"?>
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>大个子斌斌子</title>
+    <title>git on 大个子斌斌子</title>
     <link>/posts/git/</link>
-    <description>Recent content on 大个子斌斌子</description>
+    <description>Recent content in git on 大个子斌斌子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
     <lastBuildDate>Mon, 20 Feb 2012 03:00:16 +0800</lastBuildDate><atom:link href="/posts/git/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>git commit 提交规范</title>
-      <link>/posts/git/git-commit-guide/</link>
+      <link>/posts/git/commit-guide/</link>
       <pubDate>Mon, 20 Feb 2012 03:00:16 +0800</pubDate>
       
-      <guid>/posts/git/git-commit-guide/</guid>
+      <guid>/posts/git/commit-guide/</guid>
       <description>1. 说明 本文主要介绍使用 git commit 提交代码时如何书写 message，及 message 对应规范，需严格遵循 message 规范。
 2. message 提交格式 在执行 git add 后，执行 git commit 时，代码有变动，并需要特殊说明更改内容时，message 信息遵循下方定义的格式。（如没有特殊更改及说明可以使用：git commit -m &amp;lt;message&amp;gt; 提交代码）
 message 格式

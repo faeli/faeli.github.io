@@ -57,17 +57,17 @@
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/git/</loc>
-    <lastmod>2012-02-20T03:00:16+08:00</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.5</priority>
-  </url><url>
     <loc>/categories/git/</loc>
     <lastmod>2012-02-20T03:00:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
   </url><url>
-    <loc>/posts/git/git-commit-guide/</loc>
+    <loc>/posts/git/</loc>
+    <lastmod>2012-02-20T03:00:16+08:00</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.5</priority>
+  </url><url>
+    <loc>/posts/git/commit-guide/</loc>
     <lastmod>2012-02-20T03:00:16+08:00</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.5</priority>
