@@ -46,7 +46,7 @@
 <meta name="theme-color" content="#ffffff" />
 <link href="/zero.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="/scss/zero.min.42082f4c3eee1dc545847d20fa2d066146287a7e65f00e1d3d50375b4fecafdd.css">
+<link rel="stylesheet" href="/scss/zero.min.d8fc57d7790ef1f599a623fddc324590bd49a0200632b79952e5c0b25b8a8655.css">
 </head>
 <body>
   <header>
@@ -104,59 +104,60 @@
 </i>
 ≈1
   </span>
+  
 </div>
 
   
   <div class="markdown-body post-body"><p>JavaScript <code>d:/tmp/calculator.js</code></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-javascript" data-lang="javascript"><span style="color:#000;font-weight:bold">var</span> calculator <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#0086b3">Object</span>();
-
-calculator.add <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span> (n1, n2) {n1 <span style="color:#000;font-weight:bold">+</span> n2};
-calculator.subtract <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span> (n1, n2) {n1 <span style="color:#000;font-weight:bold">-</span> n2};
-calculator.multiply <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span> (n1, n2) {n1 <span style="color:#000;font-weight:bold">*</span> n2};
-calculator.divide <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span> (n1, n2) {n1 <span style="color:#000;font-weight:bold">/</span> n2};
-<span style="color:#000;font-weight:bold">function</span> test(a, b) { <span style="color:#000;font-weight:bold">if</span> (a <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#39;Number&#39;</span>) <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">1</span>; <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">return</span> b};
-</code></pre></div><p>Java Code</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">javax.script.Invocable</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">import</span> <span style="color:#555">javax.script.ScriptEngine</span><span style="color:#000;font-weight:bold">;</span>
-<span style="color:#000;font-weight:bold">import</span> <span style="color:#555">javax.script.ScriptEngineManager</span><span style="color:#000;font-weight:bold">;</span>
-
-<span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">Main</span> <span style="color:#000;font-weight:bold">{</span>
-    <span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">main</span><span style="color:#000;font-weight:bold">(</span>String<span style="color:#000;font-weight:bold">[]</span> args<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">throws</span> Exception <span style="color:#000;font-weight:bold">{</span>
-        ScriptEngineManager manager <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> ScriptEngineManager<span style="color:#000;font-weight:bold">();</span>
-        ScriptEngine engine <span style="color:#000;font-weight:bold">=</span> manager<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getEngineByName</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;JavaScript&#34;</span><span style="color:#000;font-weight:bold">);</span>
-        <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(!(</span>engine <span style="color:#000;font-weight:bold">instanceof</span> Invocable<span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>
-            System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;Invoking methods is not supported.&#34;</span><span style="color:#000;font-weight:bold">);</span>
-            <span style="color:#000;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#000;font-weight:bold">}</span>
-        Invocable inv <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span>Invocable<span style="color:#000;font-weight:bold">)</span> engine<span style="color:#000;font-weight:bold">;</span>
-        String scriptPath <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;d:/tmp/calculator.js&#34;</span><span style="color:#000;font-weight:bold">;</span>
-
-        engine<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">eval</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;load(&#39;&#34;</span> <span style="color:#000;font-weight:bold">+</span> scriptPath <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;&#39;)&#34;</span><span style="color:#000;font-weight:bold">);</span>
-
-        Object calculator <span style="color:#000;font-weight:bold">=</span> engine<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;calculator&#34;</span><span style="color:#000;font-weight:bold">);</span>
-
-        <span style="color:#458;font-weight:bold">int</span> x <span style="color:#000;font-weight:bold">=</span> 3<span style="color:#000;font-weight:bold">;</span>
-        <span style="color:#458;font-weight:bold">int</span> y <span style="color:#000;font-weight:bold">=</span> 4<span style="color:#000;font-weight:bold">;</span>
-        Object addResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeMethod</span><span style="color:#000;font-weight:bold">(</span>calculator<span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;add&#34;</span><span style="color:#000;font-weight:bold">,</span> x<span style="color:#000;font-weight:bold">,</span> y<span style="color:#000;font-weight:bold">);</span>
-        Object subResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeMethod</span><span style="color:#000;font-weight:bold">(</span>calculator<span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;subtract&#34;</span><span style="color:#000;font-weight:bold">,</span> x<span style="color:#000;font-weight:bold">,</span> y<span style="color:#000;font-weight:bold">);</span>
-        Object mulResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeMethod</span><span style="color:#000;font-weight:bold">(</span>calculator<span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;multiply&#34;</span><span style="color:#000;font-weight:bold">,</span> x<span style="color:#000;font-weight:bold">,</span> y<span style="color:#000;font-weight:bold">);</span>
-        Object divResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeMethod</span><span style="color:#000;font-weight:bold">(</span>calculator<span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;divide&#34;</span><span style="color:#000;font-weight:bold">,</span> x<span style="color:#000;font-weight:bold">,</span> y<span style="color:#000;font-weight:bold">);</span>
-        Object testResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeFunction</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;test&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;a&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;a not number&#34;</span><span style="color:#000;font-weight:bold">);</span>
-
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>addResult<span style="color:#000;font-weight:bold">);</span>
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>subResult<span style="color:#000;font-weight:bold">);</span>
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>mulResult<span style="color:#000;font-weight:bold">);</span>
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>divResult<span style="color:#000;font-weight:bold">);</span>
-        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>testResult<span style="color:#000;font-weight:bold">);</span>
-    <span style="color:#000;font-weight:bold">}</span>
-<span style="color:#000;font-weight:bold">}</span>
-</code></pre></div><p>结果：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash">7.0
--1.0
-12.0
-0.75
-a not number
-</code></pre></div></div>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-javascript" data-lang="javascript"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">var</span> calculator <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> <span style="color:#0086b3">Object</span>();
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>calculator.add <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span> (n1, n2) {n1 <span style="color:#000;font-weight:bold">+</span> n2};
+</span></span><span style="display:flex;"><span>calculator.subtract <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span> (n1, n2) {n1 <span style="color:#000;font-weight:bold">-</span> n2};
+</span></span><span style="display:flex;"><span>calculator.multiply <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span> (n1, n2) {n1 <span style="color:#000;font-weight:bold">*</span> n2};
+</span></span><span style="display:flex;"><span>calculator.divide <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">function</span> (n1, n2) {n1 <span style="color:#000;font-weight:bold">/</span> n2};
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">function</span> test(a, b) { <span style="color:#000;font-weight:bold">if</span> (a <span style="color:#000;font-weight:bold">===</span> <span style="color:#d14">&#39;Number&#39;</span>) <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">1</span>; <span style="color:#000;font-weight:bold">else</span> <span style="color:#000;font-weight:bold">return</span> b};
+</span></span></code></pre></div><p>Java Code</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-java" data-lang="java"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">javax.script.Invocable</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">javax.script.ScriptEngine</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">import</span> <span style="color:#555">javax.script.ScriptEngineManager</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">class</span> <span style="color:#458;font-weight:bold">Main</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">public</span> <span style="color:#000;font-weight:bold">static</span> <span style="color:#458;font-weight:bold">void</span> <span style="color:#900;font-weight:bold">main</span><span style="color:#000;font-weight:bold">(</span>String<span style="color:#000;font-weight:bold">[]</span> args<span style="color:#000;font-weight:bold">)</span> <span style="color:#000;font-weight:bold">throws</span> Exception <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>        ScriptEngineManager manager <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">new</span> ScriptEngineManager<span style="color:#000;font-weight:bold">();</span>
+</span></span><span style="display:flex;"><span>        ScriptEngine engine <span style="color:#000;font-weight:bold">=</span> manager<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">getEngineByName</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;JavaScript&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">if</span> <span style="color:#000;font-weight:bold">(!(</span>engine <span style="color:#000;font-weight:bold">instanceof</span> Invocable<span style="color:#000;font-weight:bold">))</span> <span style="color:#000;font-weight:bold">{</span>
+</span></span><span style="display:flex;"><span>            System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;Invoking methods is not supported.&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>            <span style="color:#000;font-weight:bold">return</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span>        Invocable inv <span style="color:#000;font-weight:bold">=</span> <span style="color:#000;font-weight:bold">(</span>Invocable<span style="color:#000;font-weight:bold">)</span> engine<span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        String scriptPath <span style="color:#000;font-weight:bold">=</span> <span style="color:#d14">&#34;d:/tmp/calculator.js&#34;</span><span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        engine<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">eval</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;load(&#39;&#34;</span> <span style="color:#000;font-weight:bold">+</span> scriptPath <span style="color:#000;font-weight:bold">+</span> <span style="color:#d14">&#34;&#39;)&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        Object calculator <span style="color:#000;font-weight:bold">=</span> engine<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">get</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;calculator&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        <span style="color:#458;font-weight:bold">int</span> x <span style="color:#000;font-weight:bold">=</span> 3<span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        <span style="color:#458;font-weight:bold">int</span> y <span style="color:#000;font-weight:bold">=</span> 4<span style="color:#000;font-weight:bold">;</span>
+</span></span><span style="display:flex;"><span>        Object addResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeMethod</span><span style="color:#000;font-weight:bold">(</span>calculator<span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;add&#34;</span><span style="color:#000;font-weight:bold">,</span> x<span style="color:#000;font-weight:bold">,</span> y<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        Object subResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeMethod</span><span style="color:#000;font-weight:bold">(</span>calculator<span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;subtract&#34;</span><span style="color:#000;font-weight:bold">,</span> x<span style="color:#000;font-weight:bold">,</span> y<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        Object mulResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeMethod</span><span style="color:#000;font-weight:bold">(</span>calculator<span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;multiply&#34;</span><span style="color:#000;font-weight:bold">,</span> x<span style="color:#000;font-weight:bold">,</span> y<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        Object divResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeMethod</span><span style="color:#000;font-weight:bold">(</span>calculator<span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;divide&#34;</span><span style="color:#000;font-weight:bold">,</span> x<span style="color:#000;font-weight:bold">,</span> y<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        Object testResult <span style="color:#000;font-weight:bold">=</span> inv<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">invokeFunction</span><span style="color:#000;font-weight:bold">(</span><span style="color:#d14">&#34;test&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;a&#34;</span><span style="color:#000;font-weight:bold">,</span> <span style="color:#d14">&#34;a not number&#34;</span><span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>addResult<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>subResult<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>mulResult<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>divResult<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>        System<span style="color:#000;font-weight:bold">.</span><span style="color:#008080">out</span><span style="color:#000;font-weight:bold">.</span><span style="color:#008080">println</span><span style="color:#000;font-weight:bold">(</span>testResult<span style="color:#000;font-weight:bold">);</span>
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">}</span>
+</span></span><span style="display:flex;"><span><span style="color:#000;font-weight:bold">}</span>
+</span></span></code></pre></div><p>结果：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>7.0
+</span></span><span style="display:flex;"><span>-1.0
+</span></span><span style="display:flex;"><span>12.0
+</span></span><span style="display:flex;"><span>0.75
+</span></span><span style="display:flex;"><span>a not number
+</span></span></code></pre></div></div>
   
   
 <section id="post-copyright">
@@ -205,9 +206,9 @@ a not number
   
   
   <div class="prev">
-    <a href="/posts/shadowsocks/">
+    <a href="/posts/redis-cluster/">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z"/></svg></i>
-Shadowsocks
+Redis Cluster
     </a>
   </div>
   
@@ -270,7 +271,7 @@ Shadowsocks
         <div><small>日志</small></div>
       </div>
       <div class="statis-number">
-        <strong class="number">2</strong>
+        <strong class="number">3</strong>
         <div><small>分类</small></div>
       </div>
       <div class="statis-number">

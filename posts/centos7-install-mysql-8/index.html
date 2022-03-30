@@ -46,7 +46,7 @@
 <meta name="theme-color" content="#ffffff" />
 <link href="/zero.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="/scss/zero.min.42082f4c3eee1dc545847d20fa2d066146287a7e65f00e1d3d50375b4fecafdd.css">
+<link rel="stylesheet" href="/scss/zero.min.d8fc57d7790ef1f599a623fddc324590bd49a0200632b79952e5c0b25b8a8655.css">
 </head>
 <body>
   <header>
@@ -104,29 +104,30 @@
 </i>
 ≈1
   </span>
+  
 </div>
 
   
   <div class="markdown-body post-body"><p><em>运行安装脚本</em></p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-bash" data-lang="bash"><span style="color:#998;font-style:italic">#下载安 sh 文件</span>
-curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh
-
-<span style="color:#998;font-style:italic">#运行 sh</span>
-sh mysql-8.0.15-el7-x86_64-install.sh
-
-<span style="color:#998;font-style:italic"># 启动服务</span>
-sudo systemctl start mysqld
-<span style="color:#998;font-style:italic"># 查看root密码</span>
-cat /var/log/mysqld.log | grep password
-
-2019-03-30T13:54:44.768968Z <span style="color:#099">5</span> <span style="color:#000;font-weight:bold">[</span>Note<span style="color:#000;font-weight:bold">]</span> <span style="color:#000;font-weight:bold">[</span>MY-010454<span style="color:#000;font-weight:bold">]</span> <span style="color:#000;font-weight:bold">[</span>Server<span style="color:#000;font-weight:bold">]</span> A temporary password is generated <span style="color:#000;font-weight:bold">for</span> root@localhost: 
-
-
-<span style="color:#998;font-style:italic">#使用密码链接</span>
-mysql -uroot -p
-<span style="color:#998;font-style:italic">#链接成功后修改密码</span>
-mysql&gt; alter user user<span style="color:#000;font-weight:bold">()</span> identified by <span style="color:#d14">&#34;你要设置的新密码&#34;</span>;
-</code></pre></div><p><em>脚本说明</em>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span><span style="color:#998;font-style:italic">#下载安 sh 文件</span>
+</span></span><span style="display:flex;"><span>curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#运行 sh</span>
+</span></span><span style="display:flex;"><span>sh mysql-8.0.15-el7-x86_64-install.sh
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 启动服务</span>
+</span></span><span style="display:flex;"><span>sudo systemctl start mysqld
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 查看root密码</span>
+</span></span><span style="display:flex;"><span>cat /var/log/mysqld.log | grep password
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>2019-03-30T13:54:44.768968Z <span style="color:#099">5</span> <span style="color:#000;font-weight:bold">[</span>Note<span style="color:#000;font-weight:bold">]</span> <span style="color:#000;font-weight:bold">[</span>MY-010454<span style="color:#000;font-weight:bold">]</span> <span style="color:#000;font-weight:bold">[</span>Server<span style="color:#000;font-weight:bold">]</span> A temporary password is generated <span style="color:#000;font-weight:bold">for</span> root@localhost: 
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span>
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#使用密码链接</span>
+</span></span><span style="display:flex;"><span>mysql -uroot -p
+</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic">#链接成功后修改密码</span>
+</span></span><span style="display:flex;"><span>mysql&gt; alter user user<span style="color:#000;font-weight:bold">()</span> identified by <span style="color:#d14">&#34;你要设置的新密码&#34;</span>;
+</span></span></code></pre></div><p><em>脚本说明</em>
 <script type="application/javascript" src="https://gist.github.com/faeli/4a041caaecc26ef7f245c899e9732754.js"></script>
 </p>
 <!-- raw HTML omitted -->
@@ -187,6 +188,13 @@ Java 调用 Javascript 代码
   
   <div class="paginate-divider"></div>
   
+  <div class="next">
+    <a href="/posts/opencv/win-c&#43;&#43;/">
+      Windows 下 Visual Studio C&#43;&#43; 使用 OpenvCV
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"/></svg></i>
+</a>
+  </div>
+  
 </div>
 
   
@@ -237,7 +245,7 @@ Java 调用 Javascript 代码
         <div><small>日志</small></div>
       </div>
       <div class="statis-number">
-        <strong class="number">2</strong>
+        <strong class="number">3</strong>
         <div><small>分类</small></div>
       </div>
       <div class="statis-number">

@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>视频剪辑 on 大个子斌斌子</title>
+    <link>/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/</link>
+    <description>Recent content in 视频剪辑 on 大个子斌斌子</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sun, 20 Feb 2022 16:40:26 +0800</lastBuildDate><atom:link href="/tags/%E8%A7%86%E9%A2%91%E5%89%AA%E8%BE%91/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Windows PC 上自带的视频编辑器使用指南</title>
+      <link>/posts/pc-free-video-cut/</link>
+      <pubDate>Sun, 20 Feb 2022 16:40:26 +0800</pubDate>
+      
+      <guid>/posts/pc-free-video-cut/</guid>
+      <description>在Windows 10系统中微软内置了一个简单的视频编辑器 Microsoft 照片。
+开始使用 windows 徽标键，直接输入 照片 或 视频编辑器 查找到对应的应用
+1. 界面说明 2. 导入资源 3. 图片编辑 4. 视频编辑器 4.1 新建 4.2 素材 4.3 标题 4.4 裁切 4.5 拆分 4.6 文本 4.7 动作 4.8 3D效果 4.9 滤镜 4.10 速度 4.11 背景音乐 5. 实践案例 5.1 视频读书案例 5.2 短视频拼接 </description>
+    </item>
+    
+  </channel>
+</rss>

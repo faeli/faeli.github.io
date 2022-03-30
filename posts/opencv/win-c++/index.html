@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en" dir="zh"><head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1"
+/>
+<meta
+  http-equiv="Content-Security-Policy"
+  content="upgrade-insecure-requests"
+/>
+<title>
+   Windows 下 Visual Studio C&#43;&#43; 使用 OpenvCV - 大个子斌斌子
+  
+</title>
+
+<meta name="keywords" content="" />
+  <meta property="og:title" content="Windows 下 Visual Studio C&#43;&#43; 使用 OpenvCV"/>
+<meta property="og:site_name" content="大个子斌斌子" />
+<meta property="og:image" content="/favicon-32x32.png" />
+<meta name="title" content="Windows 下 Visual Studio C&#43;&#43; 使用 OpenvCV - 大个子斌斌子" /> 
+<meta name="description" content="" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href="/android-icon-192x192.png"
+/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
+<link href="/zero.css" rel="stylesheet" type="text/css" />
+
+<link rel="stylesheet" href="/scss/zero.min.d8fc57d7790ef1f599a623fddc324590bd49a0200632b79952e5c0b25b8a8655.css">
+</head>
+<body>
+  <header>
+    <div class="header-inner"><div id="site-header" class="header-wrap">
+    <div class="title">
+        
+        <a href="/">大个子斌斌子</a>
+        
+         &nbsp;|&nbsp; 慢慢浇水，等待，发芽，长大！
+    </div>
+</div>
+
+<div id="post-header" class="header-wrap">
+    <div class="title">Windows 下 Visual Studio C&#43;&#43; 使用 OpenvCV</div>
+</div>
+
+</div>
+    <div class="header-band"></div>
+  </header>
+  <main id="main">
+    <div class="main-inner">
+      <div class="content-wrap">
+        <div id="main-content" class="main-content">
+<article>
+  
+  <h2 id="post-title">Windows 下 Visual Studio C&#43;&#43; 使用 OpenvCV</h2>
+  
+  <div class="post-mate">
+  
+  <span class="post-date">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M13.294 1.412h-1.44V.6a.6.6 0 1 0-1.2 0v.812H5.346V.6a.6.6 0 1 0-1.2 0v.812h-1.44c-1.1 0-2 .9-2 2V14c0 1.1.9 2 2 2h10.588c1.1 0 2-.9 2-2V3.412c0-1.1-.9-2-2-2m0 13.388H2.706a.81.81 0 0 1-.8-.8V6.282h12.188V14a.81.81 0 0 1-.8.8M2.706 2.612h1.44v.426a.6.6 0 0 0 1.2 0v-.426h5.308v.426a.6.6 0 1 0 1.2 0v-.426h1.44c.434 0 .8.366.8.8v1.67H1.906v-1.67c0-.434.366-.8.8-.8"/>
+</svg>
+</i>
+<time>
+      2022-03-30
+    </time>
+  </span>
+  
+  
+  
+  <span class="post-category">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M14.4 3.4h-1.88l-.247-1.139A1.599 1.599 0 0 0 10.709 1H1.6A1.6 1.6 0 0 0 0 2.6V13a1.6 1.6 0 0 0 1.6 1.6h12.8A1.6 1.6 0 0 0 16 13V5a1.6 1.6 0 0 0-1.6-1.6m.4 9.6a.4.4 0 0 1-.4.4H1.6a.4.4 0 0 1-.4-.4V2.6a.4.4 0 0 1 .4-.4h5.109c.187 0 .352.133.391.315l.247 1.139A1.2 1.2 0 0 0 8.52 4.6h5.88a.4.4 0 0 1 .4.4v8M11.1 2.515l.192.885H8.52l-.247-1.139c-.005-.022-.019-.039-.025-.061h2.461c.187 0 .352.133.391.315"/>
+</svg>
+</i>
+
+    <span>
+      <a href="/categories/opencv" itemprop="url" rel="index">
+        OpenCV
+      </a>
+      &nbsp;
+    </span>
+    
+  </span>
+  
+  
+  
+  
+  
+  <span class="post-count">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M15.578 2.478L13.52.421a1.441 1.441 0 0 0-2.037 0L1.405 10.5a1.355 1.355 0 0 0-.357.632l-1.03 4.123a.598.598 0 0 0 .727.726l4.12-1.03c.241-.059.462-.184.636-.36L15.578 4.518a1.444 1.444 0 0 0 0-2.039M2.084 12.017L4 13.931l-2.569.643.654-2.557m2.98 1.284l-2.382-2.383 7.561-7.56 2.394 2.395L5.064 13.3m9.665-9.633l-1.242 1.239-2.396-2.396 1.241-1.24a.237.237 0 0 1 .34 0l2.057 2.056a.241.241 0 0 1 0 .341"/>
+</svg>
+</i>
+89字</span>
+  
+  <span class="post-readtime">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m0 1.2c3.75 0 6.8 3.05 6.8 6.8s-3.05 6.8-6.8 6.8S1.2 11.75 1.2 8 4.25 1.2 8 1.2m3.296 9.733a.59.59 0 0 1-.299-.081l-3.656-2.11a.598.598 0 0 1-.3-.52V4.626a.6.6 0 1 1 1.2 0v3.25l3.355 1.938a.6.6 0 0 1-.3 1.12"/>
+</svg>
+</i>
+≈1
+  </span>
+  
+</div>
+
+  
+  <div class="markdown-body post-body"><p><a href="https://opencv.org/">OpenCV</a>是一个基于Apache2.0许可（开源）发行的跨平台计算机视觉和机器学习软件库，可以运行在Linux、Windows、Android和Mac OS操作系统上。 [1]  它轻量级而且高效——由一系列 C 函数和少量 C++ 类构成，同时提供了Python、Ruby、MATLAB等语言的接口，实现了图像处理和计算机视觉方面的很多通用算法。</p>
+<p>OpenCV用C++语言编写，它具有C ++，Python，Java和MATLAB接口，并支持Windows，Linux，Android和Mac OS，OpenCV主要倾向于实时视觉应用，并在可用时利用MMX和SSE指令， 如今也提供对于C#、Ch、Ruby，GO的支持。</p>
+<p>以下使用 <a href="https://sourceforge.net/projects/opencvlibrary/files/4.5.5/opencv-4.5.5-vc14_vc15.exe/download">OpenCV 4.5.5</a> 2021年12月30日</p>
+<h2 id="1-安装-opencv-vc-库">1. 安装 OpenCV VC++ 库</h2>
+<p>现在完成后其实就解压程序到指定目录，我指定目录为<code>D:\dev\opencv\4.5.5</code></p>
+<p><img src="/upload/image-20220330222851320.png" alt="OpenvCv 4.5.5"></p>
+<p>安装完成后：</p>
+<p><img src="/upload/image-20220330223209815.png" alt="安装成功目录"></p>
+<h3 id="配置windows环境变量">配置Windows环境变量</h3>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>OPENCV_DIR=D:\dev\opencv\4.5.5\opencv\build
+</span></span></code></pre></div><p><code>Path</code> 中添加如下变量</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>D:\dev\opencv\4.5.5\opencv\build\x64\vc14\bin
+</span></span><span style="display:flex;"><span>D:\dev\opencv\4.5.5\opencv\build\x64\vc15\bin
+</span></span></code></pre></div><h2 id="2-在-visual-studio-c-项目中使用-opencv-库">2. 在 Visual Studio C++ 项目中使用 OpenCV 库</h2>
+<p>我使用的 Microsoft Visual Studio Community 2022 进行开发</p>
+<h3 id="21-新建一个控制台应用的-c-项目">2.1 新建一个控制台应用的 C++ 项目</h3>
+<p><img src="/upload/image-20220330223835170.png" alt="image-20220330223835170"></p>
+<p><img src="/upload/image-20220330224110460.png" alt="image-20220330224110460"></p>
+<h3 id="22-设置vc目录">2.2 设置VC++目录</h3>
+<p><code>$(OPENCV_DIR)\include</code></p>
+<p><img src="/upload/image-20220330224220155.png" alt="VC++目录添加include hpp头文件目录"></p>
+<h3 id="23-设置连接器">2.3 设置连接器</h3>
+<p>附件库目录<code>$(OPENCV_DIR)\x64\vc\14\lib</code></p>
+<p><img src="/upload/image-20220330224325697.png" alt="连接器-附加库目录中添加 vc/14/lib"></p>
+<p><img src="/upload/image-20220330224411958.png" alt="连接器-输入中添加 opencv lib 引用"></p>
+<h3 id="24-编写-c-代码">2.4 编写 C++ 代码</h3>
+<p><img src="/upload/image-20220330225134061.png" alt="编写代码并使用"></p>
+<p>编写代码：</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;iostream&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;opencv2/opencv.hpp&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
+</span></span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic"></span>
+</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">main</span>()
+</span></span><span style="display:flex;"><span>{
+</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>Mat img <span style="color:#000;font-weight:bold">=</span> cv<span style="color:#000;font-weight:bold">::</span>imread(<span style="color:#d14">&#34;D:/dev/opencv/doc/imgs/A4-1.jpg&#34;</span>);
+</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>resize(img, img, cv<span style="color:#000;font-weight:bold">::</span>Size(<span style="color:#099">0</span>, <span style="color:#099">0</span>), <span style="color:#099">0.2</span>, <span style="color:#099">0.2</span>, <span style="color:#099">1</span>);
+</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>imshow(<span style="color:#d14">&#34;A4&#34;</span>, img);
+</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>cvtColor(img, img, cv<span style="color:#000;font-weight:bold">::</span>COLOR_BGR2GRAY);
+</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>imshow(<span style="color:#d14">&#34;Gray&#34;</span>, img);
+</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>waitKey(<span style="color:#099">0</span>);
+</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>destroyWindow(<span style="color:#d14">&#34;A4&#34;</span>);
+</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>destroyAllWindows();
+</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">0</span>;
+</span></span><span style="display:flex;"><span>}
+</span></span></code></pre></div></div>
+  
+  
+<section id="post-copyright">
+  <dl>
+    <dt><span>本文链接：</span>/posts/opencv/win-c&#43;&#43;/</dt>
+    <dt><span>本文作者：</span>大个子斌斌子</dt>
+    <dt>
+      <span>版权声明：</span>本博客文章除特别声明外，均采用
+      <a
+        href="https://creativecommons.org/licenses/by-nc-sa/3.0/"
+        target="_blank"
+        style="text-decoration: underline"
+        ><abbr>&nbsp;CC BY-NC-SA 3.0&nbsp;</abbr></a
+      >许可协议，转载请注明出处！
+    </dt>
+  </dl>
+</section>
+
+
+  
+  <section id="post-donate">
+  <div>
+    <p class="donate-message">“感谢您请我喝茶”</p>
+    <div class="donate-way">
+      <div class="donate-item">
+        <img width="188" src="/images/donate_ali.png" alt="支付宝" />
+        <div><cite>支付宝</cite></div>
+      </div>
+      <div class="donate-item">
+        <img width="188" src="/images/donate_wx.png" alt="微信" />
+        <div><cite>微信</cite></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <div class="tags">
+  <ul>
+    
+  </ul>
+</div>
+
+  
+  <div class="paginate">
+  
+  
+  <div class="prev">
+    <a href="/posts/centos7-install-mysql-8/">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z"/></svg></i>
+Centos7 安装 MySQL 8.0
+    </a>
+  </div>
+  
+  <div class="paginate-divider"></div>
+  
+</div>
+
+  
+   
+
+</section>
+</div>
+      </div><aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <section class="sidebar-wrap">
+  <nav class="site-nav">
+    <div id="menu" class="menu-list">
+      
+      
+      
+      
+      <div class="menu-item ">
+        <a href="/" rel="section" >
+          首页
+        </a>
+      </div>
+      
+      
+      
+      <div class="menu-item ">
+        <a href="/posts" rel="section" >
+          归档
+        </a>
+      </div>
+      
+    </div>
+  </nav>
+</section>
+
+    
+<section class="sidebar-wrap">
+  <div class="site-info">
+    <div class="site-logo">
+      <img width="96" src="/images/logo.png" />
+    </div>
+    <div><strong> 大个子斌斌子</strong></div>
+    
+    <p>慢慢浇水，等待，发芽，长大！</p>
+    
+    <div class="site-statis">
+      <div class="statis-number">
+        <strong class="number">8</strong>
+        <div><small>日志</small></div>
+      </div>
+      <div class="statis-number">
+        <strong class="number">3</strong>
+        <div><small>分类</small></div>
+      </div>
+      <div class="statis-number">
+        <strong class="number">0</strong>
+        <div><small>标签</small></div>
+      </div>
+    </div>
+    <div class="site-rss">
+      <a href="/index.xml" target="_black">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M0 11.661V16h4.348c0-.625-.104-1.215-.278-1.735a5.428 5.428 0 0 0-.94-1.389 5.978 5.978 0 0 0-1.39-.902A4.696 4.696 0 0 0 0 11.66zm0-5.83v2.88c1.009 0 1.983.209 2.887.556.87.416 1.635.937 2.296 1.562a8.635 8.635 0 0 1 1.53 2.36A6.88 6.88 0 0 1 7.27 16h2.956a9.385 9.385 0 0 0-.835-3.957 10.67 10.67 0 0 0-2.156-3.262 10.585 10.585 0 0 0-3.2-2.152A11.144 11.144 0 0 0 0 5.83zM0 0v2.95c1.809 0 3.513.347 5.078 1.007 1.6.659 3.026 1.596 4.174 2.81a12.813 12.813 0 0 1 2.818 4.131A13.09 13.09 0 0 1 13.078 16H16c0-2.221-.383-4.304-1.252-6.213a16.119 16.119 0 0 0-3.444-5.102A15.644 15.644 0 0 0 0 0z"/>
+</svg>
+</i>
+&nbsp;&nbsp;RSS&nbsp;订阅</a>
+    </div>
+    
+    
+    <div class="author-link-wrap">
+      
+      <div class="author-link">
+        <a href="https://www.zhihu.com/people/faeli" target="_black">知乎</a>
+      </div>
+      
+      <div class="author-link">
+        <a href="https://www.jianshu.com/u/b2df47bf6d97" target="_black">简书</a>
+      </div>
+      
+      <div class="author-link">
+        <a href="https://www.yuque.com/faeli" target="_black">语雀</a>
+      </div>
+      
+      <div class="author-link">
+        <a href="https://space.bilibili.com/385940640" target="_black">哔哩</a>
+      </div>
+      
+    </div>
+    
+    
+    
+  </div>
+</section>
+
+    
+ 
+  </div>
+</aside>
+</div>
+
+  </main>
+  <footer>
+    <div class="footer-inner">
+<div></div>
+<p class="copyright">
+  
+  <span>
+    由&nbsp;<a href="https://gohugo.io" target="_blank">Hugo</a>&nbsp;强力驱动
+  </span>
+  <span>&nbsp;
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M14.715 2.288A4.381 4.381 0 0 0 11.596 1a4.381 4.381 0 0 0-3.119 1.288l-.474.474-.475-.474A4.381 4.381 0 0 0 4.409 1 4.416 4.416 0 0 0 1.29 8.526l6.288 6.288a.6.6 0 0 0 .849 0l6.288-6.288a4.381 4.381 0 0 0 1.288-3.119 4.381 4.381 0 0 0-1.288-3.119z"/>
+</svg>
+</i>
+&nbsp;</span>
+  <span
+    >主题&nbsp;-
+    <a href="https://github.com/faeli/hugo-theme-zero/" target="_blank">Zero</a>
+  </span>
+</p>
+</div>
+  </footer><script src="/js/zero.js"></script>
+
+</body>
+
+</html>

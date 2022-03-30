@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>python on 大个子斌斌子</title>
+    <link>/tags/python/</link>
+    <description>Recent content in python on 大个子斌斌子</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 30 Mar 2019 20:17:14 +0800</lastBuildDate><atom:link href="/tags/python/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Pandas 60 分钟快速入门指南</title>
+      <link>/posts/started-pandas/</link>
+      <pubDate>Sat, 30 Mar 2019 20:17:14 +0800</pubDate>
+      
+      <guid>/posts/started-pandas/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

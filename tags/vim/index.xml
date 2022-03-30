@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>vim on 大个子斌斌子</title>
+    <link>/tags/vim/</link>
+    <description>Recent content in vim on 大个子斌斌子</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Mon, 22 Feb 2010 14:50:25 +0800</lastBuildDate><atom:link href="/tags/vim/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>Vim 使用指南</title>
+      <link>/posts/vim/vim-guide/</link>
+      <pubDate>Mon, 22 Feb 2010 14:50:25 +0800</pubDate>
+      
+      <guid>/posts/vim/vim-guide/</guid>
+      <description>vim 简单介绍
+历史 设计哲学 使用指南 最强IDE之争 扩展阅读 </description>
+    </item>
+    
+  </channel>
+</rss>
