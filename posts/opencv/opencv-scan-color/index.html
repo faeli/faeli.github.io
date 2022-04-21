@@ -11,15 +11,15 @@
   content="upgrade-insecure-requests"
 />
 <title>
-   Redis Cluster - 大个子斌斌子
+   OpenCV 颜色识别 - 大个子斌斌子
   
 </title>
 
 <meta name="keywords" content="" />
-  <meta property="og:title" content="Redis Cluster"/>
+  <meta property="og:title" content="OpenCV 颜色识别"/>
 <meta property="og:site_name" content="大个子斌斌子" />
 <meta property="og:image" content="/favicon-32x32.png" />
-<meta name="title" content="Redis Cluster - 大个子斌斌子" /> 
+<meta name="title" content="OpenCV 颜色识别 - 大个子斌斌子" /> 
 <meta name="description" content="" />
 
 <link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
@@ -60,7 +60,7 @@
 </div>
 
 <div id="post-header" class="header-wrap">
-    <div class="title">Redis Cluster</div>
+    <div class="title">OpenCV 颜色识别</div>
 </div>
 
 </div>
@@ -72,7 +72,7 @@
         <div id="main-content" class="main-content">
 <article>
   
-  <h2 id="post-title">Redis Cluster</h2>
+  <h2 id="post-title">OpenCV 颜色识别</h2>
   
   <div class="post-mate">
   
@@ -82,8 +82,25 @@
 </svg>
 </i>
 <time>
-      2018-10-11
+      2022-04-01
     </time>
+  </span>
+  
+  
+  
+  <span class="post-category">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M14.4 3.4h-1.88l-.247-1.139A1.599 1.599 0 0 0 10.709 1H1.6A1.6 1.6 0 0 0 0 2.6V13a1.6 1.6 0 0 0 1.6 1.6h12.8A1.6 1.6 0 0 0 16 13V5a1.6 1.6 0 0 0-1.6-1.6m.4 9.6a.4.4 0 0 1-.4.4H1.6a.4.4 0 0 1-.4-.4V2.6a.4.4 0 0 1 .4-.4h5.109c.187 0 .352.133.391.315l.247 1.139A1.2 1.2 0 0 0 8.52 4.6h5.88a.4.4 0 0 1 .4.4v8M11.1 2.515l.192.885H8.52l-.247-1.139c-.005-.022-.019-.039-.025-.061h2.461c.187 0 .352.133.391.315"/>
+</svg>
+</i>
+
+    <span>
+      <a href="/categories/opencv" itemprop="url" rel="index">
+        OpenCV
+      </a>
+      &nbsp;
+    </span>
+    
   </span>
   
   
@@ -95,7 +112,7 @@
     <path d="M15.578 2.478L13.52.421a1.441 1.441 0 0 0-2.037 0L1.405 10.5a1.355 1.355 0 0 0-.357.632l-1.03 4.123a.598.598 0 0 0 .727.726l4.12-1.03c.241-.059.462-.184.636-.36L15.578 4.518a1.444 1.444 0 0 0 0-2.039M2.084 12.017L4 13.931l-2.569.643.654-2.557m2.98 1.284l-2.382-2.383 7.561-7.56 2.394 2.395L5.064 13.3m9.665-9.633l-1.242 1.239-2.396-2.396 1.241-1.24a.237.237 0 0 1 .34 0l2.057 2.056a.241.241 0 0 1 0 .341"/>
 </svg>
 </i>
-3字</span>
+16字</span>
   
   <span class="post-readtime">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -108,15 +125,22 @@
 </div>
 
   
-  <div class="markdown-body post-body"><p>参考:<br>
-<a href="https://redis.io/topics/cluster-tutorial">https://redis.io/topics/cluster-tutorial</a><br>
-<a href="https://redis.io/topics/cluster-spec">https://redis.io/topics/cluster-spec</a></p>
+  <div class="markdown-body post-body"><ol>
+<li><code>inRange</code> 函数实现二值化功能，在阈值内的像素设置为白色(255)，不在阈值区间的像素设置为黑色(0)</li>
+<li><code>scalar</code> 定义颜色阈值</li>
+<li>链接滤波，获取 <code>Canny</code> 边缘图片</li>
+<li>使用 <code>findContours</code> 获取轮廓信息</li>
+<li>计算轮廓面积 <code>contourArea</code></li>
+<li>计算轮廓长度 <code>arcLength</code></li>
+<li>计算多边形拟合<code>approxPolyDP</code></li>
+<li>最小覆盖矩形<code>boundingRect</code></li>
+</ol>
 </div>
   
   
 <section id="post-copyright">
   <dl>
-    <dt><span>本文链接：</span>/posts/redis-cluster/</dt>
+    <dt><span>本文链接：</span>/posts/opencv/opencv-scan-color/</dt>
     <dt><span>本文作者：</span>大个子斌斌子</dt>
     <dt>
       <span>版权声明：</span>本博客文章除特别声明外，均采用
@@ -160,20 +184,13 @@
   
   
   <div class="prev">
-    <a href="/posts/lets-encrypt-ssl/">
+    <a href="/posts/opencv/win-c&#43;&#43;/">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z"/></svg></i>
-Let&#39;s Encrypt 免费证书的使用
+Windows 下 Visual Studio C&#43;&#43; 使用 OpenvCV
     </a>
   </div>
   
   <div class="paginate-divider"></div>
-  
-  <div class="next">
-    <a href="/posts/java-call-javascript/">
-      Java 调用 Javascript 代码
-<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"/></svg></i>
-</a>
-  </div>
   
 </div>
 
