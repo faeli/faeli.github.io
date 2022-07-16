@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>golang on 大个子斌斌子</title>
+    <link>/tags/golang/</link>
+    <description>Recent content in golang on 大个子斌斌子</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>zh</language>
+    <lastBuildDate>Sat, 16 Jul 2022 17:54:18 +0800</lastBuildDate><atom:link href="/tags/golang/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>快速入门 Go lang</title>
+      <link>/posts/golang/start/</link>
+      <pubDate>Sat, 16 Jul 2022 17:54:18 +0800</pubDate>
+      
+      <guid>/posts/golang/start/</guid>
+      <description>环境搭建 安装 下载地址
+根据自己的系统下载对应的安装包安装即可。
+我使用的是 Windows 标准包安装。
+go1.18.4.windows-amd64.msi
+安装完成后，需要将 go 环境变量添加到系统环境变量中，否则 go 命令将无法使用。
+$ go version go version go1.18.4 windows/amd64 安装成后开始编程。
+开发工具 推荐直接使用 Visual Studio Code 编辑器进行开发。
+你好，Go lang package main import ( &amp;#34;fmt&amp;#34; ) func main() { fmt.Println(&amp;#34;Hello, golang!&amp;#34;) } Go 命令 Go 基础 包 包的基本概念  Go 使用 包 (package) 组织源代码 包(package) 包含多个 go 源码的集合，是一种高级的代码复用方案。 任何源代码必须属于某一个包，同时源码文件的第一行有效代码必须是 package 包名 语句，通过该语句声明自己所在的包。  包的特点 包的习惯用法 包的导入 语法 import &amp;#34;包名&amp;#34; 注意
+ import 导入语句通常放在源码文件开头包声明语句的下面； 导入的包名必须使用双引号包裹起来； 包名是从 GOPATH/src/ 开始计算的，使用 / 进行分隔。  单行导入 import &amp;#34;包名1&amp;#34; import &amp;#34;包名2&amp;#34; 多行导入 import ( &amp;#34;包名1&amp;#34; &amp;#34;包名2&amp;#34; ) 包方法的调用 package main import &amp;#34;fmt&amp;#34; func main() { fmt.</description>
+    </item>
+    
+  </channel>
+</rss>

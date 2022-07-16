@@ -44,9 +44,8 @@
 <meta name="msapplication-TileColor" content="#ffffff" />
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 <meta name="theme-color" content="#ffffff" />
-<link href="/zero.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="/scss/zero.min.34cf99575789c0d7414a43a2c997b97a04363406f2b6f320133778c0f3eff276.css">
+<link rel="stylesheet" href="/scss/zero.min.e987bc1a621c30a80149f18673e22382b17787160721d91390b76bc8079f6f42.css">
 
 
 <script data-ad-client="ca-pub-0142417710587136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -136,17 +135,17 @@
 <pre tabindex="0"><code>$ curl -s https://install.zerotier.com/ | sudo bash
 </code></pre><p>注：如果是Windows或者macOS、Android、iOS等，那么可以在 <a href="https://www.zerotier.com/download/">https://www.zerotier.com/download/</a> 下载zerotier
 之后就完成了安装，然后我们要启动zerotier，并且让他开机自启动，运行：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo systemctl start zerotier-one.service
-</span></span><span style="display:flex;"><span>$ sudo systemctl <span style="color:#0086b3">enable</span> zerotier-one.service
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo systemctl start zerotier-one.service
+</span></span><span class="line"><span class="cl">$ sudo systemctl <span class="nb">enable</span> zerotier-one.service
 </span></span></code></pre></div><p>例如我有两台内网机器，于是都按照上面的描述进行了安装和启动。接下来要做的事情是到 <a href="https://my.zerotier.com/">https://my.zerotier.com/</a> 里注册帐号并且登录，然后创建一个Network，创建之后点到这个网络里，拉到最上面，选择 Private(私有网络) ，这样别人加入的时候就需要认证， 如果想改名字的话，改个名字，其他不用动。然后复制 Network ID，就是拉到最上面的时候可以看到的一个类似 82048a0632246d2c 的字符串。</p>
 <p>然后在两台内网机器上执行：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ sudo zerotier-cli join xxxxxxxxxxxxxxx
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ sudo zerotier-cli join xxxxxxxxxxxxxxx
 </span></span></code></pre></div><p>加入之后他们就启动了，但是还连不进我们创建的网络，因为我们选择了 Private(私有网络) ，我们还需要到 <a href="https://my.zerotier.com/">https://my.zerotier.com/</a> 上面对接入的机器打勾，拉到 Members 这一节，把前面的两个勾勾选上。</p>
 <p>这个时候执行一下 ip a 你会发现多了一个叫做 ztuzethlza 或者类似名字的设备，还有IP地址，这就是zerotier组建的局域网的IP 地址，但是这个时候你如果直接连接另外一台机器的话可能会非常慢，所以为了加速，我们还需要一台在国内的，或者是在国外但是访问 速度相当快的机器做转发。</p>
 <p>搭建中转机器(moon)
 首先把中转机器按照上述步骤一起加入网络，然后执行：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#0086b3">cd</span> /var/lib/zerotier-one/
-</span></span><span style="display:flex;"><span>$ sudo zerotier-idtool initmoon identity.public &gt; moon.json
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-bash" data-lang="bash"><span class="line"><span class="cl">$ <span class="nb">cd</span> /var/lib/zerotier-one/
+</span></span><span class="line"><span class="cl">$ sudo zerotier-idtool initmoon identity.public &gt; moon.json
 </span></span></code></pre></div><p>接下来编辑一下 moon.json，把 &ldquo;stableEndpoints&rdquo;: [] 这一节里加入中转机器的公网IP，例如 &ldquo;stableEndpoints&rdquo;: [&ldquo;1.2.3.4/9993&rdquo;]，其中 9993是默认监听的端口，接下来要把9993端口的防火墙放开(注意是UDP)，如果你的机器外边还有防火墙的话，也要一起放开，例如阿里云的机器就有 防火墙规则，要一起把对应端口的UDP流量放行，此后，我们要生成moon的配置：</p>
 <p><strong>注意</strong>打开 9993/udp  防火墙，我使用的是 腾讯云的云服务器版本（centos，默认系统防护墙是关闭的）,需要在云控制台中打开端口
 使用 云 服务的可用在云控制台中打开</p>
@@ -221,6 +220,13 @@ OpenCV 颜色识别
   
   <div class="paginate-divider"></div>
   
+  <div class="next">
+    <a href="/posts/golang/start/">
+      快速入门 Go lang
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M24.707 38.101L4.908 57.899c-4.686 4.686-4.686 12.284 0 16.971L185.607 256 4.908 437.13c-4.686 4.686-4.686 12.284 0 16.971L24.707 473.9c4.686 4.686 12.284 4.686 16.971 0l209.414-209.414c4.686-4.686 4.686-12.284 0-16.971L41.678 38.101c-4.687-4.687-12.285-4.687-16.971 0z"/></svg></i>
+</a>
+  </div>
+  
 </div>
 
   
@@ -267,7 +273,7 @@ OpenCV 颜色识别
     
     <div class="site-statis">
       <div class="statis-number">
-        <strong class="number">11</strong>
+        <strong class="number">12</strong>
         <div><small>日志</small></div>
       </div>
       <div class="statis-number">
@@ -275,7 +281,7 @@ OpenCV 颜色识别
         <div><small>分类</small></div>
       </div>
       <div class="statis-number">
-        <strong class="number">0</strong>
+        <strong class="number">1</strong>
         <div><small>标签</small></div>
       </div>
     </div>

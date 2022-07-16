@@ -1,0 +1,557 @@
+<!DOCTYPE html>
+<html lang="en" dir="zh"><head>
+<meta charset="UTF-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
+<meta
+  name="viewport"
+  content="width=device-width, initial-scale=1, maximum-scale=1"
+/>
+<meta
+  http-equiv="Content-Security-Policy"
+  content="upgrade-insecure-requests"
+/>
+<title>
+   快速入门 Go lang - 大个子斌斌子
+  
+</title>
+
+<meta name="keywords" content="" />
+  <meta property="og:title" content="快速入门 Go lang"/>
+<meta property="og:site_name" content="大个子斌斌子" />
+<meta property="og:image" content="/favicon-32x32.png" />
+<meta name="title" content="快速入门 Go lang - 大个子斌斌子" /> 
+<meta name="description" content="" />
+
+<link rel="apple-touch-icon" sizes="57x57" href="/apple-icon-57x57.png" />
+<link rel="apple-touch-icon" sizes="60x60" href="/apple-icon-60x60.png" />
+<link rel="apple-touch-icon" sizes="72x72" href="/apple-icon-72x72.png" />
+<link rel="apple-touch-icon" sizes="76x76" href="/apple-icon-76x76.png" />
+<link rel="apple-touch-icon" sizes="114x114" href="/apple-icon-114x114.png" />
+<link rel="apple-touch-icon" sizes="120x120" href="/apple-icon-120x120.png" />
+<link rel="apple-touch-icon" sizes="144x144" href="/apple-icon-144x144.png" />
+<link rel="apple-touch-icon" sizes="152x152" href="/apple-icon-152x152.png" />
+<link rel="apple-touch-icon" sizes="180x180" href="/apple-icon-180x180.png" />
+<link
+  rel="icon"
+  type="image/png"
+  sizes="192x192"
+  href="/android-icon-192x192.png"
+/>
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+<link rel="icon" type="image/png" sizes="96x96" href="/favicon-96x96.png" />
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+<link rel="manifest" href="/manifest.json" />
+<meta name="msapplication-TileColor" content="#ffffff" />
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
+<meta name="theme-color" content="#ffffff" />
+
+<link rel="stylesheet" href="/scss/zero.min.e987bc1a621c30a80149f18673e22382b17787160721d91390b76bc8079f6f42.css">
+
+
+<script data-ad-client="ca-pub-0142417710587136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
+
+</head>
+<body>
+  <header>
+    <div class="header-inner"><div id="site-header" class="header-wrap">
+    <div class="title">
+        
+        <a href="/">大个子斌斌子</a>
+        
+         &nbsp;|&nbsp; 慢慢浇水，等待，发芽，长大！
+    </div>
+</div>
+
+<div id="post-header" class="header-wrap">
+    <div class="title">快速入门 Go lang</div>
+</div>
+
+</div>
+    <div class="header-band"></div>
+  </header>
+  <main id="main">
+    <div class="main-inner">
+      <div class="content-wrap">
+        <div id="main-content" class="main-content">
+<article>
+  
+  <h2 id="post-title">快速入门 Go lang</h2>
+  
+  <div class="post-mate">
+  
+  <span class="post-date">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M13.294 1.412h-1.44V.6a.6.6 0 1 0-1.2 0v.812H5.346V.6a.6.6 0 1 0-1.2 0v.812h-1.44c-1.1 0-2 .9-2 2V14c0 1.1.9 2 2 2h10.588c1.1 0 2-.9 2-2V3.412c0-1.1-.9-2-2-2m0 13.388H2.706a.81.81 0 0 1-.8-.8V6.282h12.188V14a.81.81 0 0 1-.8.8M2.706 2.612h1.44v.426a.6.6 0 0 0 1.2 0v-.426h5.308v.426a.6.6 0 1 0 1.2 0v-.426h1.44c.434 0 .8.366.8.8v1.67H1.906v-1.67c0-.434.366-.8.8-.8"/>
+</svg>
+</i>
+<time>
+      2022-07-16
+    </time>
+  </span>
+  
+  
+  
+  
+  
+  <span class="post-tags">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 512"><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M625.941 293.823L421.823 497.941c-18.746 18.746-49.138 18.745-67.882 0l-.36-.36L592 259.882 331.397 0h48.721a48 48 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882zm-128 0L293.823 497.941C284.451 507.314 272.166 512 259.882 512c-12.284 0-24.569-4.686-33.941-14.059L14.059 286.059A48 48 0 0 1 0 252.118V48C0 21.49 21.49 0 48 0h204.118a47.998 47.998 0 0 1 33.941 14.059l211.882 211.882c18.745 18.745 18.745 49.137 0 67.882zM464 259.882L252.118 48H48v204.118l211.886 211.878L464 259.882zM144 96c-26.51 0-48 21.49-48 48s21.49 48 48 48 48-21.49 48-48-21.49-48-48-48z"/></svg></i>
+
+    <span class="post-tag">
+      <a href="/tags/golang" rel="tag" title="golang">#golang&nbsp;</a>
+    </span>
+    
+  </span>
+  
+  
+  
+  <span class="post-count">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M15.578 2.478L13.52.421a1.441 1.441 0 0 0-2.037 0L1.405 10.5a1.355 1.355 0 0 0-.357.632l-1.03 4.123a.598.598 0 0 0 .727.726l4.12-1.03c.241-.059.462-.184.636-.36L15.578 4.518a1.444 1.444 0 0 0 0-2.039M2.084 12.017L4 13.931l-2.569.643.654-2.557m2.98 1.284l-2.382-2.383 7.561-7.56 2.394 2.395L5.064 13.3m9.665-9.633l-1.242 1.239-2.396-2.396 1.241-1.24a.237.237 0 0 1 .34 0l2.057 2.056a.241.241 0 0 1 0 .341"/>
+</svg>
+</i>
+294字</span>
+  
+  <span class="post-readtime">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m0 1.2c3.75 0 6.8 3.05 6.8 6.8s-3.05 6.8-6.8 6.8S1.2 11.75 1.2 8 4.25 1.2 8 1.2m3.296 9.733a.59.59 0 0 1-.299-.081l-3.656-2.11a.598.598 0 0 1-.3-.52V4.626a.6.6 0 1 1 1.2 0v3.25l3.355 1.938a.6.6 0 0 1-.3 1.12"/>
+</svg>
+</i>
+≈2
+  </span>
+  
+</div>
+
+  
+  <div class="markdown-body post-body"><h2 id="环境搭建">环境搭建</h2>
+<h3 id="安装">安装</h3>
+<p><a href="https://golang.org/dl/">下载地址</a></p>
+<p>根据自己的系统下载对应的安装包安装即可。<br>
+我使用的是 Windows 标准包安装。<br>
+<a href="https://go.dev/dl/go1.18.4.windows-amd64.msi">go1.18.4.windows-amd64.msi</a></p>
+<p>安装完成后，需要将 go 环境变量添加到系统环境变量中，否则 go 命令将无法使用。</p>
+<pre tabindex="0"><code class="language-base" data-lang="base">$ go version
+go version go1.18.4 windows/amd64
+</code></pre><p>安装成后开始编程。</p>
+<h3 id="开发工具">开发工具</h3>
+<p>推荐直接使用 Visual Studio Code 编辑器进行开发。</p>
+<h3 id="你好go-lang">你好，Go lang</h3>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello, golang!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h2 id="go-命令">Go 命令</h2>
+<h2 id="go-基础">Go 基础</h2>
+<h3 id="包">包</h3>
+<h4 id="包的基本概念">包的基本概念</h4>
+<ol>
+<li>Go 使用 包 (package) 组织源代码</li>
+<li>包(package) 包含多个 go 源码的集合，是一种高级的代码复用方案。</li>
+<li>任何源代码必须属于某一个包，同时源码文件的第一行有效代码必须是 <code>package 包名</code> 语句，通过该语句声明自己所在的包。</li>
+</ol>
+<h4 id="包的特点">包的特点</h4>
+<h4 id="包的习惯用法">包的习惯用法</h4>
+<h4 id="包的导入">包的导入</h4>
+<h5 id="语法">语法</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;包名&#34;</span>
+</span></span></code></pre></div><p><strong>注意</strong></p>
+<ul>
+<li>import 导入语句通常放在源码文件开头包声明语句的下面；</li>
+<li>导入的包名必须使用双引号包裹起来；</li>
+<li>包名是从 GOPATH/src/ 开始计算的，使用 / 进行分隔。</li>
+</ul>
+<h6 id="单行导入">单行导入</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;包名1&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;包名2&#34;</span>
+</span></span></code></pre></div><h6 id="多行导入">多行导入</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;包名1&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;包名2&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><h6 id="包方法的调用">包方法的调用</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello, Go lang!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h6 id="自定义别名">自定义别名</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 自定义别名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kn">import</span> <span class="nx">f</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">f</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello, Go lang!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h6 id="省略引用格式">省略引用格式</h6>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-Go" data-lang="Go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 省略别名
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kn">import</span> <span class="p">.</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello, Go lang!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>提示</strong></p>
+<p>实际应用中不建议省略引用格式，这样会导致代码不清理，方法调用混乱。</p>
+<h6 id="匿名引用格式">匿名引用格式</h6>
+<p>在引入某个包时，如果只是希望执行包初始化 <code>init</code> 函数，而不使用包内部的数据，使用匿名引用格式。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 匿名引用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">_</span> <span class="s">&#34;database/sql&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="s">&#34;Hello, Go lang!&#34;</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><p><strong>特点</strong></p>
+<ul>
+<li>匿名导入的包和其他方式导入的包一样都会被编译到可执行文件中。</li>
+<li>使用标准格式引用的包，但是代码中却没有使用包，编译器会报错。如果包中有 <code>init</code> 初始化函数，则通过 <code>import _ &quot;包&quot;</code> 这种方式引用的包，仅执行包的初始化韩式，即使包没有<code>init</code>初始化函数，也不会引发编译器报错。</li>
+</ul>
+<h6 id="包的初始化特点">包的初始化特点</h6>
+<ul>
+<li>包初始化程序从<code>main</code>函数引用的包开始，逐级查找包的引用，直到找到没有引用其他包的包，最终生成一个包引用的有向无环图。</li>
+<li>Go编译器会将有向无环图转换为一棵树，然后从树的叶子节点开始逐层向上对包进行初始化。</li>
+<li>单个包的初始化过程如上图所示，先初始化常量，然后是全局变量，最后执行包的<code>init</code>函数。</li>
+</ul>
+<h3 id="可见性">可见性</h3>
+<p>Go 语言对关键字的增加非常吝啬，其中没有 <code>private</code>、<code>protected</code>、<code>public</code> 这样的关键字。要使某符号对其他包（<code>package</code>）符号可见定义为大写字母开头即为可见。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Rect</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// x,y 当前包可访问
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">x</span><span class="p">,</span><span class="nx">y</span> <span class="kt">float64</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// Width,Height 当前包和其他包均可访问
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">Width</span><span class="p">,</span><span class="nx">Height</span> <span class="kt">float64</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="c1">// area 方法仅可在该类型所在的包内使用
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="p">(</span><span class="nx">r</span> <span class="o">*</span><span class="nx">Rect</span><span class="p">)</span> <span class="nf">area</span><span class="p">()</span> <span class="kt">float64</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">Width</span> <span class="o">*</span> <span class="nx">r</span><span class="p">.</span><span class="nx">Height</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="常量">常量</h3>
+<p>Go 语言中常量使用 <code>const</code> 关键字定义</p>
+<h3 id="变量">变量</h3>
+<h3 id="基础类型">基础类型</h3>
+<h3 id="控制语句">控制语句</h3>
+<h3 id="数组-array">数组 array</h3>
+<h3 id="切片-slice">切片 slice</h3>
+<h3 id="字典-map">字典 map</h3>
+<h3 id="函数-function">函数 function</h3>
+<p>函数使用关键字 <code>func</code> 定义</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">gretings</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// Hello: 方法名(首字符大写，外部包可访问)
+</span></span></span><span class="line"><span class="cl"><span class="c1">// name: 字符串类型参数
+</span></span></span><span class="line"><span class="cl"><span class="c1">// message: 返回类型字符串
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">func</span> <span class="nf">Hello</span><span class="p">(</span><span class="nx">name</span> <span class="kt">string</span><span class="p">)</span> <span class="kt">string</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">message</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Speak</span><span class="p">(</span><span class="s">&#34;Hi, %v. Welcome！&#34;</span> <span class="p">,</span><span class="nx">name</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">message</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="结构-struct">结构 struct</h3>
+<h3 id="方法-method">方法 method</h3>
+<h3 id="接口-interface">接口 interface</h3>
+<h3 id="反射-reflection">反射 reflection</h3>
+<h3 id="并发-concurrency">并发 concurrency</h3>
+<h3 id="go-中的关键字">Go 中的关键字</h3>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">关键字</th>
+<th style="text-align:left">说明</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left"><code>package</code></td>
+<td style="text-align:left">包声明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>import</code></td>
+<td style="text-align:left">导入包</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>func</code></td>
+<td style="text-align:left">函数声明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>const</code></td>
+<td style="text-align:left">常量声明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>type</code></td>
+<td style="text-align:left">类型声明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>var</code></td>
+<td style="text-align:left">变量声明</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>if</code></td>
+<td style="text-align:left">判断语句</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>else</code></td>
+<td style="text-align:left">否则语句</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>switch</code></td>
+<td style="text-align:left">分支语句</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>case</code></td>
+<td style="text-align:left">分支条件</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>default</code></td>
+<td style="text-align:left">默认分支</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>for</code></td>
+<td style="text-align:left">循环语句</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>break</code></td>
+<td style="text-align:left">终止循环</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>continue</code></td>
+<td style="text-align:left">跳过当前循环</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>goto</code></td>
+<td style="text-align:left">跳转语句</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>defer</code></td>
+<td style="text-align:left">延迟执行</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>return</code></td>
+<td style="text-align:left">返回值</td>
+</tr>
+</tbody>
+</table>
+<h2 id="go-项目">Go 项目</h2>
+</div>
+  
+  
+<section id="post-copyright">
+  <dl>
+    <dt><span>本文链接：</span>/posts/golang/start/</dt>
+    <dt><span>本文作者：</span>大个子斌斌子</dt>
+    <dt>
+      <span>版权声明：</span>本博客文章除特别声明外，均采用
+      <a
+        href="https://creativecommons.org/licenses/by-nc-sa/3.0/"
+        target="_blank"
+        style="text-decoration: underline"
+        ><abbr>&nbsp;CC BY-NC-SA 3.0&nbsp;</abbr></a
+      >许可协议，转载请注明出处！
+    </dt>
+  </dl>
+</section>
+
+
+  
+  <section id="post-donate">
+  <div>
+    <p class="donate-message">“感谢您请我喝茶”</p>
+    <div class="donate-way">
+      <div class="donate-item">
+        <img width="188" src="/images/donate_ali.png" alt="支付宝" />
+        <div><cite>支付宝</cite></div>
+      </div>
+      <div class="donate-item">
+        <img width="188" src="/images/donate_wx.png" alt="微信" />
+        <div><cite>微信</cite></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+  
+  <div class="tags">
+  <ul>
+    
+    <li><a href="/tags/golang/">golang</a></li>
+    
+  </ul>
+</div>
+
+  
+  <div class="paginate">
+  
+  
+  <div class="prev">
+    <a href="/posts/zerotier/start/">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 512"><!-- Font Awesome Pro 5.15.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license (Commercial License) --><path d="M231.293 473.899l19.799-19.799c4.686-4.686 4.686-12.284 0-16.971L70.393 256 251.092 74.87c4.686-4.686 4.686-12.284 0-16.971L231.293 38.1c-4.686-4.686-12.284-4.686-16.971 0L4.908 247.515c-4.686 4.686-4.686 12.284 0 16.971L214.322 473.9c4.687 4.686 12.285 4.686 16.971-.001z"/></svg></i>
+zerotier 异地组网
+    </a>
+  </div>
+  
+  <div class="paginate-divider"></div>
+  
+</div>
+
+  
+   
+
+</section>
+</div>
+      </div><aside id="sidebar" class="sidebar">
+  <div class="sidebar-inner">
+    <section class="sidebar-wrap">
+  <nav class="site-nav">
+    <div id="menu" class="menu-list">
+      
+      
+      
+      
+      <div class="menu-item ">
+        <a href="/" rel="section" >
+          首页
+        </a>
+      </div>
+      
+      
+      
+      <div class="menu-item ">
+        <a href="/posts" rel="section" >
+          归档
+        </a>
+      </div>
+      
+    </div>
+  </nav>
+</section>
+
+    
+<section class="sidebar-wrap">
+  <div class="site-info">
+    <div class="site-logo">
+      <img width="96" src="/images/logo.png" />
+    </div>
+    <div><strong> 大个子斌斌子</strong></div>
+    
+    <p>慢慢浇水，等待，发芽，长大！</p>
+    
+    <div class="site-statis">
+      <div class="statis-number">
+        <strong class="number">12</strong>
+        <div><small>日志</small></div>
+      </div>
+      <div class="statis-number">
+        <strong class="number">4</strong>
+        <div><small>分类</small></div>
+      </div>
+      <div class="statis-number">
+        <strong class="number">1</strong>
+        <div><small>标签</small></div>
+      </div>
+    </div>
+    <div class="site-rss">
+      <a href="/index.xml" target="_black">
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M0 11.661V16h4.348c0-.625-.104-1.215-.278-1.735a5.428 5.428 0 0 0-.94-1.389 5.978 5.978 0 0 0-1.39-.902A4.696 4.696 0 0 0 0 11.66zm0-5.83v2.88c1.009 0 1.983.209 2.887.556.87.416 1.635.937 2.296 1.562a8.635 8.635 0 0 1 1.53 2.36A6.88 6.88 0 0 1 7.27 16h2.956a9.385 9.385 0 0 0-.835-3.957 10.67 10.67 0 0 0-2.156-3.262 10.585 10.585 0 0 0-3.2-2.152A11.144 11.144 0 0 0 0 5.83zM0 0v2.95c1.809 0 3.513.347 5.078 1.007 1.6.659 3.026 1.596 4.174 2.81a12.813 12.813 0 0 1 2.818 4.131A13.09 13.09 0 0 1 13.078 16H16c0-2.221-.383-4.304-1.252-6.213a16.119 16.119 0 0 0-3.444-5.102A15.644 15.644 0 0 0 0 0z"/>
+</svg>
+</i>
+&nbsp;&nbsp;RSS&nbsp;订阅</a>
+    </div>
+    
+    
+    <div class="author-link-wrap">
+      
+      <div class="author-link">
+        <a href="https://www.zhihu.com/people/faeli" target="_black">知乎</a>
+      </div>
+      
+      <div class="author-link">
+        <a href="https://www.jianshu.com/u/b2df47bf6d97" target="_black">简书</a>
+      </div>
+      
+      <div class="author-link">
+        <a href="https://www.yuque.com/faeli" target="_black">语雀</a>
+      </div>
+      
+      <div class="author-link">
+        <a href="https://space.bilibili.com/385940640" target="_black">哔哩</a>
+      </div>
+      
+    </div>
+    
+    
+    
+  </div>
+</section>
+
+     
+<section class="sidebar-wrap affix">
+  <div class="post-toc">
+    <div class="title">目录</div>
+    <div class="post-toc-content"><nav id="TableOfContents">
+  <ul>
+    <li><a href="#环境搭建">环境搭建</a>
+      <ul>
+        <li><a href="#安装">安装</a></li>
+        <li><a href="#开发工具">开发工具</a></li>
+        <li><a href="#你好go-lang">你好，Go lang</a></li>
+      </ul>
+    </li>
+    <li><a href="#go-命令">Go 命令</a></li>
+    <li><a href="#go-基础">Go 基础</a>
+      <ul>
+        <li><a href="#包">包</a></li>
+        <li><a href="#可见性">可见性</a></li>
+        <li><a href="#常量">常量</a></li>
+        <li><a href="#变量">变量</a></li>
+        <li><a href="#基础类型">基础类型</a></li>
+        <li><a href="#控制语句">控制语句</a></li>
+        <li><a href="#数组-array">数组 array</a></li>
+        <li><a href="#切片-slice">切片 slice</a></li>
+        <li><a href="#字典-map">字典 map</a></li>
+        <li><a href="#函数-function">函数 function</a></li>
+        <li><a href="#结构-struct">结构 struct</a></li>
+        <li><a href="#方法-method">方法 method</a></li>
+        <li><a href="#接口-interface">接口 interface</a></li>
+        <li><a href="#反射-reflection">反射 reflection</a></li>
+        <li><a href="#并发-concurrency">并发 concurrency</a></li>
+        <li><a href="#go-中的关键字">Go 中的关键字</a></li>
+      </ul>
+    </li>
+    <li><a href="#go-项目">Go 项目</a></li>
+  </ul>
+</nav></div>
+  </div>
+</section>
+ 
+ 
+  </div>
+</aside>
+</div>
+
+  </main>
+  <footer>
+    <div class="footer-inner">
+<div></div>
+<p class="copyright">
+  
+  <span>
+    由&nbsp;<a href="https://gohugo.io" target="_blank">Hugo</a>&nbsp;强力驱动
+  </span>
+  <span>&nbsp;
+<i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
+    <path d="M14.715 2.288A4.381 4.381 0 0 0 11.596 1a4.381 4.381 0 0 0-3.119 1.288l-.474.474-.475-.474A4.381 4.381 0 0 0 4.409 1 4.416 4.416 0 0 0 1.29 8.526l6.288 6.288a.6.6 0 0 0 .849 0l6.288-6.288a4.381 4.381 0 0 0 1.288-3.119 4.381 4.381 0 0 0-1.288-3.119z"/>
+</svg>
+</i>
+&nbsp;</span>
+  <span
+    >主题&nbsp;-
+    <a href="https://github.com/faeli/hugo-theme-zero/" target="_blank">Zero</a>
+  </span>
+</p>
+</div>
+  </footer><script src="/js/zero.js"></script>
+
+</body>
+
+</html>

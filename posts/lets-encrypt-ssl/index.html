@@ -44,9 +44,8 @@
 <meta name="msapplication-TileColor" content="#ffffff" />
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 <meta name="theme-color" content="#ffffff" />
-<link href="/zero.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="/scss/zero.min.34cf99575789c0d7414a43a2c997b97a04363406f2b6f320133778c0f3eff276.css">
+<link rel="stylesheet" href="/scss/zero.min.e987bc1a621c30a80149f18673e22382b17787160721d91390b76bc8079f6f42.css">
 
 
 <script data-ad-client="ca-pub-0142417710587136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -115,18 +114,18 @@
   <div class="markdown-body post-body"><p>Let&rsquo;s Encrypt 是一个认证机构（CA）。它可以提供免费的SSL证书，并且已经被大多数浏览器信任。
 我们可以通过Certbot-auto自动化证书的安装和更新。</p>
 <p>安装</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>wget https://dl.eff.org/certbot-auto <span style="color:#998;font-style:italic"># 下载到本地</span>
-</span></span><span style="display:flex;"><span>chmod a+x ./certbot-auto <span style="color:#998;font-style:italic"># 添加可执行权限</span>
-</span></span><span style="display:flex;"><span>./certbot-auto --help all <span style="color:#998;font-style:italic"># 查看帮助</span>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">wget https://dl.eff.org/certbot-auto <span class="c1"># 下载到本地</span>
+</span></span><span class="line"><span class="cl">chmod a+x ./certbot-auto <span class="c1"># 添加可执行权限</span>
+</span></span><span class="line"><span class="cl">./certbot-auto --help all <span class="c1"># 查看帮助</span>
 </span></span></code></pre></div><p>生成证书</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>./certbot-auto --nginx -d faeli.me -d www.faeli.me
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">./certbot-auto --nginx -d faeli.me -d www.faeli.me
 </span></span></code></pre></div><p>Let&rsquo;s Encrypt 签发的证书有效期只有90天。通过 <code>./certbot-auto renew</code> 命令可以续签</p>
 <ul>
 <li>编辑 <code>crontab</code> 文件</li>
 </ul>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-sh" data-lang="sh"><span style="display:flex;"><span>$ crontab -e
-</span></span><span style="display:flex;"><span><span style="color:#998;font-style:italic"># 每天凌晨1点更新</span>
-</span></span><span style="display:flex;"><span><span style="color:#099">0</span> <span style="color:#099">1</span> * * * /root/certbot-auto renew --quiet
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-sh" data-lang="sh"><span class="line"><span class="cl">$ crontab -e
+</span></span><span class="line"><span class="cl"><span class="c1"># 每天凌晨1点更新</span>
+</span></span><span class="line"><span class="cl"><span class="m">0</span> <span class="m">1</span> * * * /root/certbot-auto renew --quiet
 </span></span></code></pre></div><p>参考文档：<br>
 <a href="https://certbot.eff.org/docs/install.html">https://certbot.eff.org/docs/install.html</a></p>
 </div>
@@ -239,7 +238,7 @@ Tomcat GET 请求中中文参数乱码
     
     <div class="site-statis">
       <div class="statis-number">
-        <strong class="number">11</strong>
+        <strong class="number">12</strong>
         <div><small>日志</small></div>
       </div>
       <div class="statis-number">
@@ -247,7 +246,7 @@ Tomcat GET 请求中中文参数乱码
         <div><small>分类</small></div>
       </div>
       <div class="statis-number">
-        <strong class="number">0</strong>
+        <strong class="number">1</strong>
         <div><small>标签</small></div>
       </div>
     </div>

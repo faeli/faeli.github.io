@@ -32,7 +32,7 @@ D:\dev\opencv\4.5.5\opencv\build\x64\vc14\bin D:\dev\opencv\4.5.5\opencv\build\x
 2.1 新建一个控制台应用的 C++ 项目 2.2 设置VC++目录 $(OPENCV_DIR)\include
 2.3 设置连接器 附件库目录$(OPENCV_DIR)\x64\vc\14\lib
 2.4 编写 C++ 代码 编写代码：
-#include &amp;lt;iostream&amp;gt;#include &amp;lt;opencv2/opencv.hpp&amp;gt; int main() {  cv::Mat img = cv::imread(&amp;#34;D:/dev/opencv/doc/imgs/A4-1.jpg&amp;#34;);  cv::resize(img, img, cv::Size(0, 0), 0.</description>
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;opencv2/opencv.hpp&amp;gt; int main() { cv::Mat img = cv::imread(&amp;#34;D:/dev/opencv/doc/imgs/A4-1.jpg&amp;#34;); cv::resize(img, img, cv::Size(0, 0), 0.</description>
     </item>
     
   </channel>

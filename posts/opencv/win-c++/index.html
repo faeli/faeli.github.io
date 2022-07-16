@@ -44,9 +44,8 @@
 <meta name="msapplication-TileColor" content="#ffffff" />
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 <meta name="theme-color" content="#ffffff" />
-<link href="/zero.css" rel="stylesheet" type="text/css" />
 
-<link rel="stylesheet" href="/scss/zero.min.34cf99575789c0d7414a43a2c997b97a04363406f2b6f320133778c0f3eff276.css">
+<link rel="stylesheet" href="/scss/zero.min.e987bc1a621c30a80149f18673e22382b17787160721d91390b76bc8079f6f42.css">
 
 
 <script data-ad-client="ca-pub-0142417710587136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -138,10 +137,10 @@
 <p>安装完成后：</p>
 <p><img src="/upload/image-20220330223209815.png" alt="安装成功目录"></p>
 <h3 id="配置windows环境变量">配置Windows环境变量</h3>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>OPENCV_DIR=D:\dev\opencv\4.5.5\opencv\build
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">OPENCV_DIR</span><span class="p">=</span><span class="n">D:</span><span class="p">\</span><span class="n">dev</span><span class="p">\</span><span class="n">opencv</span><span class="p">\</span><span class="n">4</span><span class="p">.</span><span class="n">5</span><span class="p">.</span><span class="n">5</span><span class="p">\</span><span class="n">opencv</span><span class="p">\</span><span class="n">build</span>
 </span></span></code></pre></div><p><code>Path</code> 中添加如下变量</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-powershell" data-lang="powershell"><span style="display:flex;"><span>D:\dev\opencv\4.5.5\opencv\build\x64\vc14\bin
-</span></span><span style="display:flex;"><span>D:\dev\opencv\4.5.5\opencv\build\x64\vc15\bin
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-powershell" data-lang="powershell"><span class="line"><span class="cl"><span class="n">D:</span><span class="p">\</span><span class="n">dev</span><span class="p">\</span><span class="n">opencv</span><span class="p">\</span><span class="n">4</span><span class="p">.</span><span class="n">5</span><span class="p">.</span><span class="n">5</span><span class="p">\</span><span class="n">opencv</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">x64</span><span class="p">\</span><span class="n">vc14</span><span class="p">\</span><span class="n">bin</span>
+</span></span><span class="line"><span class="cl"><span class="n">D:</span><span class="p">\</span><span class="n">dev</span><span class="p">\</span><span class="n">opencv</span><span class="p">\</span><span class="n">4</span><span class="p">.</span><span class="n">5</span><span class="p">.</span><span class="n">5</span><span class="p">\</span><span class="n">opencv</span><span class="p">\</span><span class="n">build</span><span class="p">\</span><span class="n">x64</span><span class="p">\</span><span class="n">vc15</span><span class="p">\</span><span class="n">bin</span>
 </span></span></code></pre></div><h2 id="2-在-visual-studio-c-项目中使用-opencv-库">2. 在 Visual Studio C++ 项目中使用 OpenCV 库</h2>
 <p>我使用的 Microsoft Visual Studio Community 2022 进行开发</p>
 <h3 id="21-新建一个控制台应用的-c-项目">2.1 新建一个控制台应用的 C++ 项目</h3>
@@ -157,21 +156,21 @@
 <h3 id="24-编写-c-代码">2.4 编写 C++ 代码</h3>
 <p><img src="/upload/image-20220330225134061.png" alt="编写代码并使用"></p>
 <p>编写代码：</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#fff;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-c++" data-lang="c++"><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;iostream&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic">#include</span> <span style="color:#999;font-weight:bold;font-style:italic">&lt;opencv2/opencv.hpp&gt;</span><span style="color:#999;font-weight:bold;font-style:italic">
-</span></span></span><span style="display:flex;"><span><span style="color:#999;font-weight:bold;font-style:italic"></span>
-</span></span><span style="display:flex;"><span><span style="color:#458;font-weight:bold">int</span> <span style="color:#900;font-weight:bold">main</span>()
-</span></span><span style="display:flex;"><span>{
-</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>Mat img <span style="color:#000;font-weight:bold">=</span> cv<span style="color:#000;font-weight:bold">::</span>imread(<span style="color:#d14">&#34;D:/dev/opencv/doc/imgs/A4-1.jpg&#34;</span>);
-</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>resize(img, img, cv<span style="color:#000;font-weight:bold">::</span>Size(<span style="color:#099">0</span>, <span style="color:#099">0</span>), <span style="color:#099">0.2</span>, <span style="color:#099">0.2</span>, <span style="color:#099">1</span>);
-</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>imshow(<span style="color:#d14">&#34;A4&#34;</span>, img);
-</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>cvtColor(img, img, cv<span style="color:#000;font-weight:bold">::</span>COLOR_BGR2GRAY);
-</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>imshow(<span style="color:#d14">&#34;Gray&#34;</span>, img);
-</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>waitKey(<span style="color:#099">0</span>);
-</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>destroyWindow(<span style="color:#d14">&#34;A4&#34;</span>);
-</span></span><span style="display:flex;"><span>    cv<span style="color:#000;font-weight:bold">::</span>destroyAllWindows();
-</span></span><span style="display:flex;"><span>    <span style="color:#000;font-weight:bold">return</span> <span style="color:#099">0</span>;
-</span></span><span style="display:flex;"><span>}
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-c++" data-lang="c++"><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;iostream&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp">#include</span> <span class="cpf">&lt;opencv2/opencv.hpp&gt;</span><span class="cp">
+</span></span></span><span class="line"><span class="cl"><span class="cp"></span>
+</span></span><span class="line"><span class="cl"><span class="kt">int</span> <span class="nf">main</span><span class="p">()</span>
+</span></span><span class="line"><span class="cl"><span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv</span><span class="o">::</span><span class="n">Mat</span> <span class="n">img</span> <span class="o">=</span> <span class="n">cv</span><span class="o">::</span><span class="n">imread</span><span class="p">(</span><span class="s">&#34;D:/dev/opencv/doc/imgs/A4-1.jpg&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv</span><span class="o">::</span><span class="n">resize</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">Size</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">,</span> <span class="mi">1</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv</span><span class="o">::</span><span class="n">imshow</span><span class="p">(</span><span class="s">&#34;A4&#34;</span><span class="p">,</span> <span class="n">img</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv</span><span class="o">::</span><span class="n">cvtColor</span><span class="p">(</span><span class="n">img</span><span class="p">,</span> <span class="n">img</span><span class="p">,</span> <span class="n">cv</span><span class="o">::</span><span class="n">COLOR_BGR2GRAY</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv</span><span class="o">::</span><span class="n">imshow</span><span class="p">(</span><span class="s">&#34;Gray&#34;</span><span class="p">,</span> <span class="n">img</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv</span><span class="o">::</span><span class="n">waitKey</span><span class="p">(</span><span class="mi">0</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv</span><span class="o">::</span><span class="n">destroyWindow</span><span class="p">(</span><span class="s">&#34;A4&#34;</span><span class="p">);</span>
+</span></span><span class="line"><span class="cl">    <span class="n">cv</span><span class="o">::</span><span class="n">destroyAllWindows</span><span class="p">();</span>
+</span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="mi">0</span><span class="p">;</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div></div>
   
   
@@ -282,7 +281,7 @@ Centos7 安装 MySQL 8.0
     
     <div class="site-statis">
       <div class="statis-number">
-        <strong class="number">11</strong>
+        <strong class="number">12</strong>
         <div><small>日志</small></div>
       </div>
       <div class="statis-number">
@@ -290,7 +289,7 @@ Centos7 安装 MySQL 8.0
         <div><small>分类</small></div>
       </div>
       <div class="statis-number">
-        <strong class="number">0</strong>
+        <strong class="number">1</strong>
         <div><small>标签</small></div>
       </div>
     </div>

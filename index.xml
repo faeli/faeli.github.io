@@ -6,7 +6,24 @@
     <description>Recent content on 大个子斌斌子</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>zh</language>
-    <lastBuildDate>Fri, 03 Jun 2022 11:47:28 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Sat, 16 Jul 2022 17:54:18 +0800</lastBuildDate><atom:link href="/index.xml" rel="self" type="application/rss+xml" />
+    <item>
+      <title>快速入门 Go lang</title>
+      <link>/posts/golang/start/</link>
+      <pubDate>Sat, 16 Jul 2022 17:54:18 +0800</pubDate>
+      
+      <guid>/posts/golang/start/</guid>
+      <description>环境搭建 安装 下载地址
+根据自己的系统下载对应的安装包安装即可。
+我使用的是 Windows 标准包安装。
+go1.18.4.windows-amd64.msi
+安装完成后，需要将 go 环境变量添加到系统环境变量中，否则 go 命令将无法使用。
+$ go version go version go1.18.4 windows/amd64 安装成后开始编程。
+开发工具 推荐直接使用 Visual Studio Code 编辑器进行开发。
+你好，Go lang package main import ( &amp;#34;fmt&amp;#34; ) func main() { fmt.Println(&amp;#34;Hello, golang!&amp;#34;) } Go 命令 Go 基础 包 包的基本概念  Go 使用 包 (package) 组织源代码 包(package) 包含多个 go 源码的集合，是一种高级的代码复用方案。 任何源代码必须属于某一个包，同时源码文件的第一行有效代码必须是 package 包名 语句，通过该语句声明自己所在的包。  包的特点 包的习惯用法 包的导入 语法 import &amp;#34;包名&amp;#34; 注意
+ import 导入语句通常放在源码文件开头包声明语句的下面； 导入的包名必须使用双引号包裹起来； 包名是从 GOPATH/src/ 开始计算的，使用 / 进行分隔。  单行导入 import &amp;#34;包名1&amp;#34; import &amp;#34;包名2&amp;#34; 多行导入 import ( &amp;#34;包名1&amp;#34; &amp;#34;包名2&amp;#34; ) 包方法的调用 package main import &amp;#34;fmt&amp;#34; func main() { fmt.</description>
+    </item>
+    
     <item>
       <title>zerotier 异地组网</title>
       <link>/posts/zerotier/start/</link>
@@ -50,7 +67,7 @@ D:\dev\opencv\4.5.5\opencv\build\x64\vc14\bin D:\dev\opencv\4.5.5\opencv\build\x
 2.1 新建一个控制台应用的 C++ 项目 2.2 设置VC++目录 $(OPENCV_DIR)\include
 2.3 设置连接器 附件库目录$(OPENCV_DIR)\x64\vc\14\lib
 2.4 编写 C++ 代码 编写代码：
-#include &amp;lt;iostream&amp;gt;#include &amp;lt;opencv2/opencv.hpp&amp;gt; int main() {  cv::Mat img = cv::imread(&amp;#34;D:/dev/opencv/doc/imgs/A4-1.jpg&amp;#34;);  cv::resize(img, img, cv::Size(0, 0), 0.</description>
+#include &amp;lt;iostream&amp;gt;#include &amp;lt;opencv2/opencv.hpp&amp;gt; int main() { cv::Mat img = cv::imread(&amp;#34;D:/dev/opencv/doc/imgs/A4-1.jpg&amp;#34;); cv::resize(img, img, cv::Size(0, 0), 0.</description>
     </item>
     
     <item>
@@ -60,7 +77,7 @@ D:\dev\opencv\4.5.5\opencv\build\x64\vc14\bin D:\dev\opencv\4.5.5\opencv\build\x
       
       <guid>/posts/centos7-install-mysql-8/</guid>
       <description>运行安装脚本
-#下载安 sh 文件 curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh  #运行 sh sh mysql-8.0.15-el7-x86_64-install.sh  # 启动服务 sudo systemctl start mysqld # 查看root密码 cat /var/log/mysqld.log | grep password  2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost:   #使用密码链接 mysql -uroot -p #链接成功后修改密码 mysql&amp;gt; alter user user() identified by &amp;#34;你要设置的新密码&amp;#34;; 脚本说明  </description>
+#下载安 sh 文件 curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh #运行 sh sh mysql-8.0.15-el7-x86_64-install.sh # 启动服务 sudo systemctl start mysqld # 查看root密码 cat /var/log/mysqld.log | grep password 2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: #使用密码链接 mysql -uroot -p #链接成功后修改密码 mysql&amp;gt; alter user user() identified by &amp;#34;你要设置的新密码&amp;#34;; 脚本说明  </description>
     </item>
     
     <item>
@@ -70,8 +87,8 @@ D:\dev\opencv\4.5.5\opencv\build\x64\vc14\bin D:\dev\opencv\4.5.5\opencv\build\x
       
       <guid>/posts/java-call-javascript/</guid>
       <description>JavaScript d:/tmp/calculator.js
-var calculator = new Object();  calculator.add = function (n1, n2) {n1 + n2}; calculator.subtract = function (n1, n2) {n1 - n2}; calculator.multiply = function (n1, n2) {n1 * n2}; calculator.divide = function (n1, n2) {n1 / n2}; function test(a, b) { if (a === &amp;#39;Number&amp;#39;) return 1; else return b}; Java Code
-import javax.script.Invocable; import javax.script.ScriptEngine; import javax.script.ScriptEngineManager;  public class Main {  public static void main(String[] args) throws Exception {  ScriptEngineManager manager = new ScriptEngineManager();  ScriptEngine engine = manager.</description>
+var calculator = new Object(); calculator.add = function (n1, n2) {n1 + n2}; calculator.subtract = function (n1, n2) {n1 - n2}; calculator.multiply = function (n1, n2) {n1 * n2}; calculator.divide = function (n1, n2) {n1 / n2}; function test(a, b) { if (a === &amp;#39;Number&amp;#39;) return 1; else return b}; Java Code
+import javax.script.Invocable; import javax.script.ScriptEngine; import javax.script.ScriptEngineManager; public class Main { public static void main(String[] args) throws Exception { ScriptEngineManager manager = new ScriptEngineManager(); ScriptEngine engine = manager.</description>
     </item>
     
     <item>
@@ -106,7 +123,7 @@ https://certbot.eff.org/docs/install.html</description>
       
       <guid>/posts/tomcat-params-encoding/</guid>
       <description>需要在 Tomcat 配置conf/server.xml中加入URIEncoding=&amp;quot;utf-8&amp;quot;
-&amp;lt;Connector port=&amp;#34;8000&amp;#34; protocol=&amp;#34;HTTP/1.1&amp;#34;  connectionTimeout=&amp;#34;20000&amp;#34;  redirectPort=&amp;#34;8443&amp;#34; URIEncoding=&amp;#34;utf-8&amp;#34;/&amp;gt; </description>
+&amp;lt;Connector port=&amp;#34;8000&amp;#34; protocol=&amp;#34;HTTP/1.1&amp;#34; connectionTimeout=&amp;#34;20000&amp;#34; redirectPort=&amp;#34;8443&amp;#34; URIEncoding=&amp;#34;utf-8&amp;#34;/&amp;gt; </description>
     </item>
     
     <item>
