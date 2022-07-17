@@ -109,14 +109,14 @@
     <path d="M15.578 2.478L13.52.421a1.441 1.441 0 0 0-2.037 0L1.405 10.5a1.355 1.355 0 0 0-.357.632l-1.03 4.123a.598.598 0 0 0 .727.726l4.12-1.03c.241-.059.462-.184.636-.36L15.578 4.518a1.444 1.444 0 0 0 0-2.039M2.084 12.017L4 13.931l-2.569.643.654-2.557m2.98 1.284l-2.382-2.383 7.561-7.56 2.394 2.395L5.064 13.3m9.665-9.633l-1.242 1.239-2.396-2.396 1.241-1.24a.237.237 0 0 1 .34 0l2.057 2.056a.241.241 0 0 1 0 .341"/>
 </svg>
 </i>
-294字</span>
+735字</span>
   
   <span class="post-readtime">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
     <path d="M8 0a8 8 0 1 0 0 16A8 8 0 0 0 8 0m0 1.2c3.75 0 6.8 3.05 6.8 6.8s-3.05 6.8-6.8 6.8S1.2 11.75 1.2 8 4.25 1.2 8 1.2m3.296 9.733a.59.59 0 0 1-.299-.081l-3.656-2.11a.598.598 0 0 1-.3-.52V4.626a.6.6 0 1 1 1.2 0v3.25l3.355 1.938a.6.6 0 0 1-.3 1.12"/>
 </svg>
 </i>
-≈2
+≈4
   </span>
   
 </div>
@@ -212,7 +212,7 @@ go version go1.18.4 windows/amd64
 <h6 id="包的初始化特点">包的初始化特点</h6>
 <ul>
 <li>包初始化程序从<code>main</code>函数引用的包开始，逐级查找包的引用，直到找到没有引用其他包的包，最终生成一个包引用的有向无环图。</li>
-<li>Go编译器会将有向无环图转换为一棵树，然后从树的叶子节点开始逐层向上对包进行初始化。</li>
+<li>Go 编译器会将有向无环图转换为一棵树，然后从树的叶子节点开始逐层向上对包进行初始化。</li>
 <li>单个包的初始化过程如上图所示，先初始化常量，然后是全局变量，最后执行包的<code>init</code>函数。</li>
 </ul>
 <h3 id="可见性">可见性</h3>
@@ -229,14 +229,232 @@ go version go1.18.4 windows/amd64
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">r</span><span class="p">.</span><span class="nx">Width</span> <span class="o">*</span> <span class="nx">r</span><span class="p">.</span><span class="nx">Height</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
 </span></span></code></pre></div><h3 id="常量">常量</h3>
-<p>Go 语言中常量使用 <code>const</code> 关键字定义</p>
-<h3 id="变量">变量</h3>
-<h3 id="基础类型">基础类型</h3>
-<h3 id="控制语句">控制语句</h3>
-<h3 id="数组-array">数组 array</h3>
-<h3 id="切片-slice">切片 slice</h3>
-<h3 id="字典-map">字典 map</h3>
-<h3 id="函数-function">函数 function</h3>
+<p>Go 语言中常量使用 <code>const</code> 关键字定义，用于存储不会改变的数据，常量在编译时被创建的，即使定义在函数内部也是如此，并且只能是布尔型、数字型、和字符串型。由于编译时的限制，定义常量的表达式必须为能被编译器求值的常量表达式。</p>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// const 定义常量
+</span></span></span><span class="line"><span class="cl"><span class="c1">// pi 常量名称
+</span></span></span><span class="line"><span class="cl"><span class="c1">// float64 常量类型
+</span></span></span><span class="line"><span class="cl"><span class="c1">// = 赋值表达式
+</span></span></span><span class="line"><span class="cl"><span class="c1">// 3.141592654 常量的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">const</span> <span class="nx">pi</span> <span class="kt">float64</span> <span class="p">=</span> <span class="mf">3.141592654</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 可以省略类型说明符[type]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">const</span> <span class="nx">pi2</span> <span class="p">=</span> <span class="mf">3.141592654</span>
+</span></span></code></pre></div><h4 id="批量声明">批量声明</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="c1">// 和变量一样可是使用批量声明常量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">const</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">e</span> <span class="p">=</span> <span class="mf">2.7182818284590452353602874713527</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">pi</span> <span class="p">=</span> <span class="mf">3.14159265358979323846264338327950288</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="c1">// 使用 iota 定义计算机存储单位的枚举
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span><span class="kd">const</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// _ 忽略定义
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="c1">// iota 初始化为 0，每新增一个常量，iota 就会自动加 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">_</span> <span class="p">=</span> <span class="kc">iota</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">KG</span> <span class="kt">float64</span> <span class="p">=</span> <span class="mi">1</span> <span class="o">&lt;&lt;</span> <span class="p">(</span><span class="kc">iota</span> <span class="o">*</span> <span class="mi">10</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 左边没有定义时，直接套用上一条定义的常量，即 MB = 1 &lt;&lt; (iota * 10)，此时 iota = 2
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">MB</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">GB</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">TB</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">PB</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">EB</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">ZB</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">YB</span>
+</span></span><span class="line"><span class="cl"><span class="p">)</span>
+</span></span></code></pre></div><blockquote>
+<p><strong>注意</strong></p>
+<p><code>iota</code> 为常量计数器，只能在常量的表达式中使用。</p>
+<ol>
+<li><code>iota</code> 在 <code>const</code> 关键字出现时将被重置为 0。</li>
+<li><code>const</code> 中每新增一行常量声明将使 <code>iota</code> 计数加一（<code>iota</code>可以理解为 <code>const</code> 语句块中的行索引）</li>
+</ol>
+<p><code>iota</code> 能简化定义，在定义枚举时很有用。</p>
+</blockquote>
+<h3 id="变量-var">变量 <code>var</code></h3>
+<p>在 Go 中使用 <code>var</code> 声明变量，变量仅能正在方法体重声明，不能在函数外部声明。</p>
+<h4 id="变量的声明方式">变量的声明方式</h4>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 声明变量
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="nx">a</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">b</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">&#34;abcd&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 忽略类型声明
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="nx">c</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">d</span> <span class="p">=</span> <span class="s">&#34;abcd&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 批量声明
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">e</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">f</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">&#34;abcd&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="p">(</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">g</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">        <span class="nx">h</span> <span class="p">=</span> <span class="s">&#34;abcd&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 简短声明
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">i</span> <span class="o">:=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">i</span><span class="p">,</span><span class="nx">j</span> <span class="o">:=</span> <span class="mi">20</span><span class="p">,</span><span class="mi">30</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">k</span><span class="p">,</span><span class="nx">l</span> <span class="o">:=</span> <span class="mi">40</span><span class="p">,</span> <span class="s">&#34;abcd&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 打印
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">d</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">e</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">f</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">g</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">h</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">j</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">k</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">l</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="运算符">运算符</h3>
+<h4 id="递增递减">递增递减</h4>
+<blockquote>
+<p>在 Go 中，<code>++</code> 与 <code>--</code> 是作为语句而不是作为表达式，使用时需单独一行使用。</p>
+</blockquote>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl">
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="kd">var</span> <span class="nx">i</span> <span class="kt">int</span> <span class="p">=</span> <span class="mi">1</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">i</span><span class="o">++</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">i</span><span class="o">--</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">i</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="指针--">指针 <code>&amp;</code> <code>*</code></h3>
+<p>Go 虽然保留了指针，但与其它编程语言不同的是，在 Go 当中不支持指针运算以及 <code>-&gt;</code> 运算符，而直接采用<code>.</code>选择符来操作指针目标对象的成员。</p>
+<ul>
+<li><code>&amp;</code> 获取指针对象的地址</li>
+<li><code>*</code> 间接访问目标对象</li>
+<li>默认值为 <code>nil</code> 而非 <code>NULL</code></li>
+</ul>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">a</span> <span class="kt">string</span> <span class="p">=</span> <span class="s">&#34;abcd&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="kd">var</span> <span class="nx">p</span> <span class="p">=</span> <span class="o">&amp;</span><span class="nx">a</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%v =&gt; %p\n&#34;</span><span class="p">,</span> <span class="nx">a</span><span class="p">,</span> <span class="nx">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="o">*</span><span class="nx">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h3 id="数据类型">数据类型</h3>
+<h4 id="基础类型">基础类型</h4>
+<h4 id="聚合类型">聚合类型</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">数组</td>
+<td style="text-align:left"><code>var a [5]int</code></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>struct</code></td>
+<td style="text-align:left">结构体</td>
+</tr>
+</tbody>
+</table>
+<h5 id="数组">数组</h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 定义 容量为 10 ，类型为 int 的数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="kd">var</span> <span class="nx">a</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="kt">int</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 默认数组使用 int 的默认值 0 填充，输入结果为： [0 0 0 0 0 0 0 0 0 0]
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">a</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 使用索引初始化 第10个元素设置为 1
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">b</span> <span class="o">:=</span> <span class="p">[</span><span class="mi">10</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">9</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">b</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 忽略数组长度使用 ... 自动计算
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">c</span> <span class="o">:=</span> <span class="p">[</span><span class="o">...</span><span class="p">]</span><span class="kt">int</span><span class="p">{</span><span class="mi">5</span><span class="p">:</span><span class="mi">1</span><span class="p">,</span> <span class="mi">9</span><span class="p">:</span><span class="mi">1</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Printf</span><span class="p">(</span><span class="s">&#34;%v =&gt; %v\n&#34;</span><span class="p">,</span> <span class="nx">c</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="nx">c</span><span class="p">))</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 通过索引获取数组内元素
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">[</span><span class="mi">5</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 通过索引设置数组内元素的值
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">c</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="p">=</span> <span class="mi">10</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 使用 for 循环数组
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">l</span> <span class="o">:=</span> <span class="nb">len</span><span class="p">(</span><span class="nx">c</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="k">for</span> <span class="nx">i</span><span class="o">:=</span><span class="mi">0</span><span class="p">;</span><span class="nx">i</span><span class="p">&lt;</span><span class="nx">l</span><span class="p">;</span><span class="nx">i</span><span class="o">++</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">    	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">c</span><span class="p">[</span><span class="nx">i</span><span class="p">])</span>
+</span></span><span class="line"><span class="cl">    <span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h5 id="结构-struct">结构 <code>struct</code></h5>
+<div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">main</span>
+</span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Person</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Name</span> <span class="kt">string</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Age</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">type</span> <span class="nx">Student</span> <span class="kd">struct</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Person</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">Weight</span> <span class="kt">int</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span><span class="line"><span class="cl"><span class="kd">func</span> <span class="nf">main</span><span class="p">()</span> <span class="p">{</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 声明
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="kd">var</span> <span class="nx">p</span> <span class="nx">Person</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 初始化属性
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">p</span><span class="p">.</span><span class="nx">Name</span> <span class="p">=</span> <span class="s">&#34;Bob&#34;</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">p</span><span class="p">.</span><span class="nx">Age</span> <span class="p">=</span> <span class="mi">21</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 使用字段顺序初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>	<span class="nx">p</span> <span class="p">=</span> <span class="nx">Person</span><span class="p">{</span><span class="s">&#34;Bill&#34;</span><span class="p">,</span> <span class="mi">26</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">	<span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">	<span class="c1">// 使用`字段:值`初始化
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">p</span> <span class="p">=</span> <span class="nx">Person</span><span class="p">{</span><span class="nx">Age</span><span class="p">:</span><span class="mi">10</span><span class="p">,</span><span class="nx">Name</span><span class="p">:</span><span class="s">&#34;姓名&#34;</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">p</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="c1">// 使用 new 函数分配一个指针初始化，此处的 pp 为 *Person 指针
+</span></span></span><span class="line"><span class="cl"><span class="c1"></span>    <span class="nx">pp</span> <span class="o">:=</span> <span class="nb">new</span><span class="p">(</span><span class="nx">Person</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">pp</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">s</span> <span class="o">:=</span> <span class="nx">Student</span><span class="p">{</span><span class="nx">Weight</span><span class="p">:</span> <span class="mi">70</span><span class="p">}</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">s</span><span class="p">.</span><span class="nx">Person</span><span class="p">.</span><span class="nx">Name</span> <span class="p">=</span> <span class="s">&#34;Bob&#34;</span>
+</span></span><span class="line"><span class="cl">    <span class="nx">fmt</span><span class="p">.</span><span class="nf">Println</span><span class="p">(</span><span class="nx">s</span><span class="p">)</span>
+</span></span><span class="line"><span class="cl"><span class="p">}</span>
+</span></span></code></pre></div><h4 id="引用类型">引用类型</h4>
+<table>
+<thead>
+<tr>
+<th style="text-align:left">类型</th>
+<th style="text-align:left">描述</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:left">指针</td>
+<td style="text-align:left">使用 <code>&amp;</code> 获取对象的指针地址</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>slice</code></td>
+<td style="text-align:left">切片底层是一个数组，可以使用 <code>len</code> 和 <code>cap</code> 来获取切片的长度和容量</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>map</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>function</code></td>
+<td style="text-align:left"></td>
+</tr>
+<tr>
+<td style="text-align:left"><code>channel</code></td>
+<td style="text-align:left"></td>
+</tr>
+</tbody>
+</table>
+<h5 id="切片-slice">切片 <code>slice</code></h5>
+<h5 id="字典-map">字典 map</h5>
+<h5 id="函数-function">函数 function</h5>
+<h4 id="接口类型-interface">接口类型 interface</h4>
+<p>在 Go 中，使用 <code>interface</code> 关键字定义接口类型</p>
 <p>函数使用关键字 <code>func</code> 定义</p>
 <div class="highlight"><pre tabindex="0" class="chroma"><code class="language-go" data-lang="go"><span class="line"><span class="cl"><span class="kn">package</span> <span class="nx">gretings</span>
 </span></span><span class="line"><span class="cl"><span class="kn">import</span> <span class="s">&#34;fmt&#34;</span>
@@ -247,9 +465,8 @@ go version go1.18.4 windows/amd64
 </span></span><span class="line"><span class="cl">    <span class="nx">message</span> <span class="o">:=</span> <span class="nx">fmt</span><span class="p">.</span><span class="nf">Speak</span><span class="p">(</span><span class="s">&#34;Hi, %v. Welcome！&#34;</span> <span class="p">,</span><span class="nx">name</span><span class="p">)</span>
 </span></span><span class="line"><span class="cl">    <span class="k">return</span> <span class="nx">message</span>
 </span></span><span class="line"><span class="cl"><span class="p">}</span>
-</span></span></code></pre></div><h3 id="结构-struct">结构 struct</h3>
+</span></span></code></pre></div><h3 id="控制语句">控制语句</h3>
 <h3 id="方法-method">方法 method</h3>
-<h3 id="接口-interface">接口 interface</h3>
 <h3 id="反射-reflection">反射 reflection</h3>
 <h3 id="并发-concurrency">并发 concurrency</h3>
 <h3 id="go-中的关键字">Go 中的关键字</h3>
@@ -328,6 +545,14 @@ go version go1.18.4 windows/amd64
 <tr>
 <td style="text-align:left"><code>return</code></td>
 <td style="text-align:left">返回值</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>iota</code></td>
+<td style="text-align:left">常量计算器，仅能在 <code>const</code> 定义中使用</td>
+</tr>
+<tr>
+<td style="text-align:left"><code>interface</code></td>
+<td style="text-align:left">接口类型声明</td>
 </tr>
 </tbody>
 </table>
@@ -503,16 +728,12 @@ zerotier 异地组网
         <li><a href="#包">包</a></li>
         <li><a href="#可见性">可见性</a></li>
         <li><a href="#常量">常量</a></li>
-        <li><a href="#变量">变量</a></li>
-        <li><a href="#基础类型">基础类型</a></li>
+        <li><a href="#变量-var">变量 <code>var</code></a></li>
+        <li><a href="#运算符">运算符</a></li>
+        <li><a href="#指针--">指针 <code>&amp;</code> <code>*</code></a></li>
+        <li><a href="#数据类型">数据类型</a></li>
         <li><a href="#控制语句">控制语句</a></li>
-        <li><a href="#数组-array">数组 array</a></li>
-        <li><a href="#切片-slice">切片 slice</a></li>
-        <li><a href="#字典-map">字典 map</a></li>
-        <li><a href="#函数-function">函数 function</a></li>
-        <li><a href="#结构-struct">结构 struct</a></li>
         <li><a href="#方法-method">方法 method</a></li>
-        <li><a href="#接口-interface">接口 interface</a></li>
         <li><a href="#反射-reflection">反射 reflection</a></li>
         <li><a href="#并发-concurrency">并发 concurrency</a></li>
         <li><a href="#go-中的关键字">Go 中的关键字</a></li>
