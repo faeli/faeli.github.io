@@ -45,7 +45,7 @@
 <meta name="msapplication-TileImage" content="/ms-icon-144x144.png" />
 <meta name="theme-color" content="#ffffff" />
 
-<link rel="stylesheet" href="/scss/zero.min.6fd76f5e3ba2e8ba1ef657cc3d770acbc02c87134af726c90f562cd07981fc96.css">
+<link rel="stylesheet" href="/scss/zero.min.d161ef2dc29cd7d21c1506b64b20a3356797972eb48e2aab6621985638e2b60c.css">
 
 
 <script data-ad-client="ca-pub-0142417710587136" async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"></script>
@@ -80,7 +80,16 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/golang/start/">快速入门 Go lang</a></h4>
-	  <div class="post-mate">
+      <p>环境搭建 安装 下载地址
+根据自己的系统下载对应的安装包安装即可。
+我使用的是 Windows 标准包安装。
+go1.18.4.windows-amd64.msi
+安装完成后，需要将 go 环境变量添加到系统环境变量中，否则 go 命令将无法使用。
+$ go version go version go1.18.4 windows/amd64 安装成后开始编程。
+开发工具 推荐直接使用 Visual Studio Code 编辑器进行开发。
+你好，Go lang package main import ( &#34;fmt&#34; ) func main() { fmt.Println(&#34;Hello, golang!&#34;) } Go 命令 Go 基础 包 包的基本概念  Go 使用 包 (package) 组织源代码 包(package) 包含多个 go 源码的集合，是一种高级的代码复用方案。 任何源代码必须属于某一个包，同时源码文件的第一行有效代码必须是 package 包名 语句，通过该语句声明自己所在的包。  包的特点 包的习惯用法 包的导入 语法 import &#34;包名&#34; 注意
+ import 导入语句通常放在源码文件开头包声明语句的下面； 导入的包名必须使用双引号包裹起来； 包名是从 GOPATH/src/ 开始计算的，使用 / 进行分隔。  单行导入 import &#34;包名1&#34; import &#34;包名2&#34; 多行导入 import ( &#34;包名1&#34; &#34;包名2&#34; ) 包方法的调用 package main import &#34;fmt&#34; func main() { fmt. </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -130,7 +139,17 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/zerotier/start/">zerotier 异地组网</a></h4>
-	  <div class="post-mate">
+      <p>最近使用zerotier替换了frp来实现内网穿透，zerotier是一个软交换机，使用zerotier可以让多台内网机器组成一个局域网。
+首先要安装 zerotier-one 这个软件包，如果是ArchLinux，直接运行：
+$ sudo pacman -S zerotier-one 如果是Ubuntu/Debian/CentOS，则运行：
+$ curl -s https://install.zerotier.com/ | sudo bash 注：如果是Windows或者macOS、Android、iOS等，那么可以在 https://www.zerotier.com/download/ 下载zerotier 之后就完成了安装，然后我们要启动zerotier，并且让他开机自启动，运行：
+$ sudo systemctl start zerotier-one.service $ sudo systemctl enable zerotier-one.service 例如我有两台内网机器，于是都按照上面的描述进行了安装和启动。接下来要做的事情是到 https://my.zerotier.com/ 里注册帐号并且登录，然后创建一个Network，创建之后点到这个网络里，拉到最上面，选择 Private(私有网络) ，这样别人加入的时候就需要认证， 如果想改名字的话，改个名字，其他不用动。然后复制 Network ID，就是拉到最上面的时候可以看到的一个类似 82048a0632246d2c 的字符串。
+然后在两台内网机器上执行：
+$ sudo zerotier-cli join xxxxxxxxxxxxxxx 加入之后他们就启动了，但是还连不进我们创建的网络，因为我们选择了 Private(私有网络) ，我们还需要到 https://my.zerotier.com/ 上面对接入的机器打勾，拉到 Members 这一节，把前面的两个勾勾选上。
+这个时候执行一下 ip a 你会发现多了一个叫做 ztuzethlza 或者类似名字的设备，还有IP地址，这就是zerotier组建的局域网的IP 地址，但是这个时候你如果直接连接另外一台机器的话可能会非常慢，所以为了加速，我们还需要一台在国内的，或者是在国外但是访问 速度相当快的机器做转发。
+搭建中转机器(moon) 首先把中转机器按照上述步骤一起加入网络，然后执行：
+$ cd /var/lib/zerotier-one/ $ sudo zerotier-idtool initmoon identity. </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -186,7 +205,8 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/opencv/opencv-scan-color/">OpenCV 颜色识别</a></h4>
-	  <div class="post-mate">
+      <p> inRange 函数实现二值化功能，在阈值内的像素设置为白色(255)，不在阈值区间的像素设置为黑色(0) scalar 定义颜色阈值 链接滤波，获取 Canny 边缘图片 使用 findContours 获取轮廓信息 计算轮廓面积 contourArea 计算轮廓长度 arcLength 计算多边形拟合approxPolyDP 最小覆盖矩形boundingRect   </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -242,7 +262,18 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/opencv/win-c&#43;&#43;/">Windows 下 Visual Studio C&#43;&#43; 使用 OpenvCV</a></h4>
-	  <div class="post-mate">
+      <p>OpenCV是一个基于Apache2.0许可（开源）发行的跨平台计算机视觉和机器学习软件库，可以运行在Linux、Windows、Android和Mac OS操作系统上。 [1] 它轻量级而且高效——由一系列 C 函数和少量 C++ 类构成，同时提供了Python、Ruby、MATLAB等语言的接口，实现了图像处理和计算机视觉方面的很多通用算法。
+OpenCV用C++语言编写，它具有C ++，Python，Java和MATLAB接口，并支持Windows，Linux，Android和Mac OS，OpenCV主要倾向于实时视觉应用，并在可用时利用MMX和SSE指令， 如今也提供对于C#、Ch、Ruby，GO的支持。
+以下使用 OpenCV 4.5.5 2021年12月30日
+1. 安装 OpenCV VC++ 库 现在完成后其实就解压程序到指定目录，我指定目录为D:\dev\opencv\4.5.5
+安装完成后：
+配置Windows环境变量 OPENCV_DIR=D:\dev\opencv\4.5.5\opencv\build Path 中添加如下变量
+D:\dev\opencv\4.5.5\opencv\build\x64\vc14\bin D:\dev\opencv\4.5.5\opencv\build\x64\vc15\bin 2. 在 Visual Studio C++ 项目中使用 OpenCV 库 我使用的 Microsoft Visual Studio Community 2022 进行开发
+2.1 新建一个控制台应用的 C++ 项目 2.2 设置VC++目录 $(OPENCV_DIR)\include
+2.3 设置连接器 附件库目录$(OPENCV_DIR)\x64\vc\14\lib
+2.4 编写 C++ 代码 编写代码：
+#include &lt;iostream&gt;#include &lt;opencv2/opencv.hpp&gt; int main() { cv::Mat img = cv::imread(&#34;D:/dev/opencv/doc/imgs/A4-1.jpg&#34;); cv::resize(img, img, cv::Size(0, 0), 0. </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -298,7 +329,9 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/centos7-install-mysql-8/">Centos7 安装 MySQL 8.0</a></h4>
-	  <div class="post-mate">
+      <p>运行安装脚本
+#下载安 sh 文件 curl -O https://gist.githubusercontent.com/faeli/4a041caaecc26ef7f245c899e9732754/raw/734cccbb5c60983a5605d884c4e38cda32a88e84/mysql-8.0.15-el7-x86_64-install.sh #运行 sh sh mysql-8.0.15-el7-x86_64-install.sh # 启动服务 sudo systemctl start mysqld # 查看root密码 cat /var/log/mysqld.log | grep password 2019-03-30T13:54:44.768968Z 5 [Note] [MY-010454] [Server] A temporary password is generated for root@localhost: #使用密码链接 mysql -uroot -p #链接成功后修改密码 mysql&gt; alter user user() identified by &#34;你要设置的新密码&#34;; 脚本说明   </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -337,7 +370,10 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/java-call-javascript/">Java 调用 Javascript 代码</a></h4>
-	  <div class="post-mate">
+      <p>JavaScript d:/tmp/calculator.js
+var calculator = new Object(); calculator.add = function (n1, n2) {n1 + n2}; calculator.subtract = function (n1, n2) {n1 - n2}; calculator.multiply = function (n1, n2) {n1 * n2}; calculator.divide = function (n1, n2) {n1 / n2}; function test(a, b) { if (a === &#39;Number&#39;) return 1; else return b}; Java Code
+import javax.script.Invocable; import javax.script.ScriptEngine; import javax.script.ScriptEngineManager; public class Main { public static void main(String[] args) throws Exception { ScriptEngineManager manager = new ScriptEngineManager(); ScriptEngine engine = manager. </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -376,7 +412,10 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/redis-cluster/">Redis Cluster</a></h4>
-	  <div class="post-mate">
+      <p>参考:
+https://redis.io/topics/cluster-tutorial
+https://redis.io/topics/cluster-spec </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -415,7 +454,13 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/lets-encrypt-ssl/">Let&#39;s Encrypt 免费证书的使用</a></h4>
-	  <div class="post-mate">
+      <p>Let&rsquo;s Encrypt 是一个认证机构（CA）。它可以提供免费的SSL证书，并且已经被大多数浏览器信任。 我们可以通过Certbot-auto自动化证书的安装和更新。
+安装
+wget https://dl.eff.org/certbot-auto # 下载到本地 chmod a+x ./certbot-auto # 添加可执行权限 ./certbot-auto --help all # 查看帮助 生成证书
+./certbot-auto --nginx -d faeli.me -d www.faeli.me Let&rsquo;s Encrypt 签发的证书有效期只有90天。通过 ./certbot-auto renew 命令可以续签
+ 编辑 crontab 文件  $ crontab -e # 每天凌晨1点更新 0 1 * * * /root/certbot-auto renew --quiet 参考文档：
+https://certbot.eff.org/docs/install.html </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -454,7 +499,9 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/tomcat-params-encoding/">Tomcat GET 请求中中文参数乱码</a></h4>
-	  <div class="post-mate">
+      <p>需要在 Tomcat 配置conf/server.xml中加入URIEncoding=&quot;utf-8&quot;
+&lt;Connector port=&#34;8000&#34; protocol=&#34;HTTP/1.1&#34; connectionTimeout=&#34;20000&#34; redirectPort=&#34;8443&#34; URIEncoding=&#34;utf-8&#34;/&gt;  </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -493,7 +540,9 @@
   <li>
     <div class="post-item">
       <h4><a href="/posts/hugo-quick-start/">Hugo 使用记录</a></h4>
-	  <div class="post-mate">
+      <p>快速开始 安装 Hugo brew install hugo hugo version 创建一个网站项目 hogo new site quickstart 使用一个网站主题 cd quickstart git init git submodule add https://github.com/budparr/gohugo-theme-ananke.git themes/ananke # 修改文件使用主题 echo &#39;theme = &#34;ananka&#34;&#39; &gt;&gt; config.toml 添加文章文件 hugo new posts/my-first-post.md 运行 hugo server -D 浏览地址：http://localhost:1313
+主题开发  </p>
+      <div class="post-mate">
   
   <span class="post-date">
 <i class="inline-svg" ><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16">
@@ -633,7 +682,7 @@
     
     <div class="site-statis">
       <div class="statis-number">
-        <strong class="number">12</strong>
+        <strong class="number">11</strong>
         <div><small>日志</small></div>
       </div>
       <div class="statis-number">

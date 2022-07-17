@@ -148,14 +148,5 @@ message 格式
 &amp;lt;type&amp;gt;(&amp;lt;scope&amp;gt;): &amp;lt;subject&amp;gt; &amp;lt;!-- 空行 --&amp;gt; &amp;lt;body&amp;gt; &amp;lt;!-- 空行 --&amp;gt; &amp;lt;footer&amp;gt;    字段 必须 说明     *&amp;lt;type&amp;gt; 是 提交类别   &amp;lt;scope&amp;gt; 否 用于说明 commit 影响的范围，建议填写影响的功能模块   *&amp;lt;subject&amp;gt; 是 commit 目的的简短描述，不超过50个字符   &amp;lt;body&amp;gt; 否(建议填写) 描述当前修改的行为详细信息或修改的目的。   &amp;lt;footer&amp;gt; 否 一般用于描述BREAKING CHANGE，在项目开发中一般不需要填写，组件研发的工程需要填写。    2.</description>
     </item>
     
-    <item>
-      <title></title>
-      <link>/posts/opencv/opencv-ccv/</link>
-      <pubDate>Mon, 01 Jan 0001 00:00:00 +0000</pubDate>
-      
-      <guid>/posts/opencv/opencv-ccv/</guid>
-      <description></description>
-    </item>
-    
   </channel>
 </rss>
